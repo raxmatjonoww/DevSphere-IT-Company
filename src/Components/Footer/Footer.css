@@ -7,105 +7,104 @@
 .footer {
   background-color: #000713;
   color: white;
-  padding: 40px 0;
+  padding: 5rem 2rem;
   font-family: 'Arial', sans-serif;
 }
 
 .footer-content {
+  max-width: 1500px;
+  margin: auto;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 0 auto;
-  padding: 0 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  text-align: left;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 260px;
+  text-align: left;
 }
 
 .footer-logo a {
-  font-size: 32px;
-  font-weight: 600;
+  font-size: clamp(2.2rem, 3vw, 3.2rem);
+  font-weight: bold;
   color: #1a5bff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-logo a:hover {
-  color: #376fff; /* To'g'irlangan hover rangi */
+  color: #376fff;
 }
 
-.footer-links {
-  display: flex;
+.footer-logo p {
+  margin-top: 1rem;
+  color: #ccc;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  margin-bottom: 1rem;
+  color: #fff;
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+.footer-links ul,
+.footer-social ul {
   list-style: none;
-  justify-content: space-between;
-  width: 500px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
-.footer-links a {
-  color: white;
+.footer-links a,
+.footer-social a {
+  color: #ccc;
   text-decoration: none;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
   transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-social a:hover {
   color: #376fff;
 }
 
 .footer-bottom {
+  margin-top: 3rem;
   text-align: center;
-  margin-top: 30px;
+  border-top: 1px solid #1a1a1a;
+  padding-top: 1rem;
+  font-size: 0.95rem;
+  color: #aaa;
 }
 
-.footer-bottom p {
-  font-size: 14px;
-  color: white;
-}
-
-/* Kichik ekranlar uchun media so'rovi */
-@media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 1024px) {
   .footer-content {
-      flex-direction: column; /* Elementlarni ustun shaklida joylashtirish */
-      align-items: center; /* Markazga joylashtirish */
-      text-align: center; /* Matnni ham markazga joylashtirish */
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
   }
 
-  .footer-logo {
-      margin-bottom: 20px; /* Logodan keyin bo'sh joy */
+  .footer-section {
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: left;
   }
 
-  .footer-links {
-      flex-direction: column; /* Havolalarni ustun shaklida joylashtirish */
-      width: 100%; /* Butun kenglikni egallash */
-      align-items: center; /* Markazga joylashtirish */
-  }
-
-  .footer-links li {
-      margin-bottom: 10px; /* Har bir havola ostida bo'sh joy */
-  }
-
-  .footer-links a {
-      font-size: 18px; /* Kichikroq shrift */
-  }
-
-  .footer-bottom {
-      margin-top: 20px; /* Kichikroq yuqori bo'sh joy */
-  }
-
-  .footer-bottom p {
-      font-size: 12px; /* Yanada kichikroq shrift */
-  }
-}
-
-/* Yanada kichik ekranlar uchun (masalan, mobil telefonlar) */
-@media (max-width: 480px) {
-  .footer {
-      padding: 30px 0; /* Yanada kichikroq ichki joy */
-  }
-
-  .footer-logo a {
-      font-size: 28px; /* Yanada kichikroq logo shrifti */
-  }
-
-  .footer-links a {
-      font-size: 16px; /* Yanada kichikroq havola shrifti */
+  .footer-links ul,
+  .footer-social ul {
+    align-items: flex-start;
   }
 }

@@ -46,22 +46,25 @@
 @media (max-width: 1024px) {
   .nav-links {
     position: absolute;
-    top: 50px;
-    right: 0;
+    top: 100%;
+    left: 0;
+    width: 100%;
     background-color: #000713;
     flex-direction: column;
-    width: 100%;
-    text-align: center;
-    gap: 3.5rem;
-    justify-content: center;
-    height: 93vh;
-    padding: 0rem 0;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2rem 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    z-index: 998;
   }
 
   .nav-links.open {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .menu-icon {

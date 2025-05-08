@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+  background-color: #000713;
+  width: 100%;
+  padding: 1rem;
+}
+
+.navbar-logo a {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1a5bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  padding-left: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s, background-color 0.3s;
+  border: 2px solid #1a5bff;
+  border-radius: 5px;
+  position: relative;
+}
+
+.nav-link:hover {
+  background-color: #1a5bff;
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+}
+
+.hamburger .line {
+  height: 3px;
+  background-color: white;
+  transition: 0.3s ease;
+}
+
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 12px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .navbar-logo a {
+    font-size: 28px;
+  }
+
+  .hamburger .line.active {
+    background-color: #1a5bff;
+    transform: rotate(45deg);
+    position: relative;
+  }
+
+  .hamburger .line:nth-child(2).active {
+    opacity: 0;
+  }
+
+  .hamburger .line:nth-child(3).active {
+    background-color: #1a5bff;
+    transform: rotate(-45deg);
+    position: relative;
+  }
+}

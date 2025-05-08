@@ -2,7 +2,7 @@
 
 /* Общий контейнер секции Home2 */
 .home2-wrapper {
-  padding: 1rem 1rem;
+  padding: 2rem 1rem; /* Увеличил верхний/нижний padding */
   background-color: #000713;
   color: #e6f1ff;
   text-align: center;
@@ -14,8 +14,8 @@
 
 /* Заголовок секции */
 .home2-wrapper h2 {
-  font-size: 2.8rem;
-  margin-bottom: 60px;
+  font-size: 2.5rem; /* Немного уменьшил для лучшей читаемости на мобильных */
+  margin-bottom: 40px; /* Уменьшил отступ */
   color: #1a5bff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -25,10 +25,10 @@
 /* Контейнер для карточек услуг */
 .website-services-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Уменьшил minmax для лучшей адаптивности */
+  gap: 30px; /* Уменьшил отступ */
   max-width: 1800px;
-  width: 100%;
+  width: 95%; /* Уменьшил ширину контейнера */
 }
 
 /* Стиль отдельной карточки услуги */
@@ -36,22 +36,22 @@
   background-color: #000713;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px -15px #1a5bff;
+  box-shadow: 0 8px 20px -10px #1a5bff; /* Менее интенсивная тень */
   border: 1px solid #1a5bff;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Добавил transition для box-shadow */
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
 .website-service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px -15px #1a5bff;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px -10px #1a5bff; /* Усилил тень при наведении */
 }
 
 /* Контент карточки (теперь занимает всю высоту) */
 .card-content {
-  padding: 30px;
+  padding: 25px; /* Уменьшил padding */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -60,52 +60,51 @@
 
 /* Заголовок карточки */
 .card-content h3 {
-  font-size: 1.8rem;
+  font-size: 1.6rem; /* Немного уменьшил */
   color: #ccd6f6;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Уменьшил отступ */
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
 }
 
 /* Описание услуги */
 .card-description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: 'Montserrat', sans-serif;
   color: #a8b2d1;
-  line-height: 1.7;
-  margin-bottom: 25px;
+  line-height: 1.6; /* Немного уменьшил межстрочный интервал */
+  margin-bottom: 20px; /* Уменьшил отступ */
 }
 
 /* Секция характеристик */
 .card-features {
-  margin-bottom: 30px;
+  margin-bottom: 25px; /* Уменьшил отступ */
 }
 
 /* Заголовок характеристик */
 .card-features h4 {
-  font-size: 1.5rem;
+  font-size: 1.3rem; /* Немного уменьшил */
   color: #1a5bff;
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Уменьшил отступ */
   font-weight: 500;
   font-family: 'Montserrat', sans-serif;
-
 }
 
 /* Список характеристик */
 .card-features ul {
   list-style: none;
   padding: 0;
-  margin-top: 30px;
+  margin-top: 20px; /* Уменьшил отступ */
 }
 
 /* Элемент списка характеристик */
 .card-features li {
-  font-size: 1.3rem;
+  font-size: 1.1rem; /* Немного уменьшил */
   font-family: 'Montserrat', sans-serif;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Уменьшил отступ */
   color: #a8b2d1;
   position: relative;
-  padding-left: 20px;
+  padding-left: 18px; /* Уменьшил padding слева */
 }
 
 .card-features li::before {
@@ -113,34 +112,34 @@
   color: #1a5bff;
   position: absolute;
   left: 0;
-  top: 2px;
+  top: 3px; /* Немного скорректировал положение маркера */
+  font-size: 1rem; /* Уменьшил размер маркера */
 }
 
 /* Цена услуги */
 .card-price {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Немного уменьшил */
   font-weight: 600;
   color: #ccd6f6;
-  margin-bottom: 30px;
+  margin-bottom: 25px; /* Уменьшил отступ */
   font-family: 'Montserrat', sans-serif;
-
 }
 
 .card-price span {
-  font-size: 1.6rem;
+  font-size: 1.4rem; /* Немного уменьшил */
   font-family: 'Montserrat', sans-serif;
   color: #1a5bff;
 }
 
 /* Кнопка заказа */
 .order-button {
-  padding: 14px 30px;
+  padding: 12px 25px; /* Уменьшил padding */
   background-color: transparent;
   color: #1a5bff;
   border: 1px solid #1a5bff;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.9rem; /* Уменьшил размер шрифта */
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -154,100 +153,119 @@
 /* Адаптивный дизайн */
 @media (max-width: 992px) {
   .website-services-container {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Еще уменьшил minmax */
+      gap: 25px; /* Уменьшил отступ */
   }
 }
 
 @media (max-width: 768px) {
   .home2-wrapper {
-    padding: 6rem 3rem;
+      padding: 1.5rem 1rem; /* Уменьшил padding */
   }
 
   .home2-wrapper h2 {
-    font-size: 2.4rem;
-    margin-bottom: 40px;
+      font-size: 2rem;
+      margin-bottom: 30px;
   }
 
   .website-services-container {
-    gap: 30px;
+      gap: 20px;
   }
 
   .card-content {
-    padding: 25px;
+      padding: 20px;
   }
 
   .card-content h3 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
   }
 
   .card-description {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      line-height: 1.5;
   }
 
   .card-features h4 {
-    font-size: 1rem;
-    margin-bottom: 10px;
+      font-size: 1rem;
+      margin-bottom: 8px;
+  }
+
+  .card-features li {
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      padding-left: 16px;
+  }
+
+  .card-features li::before {
+      font-size: 0.9rem;
+      top: 2px;
   }
 
   .card-price {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
+      font-size: 1rem;
+      margin-bottom: 20px;
   }
 
   .order-button {
-    font-size: 0.9rem;
-    padding: 12px 25px;
+      font-size: 0.8rem;
+      padding: 10px 20px;
   }
 }
 
 @media (max-width: 576px) {
   .home2-wrapper {
-    padding: 4rem 2rem;
+      padding: 3rem 1rem; /* Еще уменьшил padding */
   }
 
   .home2-wrapper h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
   }
 
   .website-services-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
+      gap: 45px;
   }
 
   .card-content {
-    padding: 20px;
+      padding: 15px;
   }
 
   .card-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
   }
 
   .card-description {
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+      line-height: 1.4;
   }
 
   .card-features h4 {
-    font-size: 0.95rem;
-    margin-bottom: 10px;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
   }
 
   .card-features li {
-    font-size: 0.9rem;
-    margin-bottom: 6px;
+      font-size: 0.8rem;
+      margin-bottom: 4px;
+      padding-left: 14px;
+  }
+
+  .card-features li::before {
+      font-size: 0.8rem;
+      top: 2px;
   }
 
   .card-price {
-    font-size: 1rem;
-    margin-bottom: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
   }
 
   .order-button {
-    font-size: 0.85rem;
-    padding: 10px 20px;
+      font-size: 0.75rem;
+      padding: 8px 16px;
   }
 }

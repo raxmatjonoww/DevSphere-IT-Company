@@ -1,141 +1,70 @@
-.home-container {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+.navbar {
+  background-color: #000713;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.hero {
-  background-color: #007bff; /* Asosiy rang */
-  color: white;
-  padding: 80px 20px;
-  text-align: center;
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
+.logo {
+  font-size: clamp(1.5rem, 2.4vw, 2.4rem);
+  color: #376fff;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: clamp(1.5rem, 5vw, 5rem);
 }
 
-.hero p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
+.nav-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  transition: color 0.3s;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.call-to-action {
-  background-color: #28a745; /* Qo'ng'iroq tugmasi rangi */
-  color: white;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
+.nav-links li a:hover {
+  color: #1a5bff;
+}
+
+.menu-icon {
+  display: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.call-to-action:hover {
-  background-color: #1e7e34;
-}
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .nav-links {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #000713;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 3.5rem;
+    justify-content: center;
+    height: 93vh;
+    padding: 0rem 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
 
-.services {
-  padding: 60px 20px;
-  text-align: center;
-}
+  .nav-links.open {
+    transform: translateX(0);
+  }
 
-.services h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  color: #007bff;
-}
-
-.services-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.service-item {
-  background-color: white;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: left;
-}
-
-.service-item h3 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.service-item p {
-  color: #666;
-  line-height: 1.6;
-}
-
-.about-us {
-  background-color: #e9ecef; /* Fon rangi */
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.about-us h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  color: #007bff;
-}
-
-.about-us p {
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.7;
-  color: #333;
-}
-
-.contact-us {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.contact-us h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  color: #007bff;
-}
-
-.contact-us p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-.contact-button {
-  background-color: #007bff; /* Aloqa tugmasi rangi */
-  color: white;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.contact-button:hover {
-  background-color: #0056b3;
-}
-
-footer {
-  background-color: #343a40; /* Footer rangi */
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
+  .menu-icon {
+    display: block;
+  }
 }

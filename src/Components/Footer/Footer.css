@@ -28,7 +28,7 @@
 }
 
 .footer-logo a:hover {
-  color: #1a5bff;
+  color: #376fff; /* To'g'irlangan hover rangi */
 }
 
 .footer-links {
@@ -37,7 +37,6 @@
   justify-content: space-between;
   width: 500px;
 }
-
 
 .footer-links a {
   color: white;
@@ -59,4 +58,54 @@
 .footer-bottom p {
   font-size: 14px;
   color: white;
+}
+
+/* Kichik ekranlar uchun media so'rovi */
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column; /* Elementlarni ustun shaklida joylashtirish */
+      align-items: center; /* Markazga joylashtirish */
+      text-align: center; /* Matnni ham markazga joylashtirish */
+  }
+
+  .footer-logo {
+      margin-bottom: 20px; /* Logodan keyin bo'sh joy */
+  }
+
+  .footer-links {
+      flex-direction: column; /* Havolalarni ustun shaklida joylashtirish */
+      width: 100%; /* Butun kenglikni egallash */
+      align-items: center; /* Markazga joylashtirish */
+  }
+
+  .footer-links li {
+      margin-bottom: 10px; /* Har bir havola ostida bo'sh joy */
+  }
+
+  .footer-links a {
+      font-size: 18px; /* Kichikroq shrift */
+  }
+
+  .footer-bottom {
+      margin-top: 20px; /* Kichikroq yuqori bo'sh joy */
+  }
+
+  .footer-bottom p {
+      font-size: 12px; /* Yanada kichikroq shrift */
+  }
+}
+
+/* Yanada kichik ekranlar uchun (masalan, mobil telefonlar) */
+@media (max-width: 480px) {
+  .footer {
+      padding: 30px 0; /* Yanada kichikroq ichki joy */
+  }
+
+  .footer-logo a {
+      font-size: 28px; /* Yanada kichikroq logo shrifti */
+  }
+
+  .footer-links a {
+      font-size: 16px; /* Yanada kichikroq havola shrifti */
+  }
 }

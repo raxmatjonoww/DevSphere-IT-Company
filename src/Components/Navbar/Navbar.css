@@ -1,126 +1,141 @@
-* {
+.home-container {
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-}
-
-.navbar {
-  background-color: #000713;
-  width: 100%;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between; /* Logo va havolalarni ikki tomonga suradi */
-  align-items: center; /* Vertikal markazlash */
-}
-
-.navbar-logo a {
-  font-size: 32px;
-  font-weight: 600;
-  color: #1a5bff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-links {
-  width: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 0;
-  list-style: none; /* Ro'yxat belgilarini olib tashlaydi */
-}
-
-.nav-link {
+.hero {
+  background-color: #007bff; /* Asosiy rang */
   color: white;
-  text-decoration: none;
-  padding: 8px 16px;
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.3s, background-color 0.3s;
-  border: 2px solid #1a5bff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.call-to-action {
+  background-color: #28a745; /* Qo'ng'iroq tugmasi rangi */
+  color: white;
+  padding: 15px 30px;
+  border: none;
   border-radius: 5px;
-}
-
-.nav-link:hover {
-  background-color: #1a5bff;
-  color: white;
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 20px;
+  font-size: 1em;
   cursor: pointer;
-  position: absolute;
-  right: 20px;
-  top: 50%; /* Vertikal markazlash uchun */
-  transform: translateY(-50%); /* Aniq markazlash uchun */
+  transition: background-color 0.3s ease;
 }
 
-.hamburger .line {
-  height: 3px;
+.call-to-action:hover {
+  background-color: #1e7e34;
+}
+
+.services {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #007bff;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-item {
   background-color: white;
-  transition: 0.3s ease;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    padding: 16px;
-  }
+.service-item h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #333;
+}
 
-  .nav-links {
-    display: none; 
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    top: 60px; /* Navbar balandligiga moslang */
-    left: 0;
-    background-color: #000713;
-    z-index: 10; /* Boshqa elementlar ustida turishi uchun */
-  }
+.service-item p {
+  color: #666;
+  line-height: 1.6;
+}
 
-  .nav-links.active {
-    display: flex; /* "Active" klassi qo'shilganda ko'rsatamiz */
-  }
+.about-us {
+  background-color: #e9ecef; /* Fon rangi */
+  padding: 60px 20px;
+  text-align: center;
+}
 
-  .hamburger {
-    display: flex;
-  }
+.about-us h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #007bff;
+}
 
-  .nav-link {
-    width: 100%;
-    padding: 12px;
-    font-size: 20px;
-    margin-bottom: 10px;
-    border: none; /* Kichik ekranlarda chegarani olib tashlaymiz */
-    transition: background-color 0.3s, color 0.3s; /* Qo'shimcha o'tish effekti */
-  }
+.about-us p {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+  color: #333;
+}
 
-  .nav-link:hover {
-    background-color: #1a5bff;
-    color: white;
-  }
+.contact-us {
+  padding: 60px 20px;
+  text-align: center;
+}
 
-  .navbar-logo a {
-    font-size: 28px;
-  }
+.contact-us h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #007bff;
+}
 
-  .hamburger.active .line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
+.contact-us p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #333;
+}
 
-  .hamburger.active .line:nth-child(2) {
-    opacity: 0;
-  }
+.contact-button {
+  background-color: #007bff; /* Aloqa tugmasi rangi */
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  .hamburger.active .line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
+.contact-button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background-color: #343a40; /* Footer rangi */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
 }

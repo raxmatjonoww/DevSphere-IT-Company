@@ -12,6 +12,9 @@ body {
   background-color: #000713;
   width: 100%;
   padding: 1rem;
+  display: flex;
+  justify-content: space-between; /* Logo va havolalarni ikki tomonga suradi */
+  align-items: center; /* Vertikal markazlash */
 }
 
 .navbar-logo a {
@@ -27,8 +30,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
   padding-left: 0;
+  list-style: none; /* Ro'yxat belgilarini olib tashlaydi */
 }
 
 .nav-link {
@@ -40,7 +43,6 @@ body {
   transition: color 0.3s, background-color 0.3s;
   border: 2px solid #1a5bff;
   border-radius: 5px;
-  position: relative;
 }
 
 .nav-link:hover {
@@ -57,6 +59,8 @@ body {
   cursor: pointer;
   position: absolute;
   right: 20px;
+  top: 50%; /* Vertikal markazlash uchun */
+  transform: translateY(-50%); /* Aniq markazlash uchun */
 }
 
 .hamburger .line {
@@ -65,31 +69,25 @@ body {
   transition: 0.3s ease;
 }
 
-.nav-links.active {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  width: 100%;
-  justify-content: space-between;
-}
-
 @media (max-width: 768px) {
   .navbar {
     padding: 16px;
   }
 
   .nav-links {
-    display: none;
+    display: none; 
     flex-direction: column;
     width: 100%;
     text-align: center;
+    position: absolute;
+    top: 60px; /* Navbar balandligiga moslang */
+    left: 0;
+    background-color: #000713;
+    z-index: 10; /* Boshqa elementlar ustida turishi uchun */
+  }
+
+  .nav-links.active {
+    display: flex; /* "Active" klassi qo'shilganda ko'rsatamiz */
   }
 
   .hamburger {
@@ -101,26 +99,28 @@ body {
     padding: 12px;
     font-size: 20px;
     margin-bottom: 10px;
-    transition: background-color 0.3s, color 0.3s;
+    border: none; /* Kichik ekranlarda chegarani olib tashlaymiz */
+    transition: background-color 0.3s, color 0.3s; /* Qo'shimcha o'tish effekti */
+  }
+
+  .nav-link:hover {
+    background-color: #1a5bff;
+    color: white;
   }
 
   .navbar-logo a {
     font-size: 28px;
   }
 
-  .hamburger .line.active {
-    background-color: #1a5bff;
-    transform: rotate(45deg);
-    position: relative;
+  .hamburger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
   }
 
-  .hamburger .line:nth-child(2).active {
+  .hamburger.active .line:nth-child(2) {
     opacity: 0;
   }
 
-  .hamburger .line:nth-child(3).active {
-    background-color: #1a5bff;
-    transform: rotate(-45deg);
-    position: relative;
+  .hamburger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
   }
 }

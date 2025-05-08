@@ -29,10 +29,10 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="hamburger" onClick={toggleMenu}>
-        <div className={`line ${menuOpen ? 'active' : ''}`}></div>
-        <div className={`line ${menuOpen ? 'active' : ''}`}></div>
-        <div className={`line ${menuOpen ? 'active' : ''}`}></div>
-      </div>
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+        </div>
     </nav>
   );
 };

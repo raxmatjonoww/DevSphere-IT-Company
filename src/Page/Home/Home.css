@@ -1,80 +1,76 @@
 /* Home.css */
 
-/* Wrapper for the entire Home section */
+/* Asosiy stillar (kattaroq ekranlar uchun) */
 .home-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 40px 20px; /* Adjusted padding for better spacing on all devices */
-  background-color: #000713; /* Dark background */
+  padding: 0px 10px;
+  background-color: #000713;
   min-height: 90vh;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
 }
 
-/* Wrapper for the content section */
 .home-content-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%; /* Using percentage for better responsiveness */
-  max-width: 1200px; /* Limiting maximum width for larger screens */
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(26, 91, 255, 0.3); /* Soft shadow with brand color */
-  padding: 60px; /* Increased padding for better visual balance */
+  width: 100%;
+  max-width: 1400px;
+  padding: 60px;
+  flex-wrap: wrap; /* Kichik ekranlarda elementlarning o'tkazilishini ta'minlaydi */
+  box-shadow: 0 8px 30px rgba(26, 91, 255, 0.3);
 }
 
-/* Text section containing the description */
 .text-section {
-  width: 55%; /* Slightly larger width for text */
-  padding-right: 60px; /* Increased right padding for more space */
+  width: 55%;
+  padding-right: 60px;
 }
 
 .text-section p {
-  font-size: 2rem; /* Adjusted font size for better readability */
-  line-height: 1.7; /* Improved line height for better text flow */
+  font-size: 2rem;
+  line-height: 1.7;
   color: #e0e0e0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-bottom: 40px; /* Increased margin for better spacing */
-  letter-spacing: 0.6px; /* Subtle letter spacing for clarity */
-  text-align: left; /* Enforcing left text alignment */
+  margin-bottom: 40px;
+  letter-spacing: 0.6px;
+  text-align: left;
 }
 
 .text-section span {
   font-weight: 700;
-  color: #1a5bff; /* Brand blue color */
+  color: #1a5bff;
 }
 
-/* Button styling */
 .contact-btn {
   margin-top: 40px;
   padding: 16px 40px;
-  font-size: 20px; /* Slightly reduced font size */
+  font-size: 20px;
   background-color: #1a5bff;
-  color: #f0f8ff; /* Very light blue text */
+  color: #f0f8ff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smoother transitions */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .contact-btn:hover {
-  background-color: #0d47a1; /* Darker shade on hover */
-  transform: translateY(-3px); /* More pronounced lift effect */
-  box-shadow: 0 6px 20px rgba(26, 91, 255, 0.4); /* Enhanced shadow on hover */
+  background-color: #0d47a1;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(26, 91, 255, 0.4);
 }
 
 .contact-btn:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(26, 91, 255, 0.5); /* Clear focus state */
+  box-shadow: 0 0 0 3px rgba(26, 91, 255, 0.5);
 }
 
-/* Image section with proper alignment and styling */
 .image-section {
-  width: 40%; /* Adjusted width for better balance */
+  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,48 +78,50 @@
 
 .image-section img {
   width: 100%;
-  max-width: 500px; /* Adjusted maximum width */
+  max-width: 500px;
   height: auto;
   object-fit: contain;
-  box-shadow: 0 8px 30px rgba(26, 91, 255, 0.3); /* Soft glow */
+  box-shadow: 0 8px 30px rgba(26, 91, 255, 0.3);
   border-radius: 35px;
   transition: transform 0.3s ease-in-out;
 }
 
 .image-section img:hover {
-  transform: scale(0.98); /* Subtle zoom out effect */
+  transform: scale(0.98);
 }
 
-/* Scroll-to-top button styling */
 .scroll-to-top {
   position: fixed;
-  bottom: 30px; /* Slightly adjusted position */
-  right: 30px; /* Slightly adjusted position */
+  bottom: 30px;
+  right: 30px;
   background-color: #1a5bff;
   color: #f0f8ff;
-  font-size: 28px; /* Adjusted font size */
-  width: 45px; /* Adjusted width */
-  height: 45px; /* Adjusted height */
+  font-size: 28px;
+  width: 45px;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   cursor: pointer;
-  opacity: 0.9; /* Slightly more opaque */
-  transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease-in-out; /* Smoother transitions */
+  opacity: 0.9;
+  transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
   z-index: 10;
 }
 
 .scroll-to-top:hover {
-  background-color: #0d47a1; /* Darker shade on hover */
+  background-color: #0d47a1;
   opacity: 1;
-  transform: translateY(-2px); /* Subtle lift effect */
+  transform: translateY(-2px);
 }
 
-/* Responsive design */
-@media (max-width: 1024px) {
+/* Media so'rovlari (responsive dizayn uchun) */
+
+/* Ekran kengligi 1200 pikseldan kichik bo'lganda */
+@media (max-width: 1200px) {
   .home-content-wrapper {
     padding: 40px;
+    box-shadow: none; /* Soyani olib tashlaymiz */
   }
 
   .text-section {
@@ -141,20 +139,30 @@
   }
 }
 
-@media (max-width: 768px) {
+/* Ekran kengligi 992 pikseldan kichik bo'lganda (planshetlar uchun) */
+@media (max-width: 992px) {
   .home-content-wrapper {
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center;
+    flex-direction: column; /* Elementlarni ustun ko'rinishida joylashtiramiz */
+    align-items: center; /* Markazga tekislaymiz */
     padding: 30px;
+    box-shadow: none; /* Soyani olib tashlaymiz */
   }
 
   .text-section {
-    width: 100%;
+    width: 100%; /* To'liq enini egallaydi */
     padding-right: 0;
-    margin-bottom: 50px;
-    text-align: left; /* Ensuring text remains left-aligned */
+    margin-bottom: 40px;
+    text-align: left; /* Matnni chapga tekislaymiz */
   }
 
+  .image-section {
+    width: 80%; /* Kenglikni kichraytiramiz */
+    margin-bottom: 30px;
+  }
+}
+
+/* Ekran kengligi 768 pikseldan kichik bo'lganda (kichik planshetlar va katta telefonlar uchun) */
+@media (max-width: 768px) {
   .text-section p {
     font-size: 1.6rem;
     line-height: 1.6;
@@ -168,18 +176,23 @@
   }
 
   .image-section {
-    width: 80%;
-    margin-bottom: 40px;
+    width: 90%;
+  }
+
+  .home-content-wrapper {
+    box-shadow: none; /* Soyani olib tashlaymiz */
   }
 }
 
+/* Ekran kengligi 576 pikseldan kichik bo'lganda (kichik telefonlar uchun) */
 @media (max-width: 576px) {
   .home-content-wrapper {
     padding: 20px;
+    box-shadow: none; /* Soyani olib tashlaymiz */
   }
 
   .text-section p {
-    font-size: 0.5rem;
+    font-size: 1.4rem;
     line-height: 1.5;
     margin-bottom: 20px;
   }
@@ -191,7 +204,7 @@
   }
 
   .image-section {
-    width: 100%;
+    width: 100%; /* To'liq enini egallaydi */
     margin-bottom: 30px;
   }
 
@@ -204,8 +217,9 @@
   }
 }
 
+/* Ekran kengligi 375 pikseldan kichik bo'lganda (juda kichik telefonlar uchun) */
 @media (max-width: 375px) {
   .text-section p {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }

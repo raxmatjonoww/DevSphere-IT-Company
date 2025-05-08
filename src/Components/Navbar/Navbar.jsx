@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";  // Importing Link from react-router-dom
 import "./Navbar.css";
 import { Menu, X } from "lucide-react";
 
@@ -15,11 +16,11 @@ const Navbar = () => {
         <h1 className="logo">DevSphere</h1>
 
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-          <li><a href="#home">Главная</a></li>
-          <li><a href="#about">О нас</a></li>
-          <li><a href="#services">Услуги</a></li>
-          <li><a href="#projects">Проекты</a></li>
-          <li><a href="#contact">Контакты</a></li>
+          <li><Link to="/">Главная</Link></li> {/* Replaced <a> with <Link> */}
+          <li><Link to="/">О нас</Link></li> {/* Replaced <a> with <Link> */}
+          <li><Link to="/">Услуги</Link></li> {/* Replaced <a> with <Link> */}
+          <li><Link to="/">Проекты</Link></li> {/* Replaced <a> with <Link> */}
+          <li><Link to="/">Контакты</Link></li> {/* Replaced <a> with <Link> */}
         </ul>
 
         <div className="menu-icon" onClick={toggleMenu}>

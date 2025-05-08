@@ -1,0 +1,253 @@
+/* Home2.css */
+
+/* Общий контейнер секции Home2 */
+.home2-wrapper {
+  padding: 1rem 1rem;
+  background-color: #000713;
+  color: #e6f1ff;
+  text-align: center;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Заголовок секции */
+.home2-wrapper h2 {
+  font-size: 2.8rem;
+  margin-bottom: 60px;
+  color: #1a5bff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+/* Контейнер для карточек услуг */
+.website-services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 1800px;
+  width: 100%;
+}
+
+/* Стиль отдельной карточки услуги */
+.website-service-card {
+  background-color: #000713;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -15px #1a5bff;
+  border: 1px solid #1a5bff;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.website-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px -15px #1a5bff;
+}
+
+/* Контент карточки (теперь занимает всю высоту) */
+.card-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+/* Заголовок карточки */
+.card-content h3 {
+  font-size: 1.8rem;
+  color: #ccd6f6;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+/* Описание услуги */
+.card-description {
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #a8b2d1;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+/* Секция характеристик */
+.card-features {
+  margin-bottom: 30px;
+}
+
+/* Заголовок характеристик */
+.card-features h4 {
+  font-size: 1.5rem;
+  color: #1a5bff;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+/* Список характеристик */
+.card-features ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+/* Элемент списка характеристик */
+.card-features li {
+  font-size: 1.3rem;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 15px;
+  color: #a8b2d1;
+  position: relative;
+  padding-left: 20px;
+}
+
+.card-features li::before {
+  content: '•';
+  color: #1a5bff;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+/* Цена услуги */
+.card-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ccd6f6;
+  margin-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.card-price span {
+  font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #1a5bff;
+}
+
+/* Кнопка заказа */
+.order-button {
+  padding: 14px 30px;
+  background-color: transparent;
+  color: #1a5bff;
+  border: 1px solid #1a5bff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.order-button:hover {
+  background-color: #1a5bff;
+  color: #fff;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 992px) {
+  .website-services-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .home2-wrapper {
+    padding: 6rem 3rem;
+  }
+
+  .home2-wrapper h2 {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+  }
+
+  .website-services-container {
+    gap: 30px;
+  }
+
+  .card-content {
+    padding: 25px;
+  }
+
+  .card-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .card-features h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .card-price {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+  }
+
+  .order-button {
+    font-size: 0.9rem;
+    padding: 12px 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home2-wrapper {
+    padding: 4rem 2rem;
+  }
+
+  .home2-wrapper h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .website-services-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .card-features h4 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  .card-features li {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+
+  .card-price {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .order-button {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+  }
+}

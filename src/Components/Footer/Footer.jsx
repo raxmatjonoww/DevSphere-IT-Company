@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="footer-section footer-links">
           <h4>Навигация</h4>
           <ul>
-            <li><a href="/">Главная</a></li>
+            <li><a href="/">Гsлавная</a></li>
             <li><a href="/about">О нас</a></li>
             <li><a href="/services">Услуги</a></li>
             <li><a href="/projects">Наши работы</a></li>

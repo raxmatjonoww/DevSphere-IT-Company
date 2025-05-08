@@ -2,7 +2,7 @@ import React from "react";
 import './Home.css';
 import { motion } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
-import dev from '../../assets/dev.png'
+import dev from '../../../assets/dev.png'
 
 function Home() {
     const navigate = useNavigate(); // React Router hook

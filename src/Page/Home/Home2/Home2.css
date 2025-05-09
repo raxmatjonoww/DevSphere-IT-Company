@@ -225,8 +225,8 @@
   }
 
   .website-services-container {
-      gap: 45px;
-  }
+    gap: 20px; /* avval 45px edi */
+}
 
   .card-content {
       padding: 15px;

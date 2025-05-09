@@ -1,110 +1,54 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .footer {
-  background-color: #000713;
-  color: white;
-  padding: 5rem 2rem;
-  font-family: 'Arial', sans-serif;
-}
-
-.footer-content {
-  max-width: 1500px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  text-align: left;
-}
-
-.footer-section {
-  flex: 1;
-  min-width: 260px;
-  text-align: left;
-}
-
-.footer-logo a {
-  font-size: clamp(2.2rem, 3vw, 3.2rem);
-  font-weight: bold;
-  color: #1a5bff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-logo a:hover {
-  color: #376fff;
-}
-
-.footer-logo p {
-  margin-top: 1rem;
-  color: #ccc;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  text-align: left;
-}
-
-.footer-links h4,
-.footer-social h4 {
-  margin-bottom: 1rem;
-  color: #fff;
-  font-size: 1.3rem;
-  text-align: left;
-}
-
-.footer-links ul,
-.footer-social ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.footer-links a,
-.footer-social a {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 1.05rem;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover,
-.footer-social a:hover {
-  color: #376fff;
-}
-
-.footer-bottom {
-  margin-top: 3rem;
-  text-align: center;
-  border-top: 1px solid #1a1a1a;
-  padding-top: 1rem;
-  font-size: 0.95rem;
-  color: #aaa;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
   }
-
-  .footer-section {
-    width: 100%;
-    margin-bottom: 2rem;
-    text-align: left;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
   }
-
-  .footer-links ul,
-  .footer-social ul {
-    align-items: flex-start;
+  
+  .copyright {
+    font-size: 14px;
   }
-}
+  
+  .social-links a {
+    color: #fff;
+    margin-left: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #007bff;
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  /* Для небольших экранов */
+  @media (max-width: 600px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .copyright,
+    .social-links,
+    .contact-info {
+      margin-bottom: 15px;
+    }
+  
+    .social-links a {
+      margin: 0 10px;
+    }
+  }

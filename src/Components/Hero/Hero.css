@@ -1,0 +1,185 @@
+.hero {
+  background-color: #000713; /* Chuqur va boy fon rangi */
+  padding: 150px; /* Balandlikni biroz oshirdik */
+  position: relative;
+  overflow: hidden;
+  height: auto; /* Kontentga qarab balandlikni avtomatik sozlash */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000713; /* Gradientli fon effekti */
+  z-index: 0;
+  opacity: 0.9; /* Yengil shaffoflik */
+}
+
+.hero-container {
+  max-width: 1400px; /* Kengroq ekranlar uchun kenglik */
+  margin: 0 auto;
+  padding: 0 30px; /* Kengroq yon bo'shliqlar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px; /* Elementlar orasidagi bo'shliqni oshirish */
+  position: relative;
+  z-index: 1;
+  min-height: 700px; /* Minimal balandlik belgilash */
+}
+
+.hero-content {
+  flex: 1;
+  order: 1;
+  z-index: 2;
+  padding-right: 40px; /* Yanada kengroq bo'shliq */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem; /* Kattaroq va ko'proq e'tibor tortadigan sarlavha */
+  color: #2563EB; /* Oq rangdagi sarlavha */
+  font-weight: 700; /* Qalinroq shrift */
+  line-height: 1.1;
+  margin-bottom: 30px; /* O'rtadagi bo'shliqni oshirish */
+  letter-spacing: -0.05em; /* Shriftni biroz kengaytirish */
+}
+
+.hero-content p {
+  font-size: 1.2rem; /* O'qilishi qulay matn hajmi */
+  color: #D1D5DB; /* Yumshoqroq kulrang */
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 600px; /* Matnni yanada kengroq joylashtirish */
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 30px; /* Kattaroq bo'shliq */
+}
+
+.primary-button,
+.secondary-button {
+  padding: 16px 36px; /* Kattaroq padding */
+  font-size: 1.1rem; /* Kattaroq shrift */
+  font-weight: 600;
+  border-radius: 10px; /* Yumaloqroq burchaklar */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Yumshoqroq tranzaksiya */
+  letter-spacing: 0.02em;
+}
+
+.primary-button {
+  background-color: #2563EB; /* Asosiy rang */
+  color: #FFFFFF;
+  border: none;
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3); /* Yumshoq soya */
+}
+
+.primary-button:hover {
+  background-color: #1D4ED8; /* Hover effekti uchun to'qroq rang */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: #2563EB;
+  border: 2px solid #2563EB;
+}
+
+.secondary-button:hover {
+  background-color: #E0F2FE; /* Yengil fon rangi */
+  color: #2563EB;
+  transform: translateY(-3px);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+  order: 2;
+}
+
+.hero-image img {
+  max-width: 80%; /* Rasmni konteynerning 85%igacha kattalashtirish */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px #2563EB; /* Halqa va soya */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05); /* Rasmni biroz kattalashtirish */
+  box-shadow: 0 12px 30px #2563EB; /* Hoverda halqa biroz kattalashadi */
+}
+
+/* Tablet (<=992px) */
+@media (max-width: 992px) {
+  .hero {
+    padding: 80px 0; /* Kichik ekranlar uchun vertikal paddingni kamaytirish */
+  }
+
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px; /* Elementlar orasidagi bo'shliqni oshirish */
+    min-height: auto;
+  }
+
+  .hero-content {
+    order: 1;
+    padding: 0 30px;
+    padding-right: 0;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem; /* Kattaroq sarlavha */
+    margin-bottom: 25px;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image {
+    order: 2;
+    margin-top: 30px;
+  }
+}
+
+/* Mobile (<=576px) */
+@media (max-width: 576px) {
+  .hero {
+    padding: 60px 0; /* Mobil uchun yuqori va pastki paddingni oshirish */
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch; /* Butun enini egallash */
+    gap: 15px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+
+  .hero-image {
+    display: none; /* Kichik ekranlarda olib tashlash */
+  }
+}

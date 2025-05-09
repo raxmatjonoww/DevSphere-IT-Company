@@ -1,0 +1,89 @@
+.services-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .container h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .service-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service-card h3 {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  .service-card p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .service-card a {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .service-card a:hover {
+    color: #0056b3;
+  }
+  
+  .call-to-action {
+    padding: 30px;
+    background-color: #e0f7fa;
+    border-radius: 8px;
+  }
+  
+  .call-to-action p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .call-to-action .contact-button {
+    padding: 12px 24px;
+    font-size: 1em;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .call-to-action .contact-button:hover {
+    background-color: #1e7e34;
+  }

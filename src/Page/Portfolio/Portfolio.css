@@ -1,0 +1,81 @@
+.portfolio-page {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .container h1 {
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .container .intro-text {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+  }
+  
+  .project-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Если будете добавлять изображения */
+  /* .project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  } */
+  
+  .project-card h3 {
+    font-size: 1.5em;
+    color: #007bff;
+    padding: 15px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  
+  .project-card p {
+    font-size: 1em;
+    color: #555;
+    padding: 0 15px 15px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  
+  .project-card a {
+    display: block;
+    padding: 10px 15px;
+    background-color: #e0f7fa;
+    color: #007bff;
+    text-decoration: none;
+    text-align: left;
+    transition: background-color 0.3s ease;
+  }
+  
+  .project-card a:hover {
+    background-color: #b3e5fc;
+  }

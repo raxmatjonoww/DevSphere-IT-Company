@@ -1,0 +1,62 @@
+.home {
+    background-color: #000713;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #1a5bff;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  
+  .hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: #d0d0d0;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #376fff;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #1a5bff;
+  }
+  
+  /* 🔽 Responsive: mobil uchun */
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  
+    .cta-button {
+      padding: 12px 24px;
+      font-size: 1rem;
+    }
+  }
+  

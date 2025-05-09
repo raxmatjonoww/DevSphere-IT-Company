@@ -1,47 +1,61 @@
-import React from "react";
+import React from 'react';
 import './Home.css';
-import { motion } from "framer-motion";
-import { useNavigate } from 'react-router-dom';
-import dev from '../../../assets/dev.png'
+import devImage from '../../../assets/dev.png'; // Tasvir manzilini tekshiring
 
-function Home() {
-    const navigate = useNavigate(); // React Router hook
-
-    const handleClick = () => {
-        console.log("Связаться с нами кнопка нажата");
-        navigate('/contactus'); // Navigate to contact page
-    };
-
-    return (
-        <div className="home-wrapper">
-            <div className="home-content-wrapper">
-                <div className="text-section">
-                    <p>
-                        <span>DevSphere</span> — это онлайн IT-компания, создающая современные, адаптивные и быстрые веб-сайты для бизнеса. Мы успешно реализовали множество проектов и помогаем компаниям расти, предоставляя качественные IT-решения под ключ.
-                    </p>
-                    <motion.button
-                        whileHover={{ scale: 1.05, boxShadow: "0px 0px 90px rgb(37, 106, 255)" }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={handleClick}
-                        className="contact-btn">
-                        Связаться с нами
-                    </motion.button>
-                </div>
-                <div className="image-section">
-                    <img src={dev} alt="DevSphere" />
-                </div>
+const Home = () => {
+  return (
+    <section className="home-section">
+      <div className="container">
+        {/* Hero section */}
+        <div className="hero">
+          <div className="hero-text">
+            <h1>Инновационные IT-решения</h1>
+            <p className="subtitle">Цифровые решения для вашего бизнеса</p>
+            <p className="description">
+              Мы создаем высококлассные цифровые продукты, которые помогают компаниям улучшать свои бизнес-процессы и достигать новых высот.
+            </p>
+            <div className="hero-buttons">
+              <button className="primary-button">Наши услуги</button>
+              <button className="secondary-button">Связаться с нами</button>
             </div>
-
-            {/* Scroll to Top Button */}
-            <motion.div 
-                whileHover={{ scale: 1.1, rotate: 10 }} 
-                className="scroll-to-top" 
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
-                ↑
-            </motion.div>
+            <div className="tech-stack">
+              <span className="tech-item">React</span>
+              <span className="tech-item">Angular</span>
+              <span className="tech-item">Vue</span>
+              <span className="tech-item">Next.js</span>
+              <span className="tech-item">Flutter</span>
+              <span className="tech-item">Node.js</span>
+            </div>
+          </div>
+          <div className="hero-image">
+            <img src={devImage} alt="Инновационные IT Решения" />
+          </div>
         </div>
-    );
-}
+
+        {/* Stats section */}
+        <div className="stats-section">
+          <div className="stats-grid">
+            <div className="stat-card">
+              <h3>200+</h3>
+              <p>Завершенных проектов</p>
+            </div>
+            <div className="stat-card">
+              <h3>50+</h3>
+              <p>Экспертов в команде</p>
+            </div>
+            <div className="stat-card">
+              <h3>8+</h3>
+              <p>Лет опыта</p>
+            </div>
+            <div className="stat-card">
+              <h3>95%</h3>
+              <p>Довольных клиентов</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Home;

@@ -1,225 +1,270 @@
-/* Home.css */
-
-/* Asosiy stillar (kattaroq ekranlar uchun) */
-.home-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0px 10px;
-  background-color: #000713;
-  min-height: 90vh;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #001f3d; /* Dark blue background */
+  color: #a8b2d1; /* Soft blue text */
 }
 
-.home-content-wrapper {
+/* Home section */
+.home-section {
+  width: 100%;
+  background-color: #001f3d; /* Dark blue background */
+  color: #a8b2d1; /* Soft blue text */
+  padding: 3rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1500px;
+}
+
+/* Hero section */
+.hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1600px;
-  border-radius: 20px;
-  padding: 60px;
-  flex-wrap: wrap; /* Kichik ekranlarda elementlarning o'tkazilishini ta'minlaydi */
-  box-shadow: 0 8px 30px rgba(26, 91, 255, 0.3);
+  flex-wrap: wrap;
+  padding: 5rem 0;
 }
 
-.text-section {
-  width: 55%;
-  padding-right: 60px;
-}
-
-.text-section p {
-  font-size: 2rem;
-  line-height: 1.7;
-  color: #a8b2d1;
-  font-family: 'Montserrat', sans-serif;  margin-bottom: 40px;
-  letter-spacing: 0.6px;
+.hero-text {
+  flex: 1;
   text-align: left;
+  padding-right: 2rem;
 }
 
-.text-section span {
+.hero-text h1 {
+  font-size: 3.5rem;
   font-weight: 700;
-  color: #1a5bff;
+  color: #1e90ff; /* Sky blue */
+  margin-bottom: 1.5rem;
 }
 
-.contact-btn {
-  margin-top: 40px;
-  padding: 16px 40px;
-  font-size: 20px;
-  background-color: #1a5bff;
-  color: #f0f8ff;
-  border: none;
-  border-radius: 10px;
+.hero-text p.subtitle {
+  font-size: 2.2rem;
+  color: #7f8c8d; /* Light grey */
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.hero-text p.description {
+  color: #ccd6f6;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 3.5rem;
+  max-width: 580px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.8rem;
+  margin-bottom: 4rem;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 1.3rem 2.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.contact-btn:hover {
-  background-color: #1a5bff;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px #1a5bff;
+.primary-button {
+  background-color: #1e90ff; /* Sky blue */
+  color: #001f3d; /* Dark blue */
+  border: 1px solid #1e90ff;
+  box-shadow: 0 5px 15px rgba(30, 144, 255, 0.3);
 }
 
-.contact-btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px #1a5bff;
+.primary-button:hover {
+  background-color: rgba(30, 144, 255, 0.1);
+  color: #1e90ff;
+  box-shadow: 0 7px 20px rgba(30, 144, 255, 0.4);
 }
 
-.image-section {
-  width: 40%;
+.secondary-button {
+  background-color: transparent;
+  color: #1e90ff; /* Sky blue */
+  border: 1px solid #1e90ff;
+}
+
+.secondary-button:hover {
+  background-color: #1e90ff;
+  color: #001f3d;
+  box-shadow: 0 5px 15px rgba(30, 144, 255, 0.3);
+}
+
+/* Tech stack */
+.tech-stack {
+  display: flex;
+  gap: 1.8rem;
+  color: #7f8c8d;
+  font-size: 1.05rem;
+  margin-bottom: 3rem;
+}
+
+.tech-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+}
+
+.hero-image {
+  flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.image-section img {
+.hero-image img {
+  max-width: 520px;
   width: 100%;
-  max-width: 500px;
   height: auto;
-  object-fit: contain;
-  box-shadow: 0 8px 30px #1a5bff;
-  border-radius: 20px;
-  transition: transform 0.3s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.image-section img:hover {
-  transform: scale(0.98);
+/* Stats section */
+.stats-section {
+  padding: 6rem 0;
+  text-align: center;
+  background-color: #112240; /* Slightly lighter dark blue background */
 }
 
-.scroll-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #1a5bff;
-  color: #f0f8ff;
-  font-size: 28px;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  cursor: pointer;
-  opacity: 0.9;
-  transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-  z-index: 10;
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-.scroll-to-top:hover {
-  background-color: #0d47a1;
-  opacity: 1;
-  transform: translateY(-2px);
+.stat-card {
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Media so'rovlari (responsive dizayn uchun) */
+.stat-card h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1e90ff; /* Sky blue */
+  margin-bottom: 0.8rem;
+}
 
-/* Ekran kengligi 1200 pikseldan kichik bo'lganda */
+.stat-card p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+/* Responsiveness */
 @media (max-width: 1200px) {
-  .home-content-wrapper {
-    padding: 40px;
-    box-shadow: none; /* Soyani olib tashlaymiz */
-  }
-
-  .text-section {
-    padding-right: 40px;
-  }
-
-  .text-section p {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-  }
-
-  .contact-btn {
-    font-size: 18px;
-    padding: 14px 35px;
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
-/* Ekran kengligi 992 pikseldan kichik bo'lganda (planshetlar uchun) */
 @media (max-width: 992px) {
-  .home-content-wrapper {
-    flex-direction: column; /* Elementlarni ustun ko'rinishida joylashtiramiz */
-    align-items: center; /* Markazga tekislaymiz */
-    padding: 30px;
-    box-shadow: none; /* Soyani olib tashlaymiz */
+  .hero {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .text-section {
-    width: 100%; /* To'liq enini egallaydi */
+  .hero-text {
+    margin-bottom: 3rem;
     padding-right: 0;
-    margin-bottom: 40px;
-    text-align: left; /* Matnni chapga tekislaymiz */
   }
 
-  .image-section {
-    width: 80%; /* Kenglikni kichraytiramiz */
-    margin-bottom: 30px;
+  .hero-image {
+    margin-top: 3rem;
+    justify-content: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .tech-stack {
+    justify-content: center;
   }
 }
 
-/* Ekran kengligi 768 pikseldan kichik bo'lganda (kichik planshetlar va katta telefonlar uchun) */
 @media (max-width: 768px) {
-  .text-section p {
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .hero-text p.subtitle {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .tech-stack {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+  }
+
+  .stat-card h3 {
+    font-size: 2.5rem;
+  }
+
+  .stat-card p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p.subtitle {
     font-size: 1.6rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
   }
 
-  .contact-btn {
-    font-size: 16px;
-    padding: 12px 30px;
-    margin-top: 30px;
+  .hero-text p.description {
+    font-size: 1rem;
   }
 
-  .image-section {
-    width: 90%;
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
 
-  .home-content-wrapper {
-    box-shadow: none; /* Soyani olib tashlaymiz */
+  .stat-card {
+    padding: 1.5rem;
+  }
+
+  .stat-card h3 {
+    font-size: 2rem;
+  }
+
+  .stat-card p {
+    font-size: 0.9rem;
   }
 }
 
-/* Ekran kengligi 576 pikseldan kichik bo'lganda (kichik telefonlar uchun) */
-@media (max-width: 576px) {
-  .home-content-wrapper {
-    padding: 20px;
-    box-shadow: none; /* Soyani olib tashlaymiz */
+@media (max-width: 400px) {
+  .hero-text h1 {
+    font-size: 2rem;
   }
 
-  .text-section p {
+  .hero-text p.subtitle {
     font-size: 1.4rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-
-  .contact-btn {
-    font-size: 14px;
-    padding: 10px 20px;
-    margin-top: 20px;
-  }
-
-  .image-section {
-    width: 100%; /* To'liq enini egallaydi */
-    margin-bottom: 30px;
-  }
-
-  .scroll-to-top {
-    bottom: 20px;
-    right: 20px;
-    font-size: 22px;
-    width: 35px;
-    height: 35px;
-  }
-}
-
-/* Ekran kengligi 375 pikseldan kichik bo'lganda (juda kichik telefonlar uchun) */
-@media (max-width: 375px) {
-  .text-section p {
-    font-size: 1.2rem;
   }
 }

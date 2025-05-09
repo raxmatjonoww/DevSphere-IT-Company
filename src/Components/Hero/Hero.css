@@ -154,16 +154,19 @@
 /* Mobile (<=576px) */
 @media (max-width: 576px) {
   .hero {
-    padding: 60px 0; /* Mobil uchun yuqori va pastki paddingni oshirish */
+    padding: 130px 0; /* Mobil uchun yuqori va pastki paddingni oshirish */
   }
 
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
+    text-align: left;
     margin-bottom: 20px;
+    line-height: 40px;
   }
 
   .hero-content p {
     font-size: 1.1rem;
+    text-align: left;
     margin-bottom: 30px;
   }
 

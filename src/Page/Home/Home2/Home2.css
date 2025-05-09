@@ -225,7 +225,7 @@
   }
 
   .website-services-container {
-    gap: 20px; /* avval 45px edi */
+    gap: 0px; /* avval 45px edi */
 }
 
   .card-content {

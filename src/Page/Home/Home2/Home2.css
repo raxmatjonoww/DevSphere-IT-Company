@@ -216,11 +216,11 @@
 
 @media (max-width: 576px) {
   .home2-wrapper {
-      padding: 3rem 1rem; /* Еще уменьшил padding */
+      padding: 4rem 1rem; /* Еще уменьшил padding */
   }
 
   .home2-wrapper h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 25px;
   }
 

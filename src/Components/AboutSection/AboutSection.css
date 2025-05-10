@@ -1,77 +1,75 @@
-/* AboutSection.css */
-
 .about-section {
   background-color: #000713;
-  padding: 100px 0px;
-  color: #ffffff;
+  padding: 80px 0;
+  color: #fff;
   font-family: 'Inter', sans-serif;
 }
 
 .about-container {
-  max-width: 1600px;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
+  justify-content: space-around;
 }
 
 .about-text {
   flex: 1;
-  min-width: 30px;
+  min-width: 300px;
+  max-width: 600px;
 }
 
 .about-text h2 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: #2563eb;
-  margin-bottom: 25px;
-  line-height: 1.2;
+  margin-bottom: 20px;
+  text-align: left; /* Matnni chapga tekislash */
 }
 
 .about-text p {
   font-size: 1.1rem;
   color: #cbd5e1;
   line-height: 1.8;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  text-align: left; /* Matnni chapga tekislash */
 }
 
 .learn-more-button {
   background-color: #2563eb;
   color: #fff;
-  padding: 14px 32px;
+  padding: 12px 28px;
   font-size: 1rem;
   font-weight: 600;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+  text-align: center;
 }
 
 .learn-more-button:hover {
   background-color: #1d4ed8;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
 }
 
 .about-image {
-  flex: 1;
   text-align: center;
   min-width: 320px;
 }
 
 .about-image img {
   width: 100%;
-  max-width: 500px;
-  border-radius: 16px;
-  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.25);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  max-width: 560px;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-image img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.35);
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
 }
 
 /* Tablet: stack elements vertically */
@@ -83,31 +81,31 @@
   }
 
   .about-text h2 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .about-text p {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 }
 
 /* Mobile */
 @media (max-width: 576px) {
   .about-section {
-    padding: 60px 15px;
+    padding: 50px 15px;
   }
 
   .about-text h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .about-text p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .learn-more-button {
     width: 100%;
-    padding: 14px 0;
+    padding: 12px 0;
   }
 
   .about-image img {

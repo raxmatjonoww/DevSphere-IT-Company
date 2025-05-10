@@ -28,12 +28,12 @@ const projects = [
 
 function PortfolioSection() {
   return (
-    <section className="portfolio-section">
-      <div className="container">
+    <section className="projects-container">
+      <div className="projects-content">
         <h2>Последние проекты</h2>
-        <div className="portfolio-grid">
+        <div className="projects-grid">
           {projects.map((project, index) => (
-            <div key={index} className="project-card">
+            <div key={index} className="project-box">
               {/* <img src={project.image} alt={project.title} /> */}
               <h3>{project.title}</h3>
               <p>{project.description}</p>
@@ -41,7 +41,7 @@ function PortfolioSection() {
             </div>
           ))}
         </div>
-        <div className="view-all-button">
+        <div className="view-project-button">
           <a href="/portfolio">Смотреть все проекты</a>
         </div>
       </div>

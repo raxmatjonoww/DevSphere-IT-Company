@@ -1,5 +1,5 @@
 import React from 'react';
-import './ServicesSection.css'; // Если вы используете CSS Modules
+import './ServicesSection.css';
 
 const services = [
   {
@@ -17,14 +17,15 @@ const services = [
     description: 'Предлагаем разработку кастомного программного обеспечения для бизнеса.',
     link: '/services/software-development',
   },
-  // Добавьте другие ваши услуги
+  // Вы можете добавить больше услуг по необходимости
 ];
 
 function ServicesSection() {
   return (
     <section className="services-section">
-      <div className="container">
-        <h2>Наши услуги</h2>
+      <div className="containerrr">
+      <h2 className="section-title">Наши услуги</h2>
+
         <div className="services-grid">
           {services.map((service, index) => (
             <div key={index} className="service-card">

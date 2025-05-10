@@ -1,131 +1,134 @@
-.portfolio-section {
+.projects-container {
   padding: 60px 0;
-  background-color: #fff;
+  background-color: #000713; /* Asosiy fon rangi */
 }
 
-.container {
+.projects-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
 }
 
-.container h2 {
-  font-size: 2.5em;
-  color: #333;
+.projects-content h2 {
+  font-size: 2.5rem;
+  color: #376fff; /* DevSphere ko‘k */
   margin-bottom: 40px;
 }
 
-.portfolio-grid {
+.projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-.project-card {
-  background-color: #f9f9f9;
-  border-radius: 8px;
+.project-box {
+  background-color: #000713; /* Asosiy fon */
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover {
+.project-box:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.project-card img {
-  width: 100%;
-  height: auto;
-  display: block;
+.project-box h3 {
+  font-size: 1.3rem;
+  color: #1a5bff; /* DevSphere ochiq ko‘k */
+  margin-bottom: 15px;
 }
 
-.project-card h3 {
-  font-size: 1.3em;
-  color: #007bff;
-  padding: 15px;
-  margin-bottom: 0;
-  text-align: left;
+.project-box p {
+  font-size: 1rem;
+  color: #e2e8f0; /* Yengil kulrang matn */
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
-.project-card p {
-  font-size: 1em;
-  color: #555;
-  padding: 0 15px 15px;
-  margin-bottom: 0;
-  text-align: left;
-}
-
-.project-card a {
-  display: block;
-  padding: 10px 15px;
-  background-color: #e0f7fa;
-  color: #007bff;
-  text-decoration: none;
-  text-align: left;
-  transition: background-color 0.3s ease;
-}
-
-.project-card a:hover {
-  background-color: #b3e5fc;
-}
-
-.view-all-button a {
+.project-box a {
   display: inline-block;
+  color: #376fff; /* DevSphere ko‘k */
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #376fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.project-box a:hover {
+  background-color: #376fff;
+  color: white;
+  border: 1px solid #1a5bff;
+}
+
+.view-project-button {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.view-project-button a {
   padding: 12px 24px;
-  font-size: 1em;
-  background-color: #007bff;
-  color: #fff;
+  font-size: 1.2rem;
+  background-color: #1a5bff; /* DevSphere ochiq ko‘k */
+  color: white;
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
-.view-all-button a:hover {
-  background-color: #0056b3;
+.view-project-button a:hover {
+  background-color: #376fff; /* DevSphere ko‘k */
 }
 
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
-  .container h2 {
-    font-size: 2em;
+  .projects-content h2 {
+    font-size: 2rem;
   }
 
-  .portfolio-grid {
+  .projects-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .project-card h3 {
-    font-size: 1.1em;
+  .project-box {
+    padding: 20px;
   }
 
-  .project-card p {
-    font-size: 0.95em;
+  .project-box h3 {
+    font-size: 1.1rem;
   }
 
-  .view-all-button a {
-    font-size: 0.95em;
+  .project-box p {
+    font-size: 1rem;
+  }
+
+  .view-project-button a {
+    font-size: 1rem;
     padding: 10px 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .container h2 {
-    font-size: 1.8em;
+  .projects-content h2 {
+    font-size: 1.8rem;
   }
 
-  .project-card h3 {
-    font-size: 1em;
+  .project-box h3 {
+    font-size: 1.1rem;
   }
 
-  .project-card p {
-    font-size: 0.9em;
+  .project-box p {
+    font-size: 0.95rem;
   }
 
-  .view-all-button a {
-    font-size: 0.9em;
+  .view-project-button a {
+    font-size: 1rem;
     padding: 8px 16px;
   }
 }

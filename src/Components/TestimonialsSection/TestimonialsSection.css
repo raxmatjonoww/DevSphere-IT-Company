@@ -1,6 +1,6 @@
 .testimonials-section {
   padding: 60px 0;
-  background-color: #f9f9f9;
+  background-color: #000713; /* Asosiy fon rangini qora rangga o‘zgartirdim */
 }
 
 .container {
@@ -12,7 +12,13 @@
 
 .container h2 {
   font-size: 2.5em;
-  color: #333;
+  color: #376fff; /* DevSphere ko‘k rang */
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #376fff; /* DevSphere ko‘k rang */
   margin-bottom: 40px;
 }
 
@@ -23,15 +29,22 @@
 }
 
 .testimonial-card {
-  background-color: #fff;
+  background-color: #0c1020; /* Qora rang fon */
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(55, 111, 255, 0.2); /* Ko‘k soyalar */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #1a5bff10;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(55, 111, 255, 0.4); /* Hover effekti */
 }
 
 .quote {
   font-size: 1.1em;
-  color: #555;
+  color: #e2e8f0; /* Yumshoq oq rang */
   line-height: 1.7;
   font-style: italic;
   margin-bottom: 20px;
@@ -39,7 +52,7 @@
 
 .author {
   font-size: 0.9em;
-  color: #777;
+  color: #1a5bff; /* Ko‘k rangda avtori ko‘rsatiladi */
   text-align: right;
 }
 

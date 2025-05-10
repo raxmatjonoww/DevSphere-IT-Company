@@ -1,89 +1,101 @@
 .services-section {
-    padding: 60px 0;
-    background-color: #f9f9f9;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
-  }
-  
-  .container h2 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 40px;
-  }
-  
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-  }
-  
-  .service-card {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    transition: transform 0.3s ease;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .service-card h3 {
-    font-size: 1.5em;
-    color: #007bff;
-    margin-bottom: 15px;
-  }
-  
-  .service-card p {
-    font-size: 1em;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  .service-card a {
-    display: inline-block;
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .service-card a:hover {
-    color: #0056b3;
-  }
-  
-  .call-to-action {
-    padding: 30px;
-    background-color: #e0f7fa;
-    border-radius: 8px;
-  }
-  
-  .call-to-action p {
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .call-to-action .contact-button {
-    padding: 12px 24px;
-    font-size: 1em;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .call-to-action .contact-button:hover {
-    background-color: #1e7e34;
-  }
+  padding: 60px 0;
+  background-color: #000713; /* Asosiy fon */
+}
+
+.containerrr {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.containerrr h2 {
+  font-size: 2.5rem;
+  color: #376fff; /* DevSphere ko‘k */
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #376fff; /* DevSphere ko‘k */
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.service-card {
+  background-color: #0c1020; /* Qora fon, #000713 bilan o‘xshash */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(55, 111, 255, 0.3); /* Ko‘k soyalar */
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #1a5bff10;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(55, 111, 255, 0.5);
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #1a5bff; /* Ko‘k rang */
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #e2e8f0; /* Yumshoq oq rang */
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.service-card a {
+  display: inline-block;
+  color: #376fff; /* DevSphere ko‘k */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.service-card a:hover {
+  color: #1a5bff; /* Hoverda ko‘k rangni o‘zgartirish */
+}
+
+.call-to-action {
+  padding: 30px;
+  background-color: #0c1020; /* Qora fon */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(55, 111, 255, 0.4); /* Ko‘k soyalar */
+}
+
+.call-to-action p {
+  font-size: 1.2rem;
+  color: #f1f5f9; /* Yengil oq rang */
+  margin-bottom: 20px;
+}
+
+.contact-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #1a5bff; /* Ko‘k rang */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #000713; /* Qora fon */
+  color: #1a5bff; /* Hoverda ko‘k rang */
+  border: 2px solid #1a5bff;
+}

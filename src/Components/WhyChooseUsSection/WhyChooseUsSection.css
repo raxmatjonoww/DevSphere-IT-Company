@@ -1,56 +1,54 @@
 .why-choose-us-section {
-    padding: 60px 0;
-    background-color: #f0f8ff; /* Yengilroq fon */
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
-  }
-  
-  .container h2 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 40px;
-  }
-  
-  .reasons-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-  }
-  
-  .reason-item {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  }
-  
-  .reason-item h3 {
-    font-size: 1.3em;
-    color: #007bff;
-    margin-bottom: 15px;
-  }
-  
-  .reason-item p {
-    font-size: 1em;
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  /* Mobil qurilmalar uchun uslublar */
-  @media (max-width: 768px) {
-    .reasons-list {
-      grid-template-columns: 1fr;
-    }
-    .reason-item {
-      text-align: center;
-    }
-  }
+  background-color: #000713;
+  padding: 60px 20px;
+  color: #ffffff;
+}
+
+.why-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.why-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.why-title span {
+  color: #376fff;
+}
+
+.reasons-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reason-item {
+  background-color: #0c1020;
+  border: 1px solid #1a5bff;
+  border-radius: 12px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reason-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(26, 91, 255, 0.3);
+}
+
+.reason-item h3 {
+  font-size: 20px;
+  color: #1a5bff;
+  margin-bottom: 10px;
+}
+
+.reason-item p {
+  font-size: 16px;
+  color: #e0e0e0;
+}

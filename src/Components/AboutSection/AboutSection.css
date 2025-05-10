@@ -21,9 +21,9 @@
 
 .about-text h2 {
   font-size: 2.5rem;
-  color: #2563eb;
+  color: #376fff;
   margin-bottom: 20px;
-  text-align: left; /* Matnni chapga tekislash */
+  text-align: left;
 }
 
 .about-text p {
@@ -31,11 +31,11 @@
   color: #cbd5e1;
   line-height: 1.8;
   margin-bottom: 25px;
-  text-align: left; /* Matnni chapga tekislash */
+  text-align: left;
 }
 
 .learn-more-button {
-  background-color: #2563eb;
+  background-color: #1a5bff;
   color: #fff;
   padding: 12px 28px;
   font-size: 1rem;
@@ -44,14 +44,15 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 10px rgba(26, 91, 255, 0.3);
   text-align: center;
 }
 
 .learn-more-button:hover {
-  background-color: #1d4ed8;
+  background-color: #000713;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+  border: 2px solid #376fff;
+  box-shadow: 0 8px 20px rgba(55, 111, 255, 0.5);
 }
 
 .about-image {
@@ -63,13 +64,13 @@
   width: 100%;
   max-width: 560px;
   border-radius: 12px;
-  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 12px 25px rgba(55, 111, 255, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-image img:hover {
   transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 15px 30px rgba(55, 111, 255, 0.45);
 }
 
 /* Tablet: stack elements vertically */
@@ -92,7 +93,7 @@
 /* Mobile */
 @media (max-width: 576px) {
   .about-section {
-    padding: 50px 15px;
+    padding: 50px 1.4rem;
   }
 
   .about-text h2 {

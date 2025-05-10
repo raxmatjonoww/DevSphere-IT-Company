@@ -112,77 +112,84 @@
   box-shadow: 0 12px 30px #2563EB; /* Hoverda halqa biroz kattalashadi */
 }
 
+
 /* Tablet (<=992px) */
 @media (max-width: 992px) {
   .hero {
-    padding: 80px 0; /* Kichik ekranlar uchun vertikal paddingni kamaytirish */
+    padding: 100px 20px; /* Eng mos keladigan padding */
   }
 
   .hero-container {
     flex-direction: column;
     text-align: center;
-    gap: 50px; /* Elementlar orasidagi bo'shliqni oshirish */
+    gap: 40px;
     min-height: auto;
   }
 
   .hero-content {
-    order: 1;
-    padding: 0 30px;
-    padding-right: 0;
+    order: 2;
+    padding: 0;
   }
 
   .hero-content h1 {
-    font-size: 3rem; /* Kattaroq sarlavha */
-    margin-bottom: 25px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
   }
 
   .hero-content p {
     font-size: 1.1rem;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
+    max-width: 100%;
   }
 
   .hero-buttons {
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .hero-image {
-    order: 2;
-    margin-top: 30px;
+    order: 1;
+    margin-top: 0;
+  }
+
+  .hero-image img {
+    max-width: 100%;
   }
 }
 
 /* Mobile (<=576px) */
 @media (max-width: 576px) {
   .hero {
-    padding: 130px 0; /* Mobil uchun yuqori va pastki paddingni oshirish */
+    padding: 160px 0px;
   }
 
   .hero-content h1 {
-    font-size: 1.6rem;
-    text-align: left;
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 1.3;
     margin-bottom: 20px;
-    line-height: 40px;
   }
 
   .hero-content p {
-    font-size: 1.1rem;
-    text-align: left;
-    margin-bottom: 30px;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 25px;
   }
 
   .hero-buttons {
     flex-direction: column;
-    align-items: stretch; /* Butun enini egallash */
-    gap: 15px;
+    align-items: center;
+    gap: 12px;
   }
 
   .primary-button,
   .secondary-button {
-    padding: 14px 28px;
+    width: 100%;
+    padding: 12px;
     font-size: 1rem;
   }
 
   .hero-image {
-    display: none; /* Kichik ekranlarda olib tashlash */
+    display: none;
   }
 }

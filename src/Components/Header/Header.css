@@ -1,92 +1,72 @@
-/* Asosiy stil */
 .header {
+  width: 100%;
   position: fixed;
   top: 0;
-  width: 100%;
-  background: transparent;
+  z-index: 1000;
+  background-color: #000713;
   transition: all 0.3s ease;
-  z-index: 999;
+  padding: 20px 0;
 }
 
 .header.scrolled {
-  background: #000713;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.container {
+.header-container {
   max-width: 1200px;
-  margin: auto;
-  padding: 15px 20px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: space-between;
 }
 
 .logo a {
-  color: #ffffff;
-  font-size: 1.5rem;
-  text-decoration: none;
+  font-size: 1.8em;
   font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-/* Nav */
 .nav {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  height: 100vh;
-  width: 240px;
-  background: #000713;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: right 0.3s ease;
-}
-
-.nav.open {
-  right: 0;
 }
 
 .nav ul {
+  display: flex;
+  gap: 30px;
   list-style: none;
+  margin: 0;
   padding: 0;
-  text-align: center;
 }
 
-.nav li {
-  margin: 20px 0;
-}
-
-.nav a {
-  color: #ffffff;
-  font-size: 1.2rem;
+.nav ul li a {
+  color: #fff;
   text-decoration: none;
-  transition: color 0.3s;
+  font-size: 1em;
+  transition: color 0.3s ease;
 }
 
-.nav a:hover,
-.nav a.active {
+.nav ul li a:hover,
+.nav ul li a.active {
   color: #1a5bff;
 }
 
-/* Hamburger */
+/* Hamburger menu */
 .hamburger {
-  display: flex;
+  display: none;
   flex-direction: column;
-  justify-content: space-between;
-  width: 25px;
-  height: 20px;
+  gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 1000;
 }
 
 .hamburger span {
+  width: 25px;
   height: 3px;
-  background: #ffffff;
-  border-radius: 2px;
-  transition: 0.3s;
+  background: #fff;
+  transition: 0.3s ease;
 }
 
 .hamburger.open span:nth-child(1) {
@@ -98,30 +78,35 @@
 }
 
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Desktop view */
-@media (min-width: 768px) {
+/* Responsive styles */
+@media (max-width: 768px) {
   .nav {
-    position: static;
-    height: auto;
-    width: auto;
-    background: none;
-    display: flex;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background-color: #000713;
+    flex-direction: column;
     align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav.open {
+    max-height: 300px;
+    padding: 20px 0;
   }
 
   .nav ul {
-    display: flex;
-    gap: 30px;
-  }
-
-  .nav li {
-    margin: 0;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .hamburger {
-    display: none;
+    display: flex;
   }
 }

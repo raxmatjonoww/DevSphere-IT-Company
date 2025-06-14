@@ -1,0 +1,120 @@
+.team-section {
+    /* background: linear-gradient(135deg, #0E1A35 0%, #2C59CC 100%); */
+    padding: 6rem 2rem;
+    color: #ffffff;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .team-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 1.2px;
+    position: relative;
+  }
+  
+  .team-title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #ffffff;
+    display: block;
+    margin: 16px auto 0;
+    border-radius: 2px;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .team-card {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .team-card::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(circle, rgba(26,91,255,0.2) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+  }
+  
+  .team-card:hover::before {
+    opacity: 1;
+  }
+  
+  .team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(26, 91, 255, 0.4);
+  }
+  
+  .team-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+  }
+  
+  .team-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0.5rem 0 0.3rem;
+    color: #ffffff;
+  }
+  
+  .position {
+    font-weight: 600;
+    color: #9ecbff;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .desc {
+    font-size: 0.9rem;
+    color: #d0d0d0;
+    line-height: 1.6;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .team-title {
+      font-size: 2rem;
+    }
+  
+    .team-card {
+      padding: 1.5rem;
+    }
+  
+    .team-card h3 {
+      font-size: 1.1rem;
+    }
+  
+    .desc {
+      font-size: 0.85rem;
+    }
+  }
+  

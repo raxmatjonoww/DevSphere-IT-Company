@@ -1,0 +1,16 @@
+/* App.css */
+
+body, html, #root {
+    margin: 0;
+    padding: 0;
+    /* height: 100%; */
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+    background: linear-gradient(135deg, #0E1A35 0%, #2C59CC 100%);
+    color: #ffffff;
+  }
+  
+  .App {
+    min-height: 100vh;
+  }
+  

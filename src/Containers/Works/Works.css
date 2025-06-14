@@ -1,0 +1,137 @@
+.works-section {
+  width: 100%;
+  padding: 6rem 5%;
+  /* background: linear-gradient(135deg, #0E1A35 0%, #2C59CC 100%); */
+  color: #ffffff;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.works-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.works-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  position: relative;
+  color: #ffffff;
+}
+
+.works-title::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #ffffff;
+  display: block;
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.work-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.work-card::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(circle, rgba(26,91,255,0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.work-card:hover::before {
+  opacity: 1;
+}
+
+.work-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(26, 91, 255, 0.4);
+}
+
+.work-image {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+}
+
+.work-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.work-card p {
+  font-size: 1rem;
+  color: #d0d0d0;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.work-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ffffff;
+  color: #0E1A35;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.work-button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .works-title {
+    font-size: 2rem;
+  }
+
+  .work-card {
+    padding: 1.5rem;
+  }
+
+  .work-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .work-card p {
+    font-size: 0.95rem;
+  }
+
+  .work-image {
+    max-width: 100%;
+  }
+}

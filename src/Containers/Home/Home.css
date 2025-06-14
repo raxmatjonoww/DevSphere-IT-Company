@@ -1,0 +1,126 @@
+/* === HOME SECTION === */
+.home-section {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  /* background: radial-gradient(circle at top left, #0E1A35 0%, #0B1A38 50%, #050f24 100%); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 3rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.Home-Flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+/* === TEXT CONTENT === */
+.home-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.home-p {
+  font-size: 1.6rem;
+  color: #d0d0d0;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+  line-height: 2;
+}
+
+/* === BUTTON === */
+.home-btn {
+  padding: 1rem 2.5rem;
+  background-color: #1a5bff;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 25px rgba(26, 91, 255, 0.6);
+}
+
+.home-btn:hover {
+  background-color: #0040c1;
+  box-shadow: 0 0 30px rgba(26, 91, 255, 0.9);
+  transform: translateY(-4px);
+}
+
+/* === IMAGE === */
+.home-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-img img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  animation: float 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(26, 91, 255, 0.3));
+}
+
+/* === FLOATING ANIMATION === */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* === RESPONSIVE STYLES === */
+@media (max-width: 992px) {
+  .Home-Flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-title {
+    font-size: 2.4rem;
+  }
+
+  .home-p {
+    font-size: 1.3rem;
+  }
+
+  .home-btn {
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  .home-img img {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-p {
+    font-size: 1.1rem;
+  }
+
+  .home-btn {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+}

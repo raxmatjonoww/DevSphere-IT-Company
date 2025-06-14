@@ -48,9 +48,14 @@ const Services = () => (
       <div className="services-grid">
         {servicesData.map((service, index) => (
           <div className="service-card" key={index}>
-            <img src={service.icon} alt={service.title} className="service-icon" />
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
+            <div className="card-content">
+              <img src={service.icon} alt={service.title} className="service-icon" />
+              <div className="card-text">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <a href="#contact"><button className="order-button">Заказать</button></a>
+              </div>
+            </div>
           </div>
         ))}
       </div>

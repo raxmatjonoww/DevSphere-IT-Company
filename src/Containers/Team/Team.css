@@ -6,7 +6,9 @@
     text-align: center;
     overflow: hidden;
   }
-  
+  .a-hreff{
+    text-decoration: none;
+  }
   .team-title {
     font-size: 3rem;
     font-weight: 800;

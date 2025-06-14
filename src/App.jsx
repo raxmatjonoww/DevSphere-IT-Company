@@ -6,6 +6,7 @@ import Services from './Containers/Services/Services';
 import Works from './Containers/Works/Works';
 import Team from "./Containers/Team/Team";
 import Contact from "./Containers/Contact/Contact";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
       <Works />
       <Team />
       <Contact />
+
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,206 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.footer-section {
+  background: linear-gradient(135deg, #000713, #1a5bff);
+  color: #ffffff;
+  padding: 6rem 5% 3rem;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  width: 100%;
+  gap: 4rem;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex: 1 1 300px;
+}
+
+.footer-logo {
+  font-size: 3rem;
+  color: #1a5bff;
+}
+
+.footer-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+.footer-heading {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-links li a {
+  font-size: 1.05rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: #84a7ff;
+}
+
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #84a7ff;
+}
+
+.footer-flex-group {
+  display: flex;
+  flex: 1;
+  gap: 4rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  font-size: 1rem;
+  opacity: 0.7;
+  width: 100%;
+  text-align: center;
+}
+
+/* --- Small Phones (max-width: 480px) --- */
+@media (max-width: 480px) {
+  .footer-section {
+    padding: 4rem 1.5rem 2rem;
+  }
+
+  .footer-container,
+  .footer-flex-group {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-size: 2rem;
+  }
+
+  .footer-heading {
+    font-size: 1.1rem;
+  }
+
+  .footer-description {
+    font-size: 0.95rem;
+    max-width: 100%;
+    line-height: 1.6;
+  }
+
+  .footer-col {
+    width: 100%;
+    align-items: center;
+  }
+
+  .footer-links {
+    align-items: center;
+  }
+
+  .footer-links li a {
+    font-size: 1rem;
+  }
+
+  .footer-socials {
+    align-items: center;
+  }
+
+  .footer-socials a {
+    font-size: 0.95rem;
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    font-size: 0.85rem;
+    margin-top: 3rem;
+  }
+}
+
+/* --- Tablets (max-width: 768px) --- */
+@media (max-width: 768px) {
+  .footer-flex-group {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .footer-col {
+    align-items: center;
+    width: 100%;
+  }
+
+  .footer-links {
+    align-items: center;
+  }
+
+  .footer-socials {
+    align-items: center;
+  }
+
+  .footer-socials a {
+    justify-content: center;
+  }
+}
+
+/* --- Laptops (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+  .footer-container {
+    padding: 0 3%;
+  }
+
+  .footer-description {
+    font-size: 1.05rem;
+    max-width: 100%;
+  }
+
+  .footer-flex-group {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+}

@@ -49,13 +49,13 @@ const Footer = () => {
           <h3>Связаться с нами</h3>
           <ul className="contact-list">
             <li>
-              <a href="tel:+998901234567" target="_blank" rel="noopener noreferrer">
+              <a href="tel:+998999909569" target="_blank" rel="noopener noreferrer">
                 <FaPhoneAlt className="icon" />
                 <span className="contact-text">+998 (99) 990-95-69</span>
               </a>
             </li>
             <li>
-              <a href="https://t.me/devsphere" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/devsphereuzb" target="_blank" rel="noopener noreferrer">
                 <FaTelegramPlane className="icon" />
                 <span className="contact-text">@devsphere.uz</span>
               </a>

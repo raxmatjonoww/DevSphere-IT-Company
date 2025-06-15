@@ -5,7 +5,6 @@
   font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
 }
 
-/* Navbar asosiy konteyner */
 .navbar {
   width: 100%;
   padding: 1rem 2rem;
@@ -17,14 +16,14 @@
   backdrop-filter: blur(10px);
 }
 
-/* Navbar ichki joylashuvi */
 .navbar-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
 }
 
-/* Logo uslubi */
 .logo {
   font-size: 2.8rem;
   font-weight: bold;
@@ -32,7 +31,6 @@
   letter-spacing: 0.05em;
 }
 
-/* Havolalar ro'yxati */
 .nav-links {
   display: flex;
   align-items: center;
@@ -40,7 +38,6 @@
   list-style: none;
 }
 
-/* Har bir nav link */
 .nav-link {
   color: white;
   text-decoration: none;
@@ -50,7 +47,6 @@
   letter-spacing: 0.02em;
 }
 
-/* Hover effekt chizig'i */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -70,7 +66,6 @@
   width: 100%;
 }
 
-/* Qo'ng'iroq ikonkasi */
 .call-icon {
   color: white;
   font-size: 1.8rem;
@@ -79,7 +74,6 @@
   border-radius: 50%;
   transition: background-color 0.3s, color 0.3s;
   cursor: pointer;
-  margin-left: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,7 +85,6 @@
   color: white;
 }
 
-/* Burger menyu (mobil uchun) */
 .burger {
   display: none;
   flex-direction: column;
@@ -107,36 +100,54 @@
   border-radius: 2px;
 }
 
-/* Responsiv uslublar */
+/* RESPONSIVE */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0.7rem 1.2rem;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
   .nav-links {
     position: absolute;
-    top: 70px;
+    top: 65px;
     left: 0;
     right: 0;
     flex-direction: column;
     background-color: #000713;
-    padding: 2rem;
+    padding: 1.5rem;
     transform: translateY(-200%);
     transition: transform 0.3s ease-in-out;
     z-index: 999;
+    gap: 1.2rem;
   }
 
   .nav-links.active {
     transform: translateY(0);
   }
 
-  .burger {
-    display: flex;
+  .nav-link {
+    font-size: 1.2rem;
+    text-align: center;
   }
 
   .nav-link::after {
     display: none;
   }
 
+  .burger {
+    display: flex;
+  }
+
+  .burger .line {
+    width: 22px;
+    height: 2px;
+  }
+
   .call-icon {
-    font-size: 1.4rem;
-    padding: 6px;
-    margin-left: 0.5rem;
+    font-size: 1.2rem;
+    padding: 5px;
   }
 }

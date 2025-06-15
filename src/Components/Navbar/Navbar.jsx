@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { FaPhoneAlt } from "react-icons/fa";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -25,49 +26,17 @@ const Navbar = () => {
 
           {isHomePage ? (
             <>
-              <li>
-                <a href="#services" className="nav-link" onClick={handleClose}>
-                  Услуги
-                </a>
-              </li>
-              <li>
-                <a href="#works" className="nav-link" onClick={handleClose}>
-                  Наши работы
-                </a>
-              </li>
-              <li>
-                <a href="#team" className="nav-link" onClick={handleClose}>
-                  О нас
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="nav-link" onClick={handleClose}>
-                  Контакты
-                </a>
-              </li>
+              <li><a href="#services" className="nav-link" onClick={handleClose}>Услуги</a></li>
+              <li><a href="#works" className="nav-link" onClick={handleClose}>Наши работы</a></li>
+              <li><a href="#team" className="nav-link" onClick={handleClose}>О нас</a></li>
+              <li><a href="#contact" className="nav-link" onClick={handleClose}>Контакты</a></li>
             </>
           ) : (
             <>
-              <li>
-                <HashLink smooth to="/#services" className="nav-link" onClick={handleClose}>
-                  Услуги
-                </HashLink>
-              </li>
-              <li>
-                <HashLink smooth to="/#works" className="nav-link" onClick={handleClose}>
-                  Наши работы
-                </HashLink>
-              </li>
-              <li>
-                <HashLink smooth to="/#team" className="nav-link" onClick={handleClose}>
-                  О нас
-                </HashLink>
-              </li>
-              <li>
-                <HashLink smooth to="/#contact" className="nav-link" onClick={handleClose}>
-                  Контакты
-                </HashLink>
-              </li>
+              <li><HashLink smooth to="/#services" className="nav-link" onClick={handleClose}>Услуги</HashLink></li>
+              <li><HashLink smooth to="/#works" className="nav-link" onClick={handleClose}>Наши работы</HashLink></li>
+              <li><HashLink smooth to="/#team" className="nav-link" onClick={handleClose}>О нас</HashLink></li>
+              <li><HashLink smooth to="/#contact" className="nav-link" onClick={handleClose}>Контакты</HashLink></li>
             </>
           )}
 
@@ -78,11 +47,17 @@ const Navbar = () => {
           </li>
         </ul>
 
+        {/* Burger for mobile */}
         <div className="burger" onClick={handleToggle}>
           <span className="line"></span>
           <span className="line"></span>
           <span className="line"></span>
         </div>
+
+        {/* Call Icon outside of nav links */}
+        <a href="tel:+998999909569" className="call-icon" aria-label="Позвонить">
+          <FaPhoneAlt />
+        </a>
       </div>
     </nav>
   );

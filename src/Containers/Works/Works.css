@@ -3,7 +3,7 @@
   padding: 6rem 5%;
   /* background: linear-gradient(135deg, #0E1A35 0%, #2C59CC 100%); */
   color: #ffffff;
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
   position: relative;
   overflow: hidden;
 }

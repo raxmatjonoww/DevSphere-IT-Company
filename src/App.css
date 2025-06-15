@@ -4,7 +4,7 @@
 body, html, #root {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
   scroll-behavior: smooth;
   background: linear-gradient(135deg, #000713, #1a5bff);
   color: #ffffff;

@@ -2,7 +2,7 @@
     padding: 6rem 5%;
     background: transparent;
     color: white;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
     position: relative;
     z-index: 1;
   }

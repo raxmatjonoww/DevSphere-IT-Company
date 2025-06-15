@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
 }
 
 .navbar {
@@ -17,30 +18,31 @@
 
 .navbar-container {
   display: flex;
-  justify-content: space-around; /* So‘rov bo‘yicha o‘zgartirildi */
+  justify-content: space-around; /* space-around ishlatilmoqda */
   align-items: center;
+  position: relative;
 }
 
 .logo {
-  font-size: 2rem; /* Kattalashtirildi */
+  font-size: 2.2rem;
   font-weight: bold;
-  color: #3770ff;
+  color: #84a7ff;
+  letter-spacing: 0.1em; /* harflar orasini kengaytirdi */
 }
 
 .nav-links {
   display: flex;
-  gap: 2.5rem; /* Sal ko‘proq joy */
+  gap: 3rem; /* kartalar orasidagi bo‘shliq kattalashdi */
   list-style: none;
 }
 
 .nav-link {
   color: white;
   text-decoration: none;
-  font-size: 1.2rem; /* Yozuvlar kattalashtirildi */
-  font-weight: 500;
+  font-size: 1.3rem;
   position: relative;
   transition: color 0.3s ease;
-  padding: 0.2rem 0;
+  letter-spacing: 0.05em; /* harflar orasini kengaytirdi */
 }
 
 .nav-link::after {
@@ -76,6 +78,27 @@
   border-radius: 2px;
 }
 
+/* Qo'ng'iroq ikonkasi */
+.call-icon {
+  color: white;
+  font-size: 1.5rem;
+  border: 2px solid white;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-icon:hover {
+  background-color: #95b3ff;
+  border-color: #95b3ff;
+  color: white;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links {
@@ -88,6 +111,7 @@
     padding: 2rem;
     transform: translateY(-200%);
     transition: transform 0.3s ease-in-out;
+    z-index: 999;
   }
 
   .nav-links.active {
@@ -98,12 +122,14 @@
     display: flex;
   }
 
-  .nav-link {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-
   .nav-link::after {
     display: none;
+  }
+  
+  /* Qo'ng'iroq tugmasini kichik ekranlarda ozroq kattalashtirish yoki joylashuv o'zgartirish mumkin */
+  .call-icon {
+    font-size: 1.3rem;
+    padding: 6px;
+    margin-left: 0.5rem;
   }
 }

@@ -1,24 +1,16 @@
-/* === GLOBAL RESET === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
-}
-
 /* === HOME SECTION === */
 .home-section {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh; /* Asosiy ranglar */
+  font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5rem 3rem;
-  /* background-color: #000713; */
+  box-sizing: border-box;
   overflow: hidden;
 }
 
-/* === FLEX CONTAINER === */
 .Home-Flex {
   display: flex;
   align-items: center;
@@ -34,8 +26,9 @@
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
-  line-height: 1.3;
+  color: #ffffff;
   letter-spacing: 1px;
+  line-height: 1.4;
   background: linear-gradient(to right, #1a5bff, #00c3ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -43,10 +36,10 @@
 
 .home-p {
   font-size: 1.6rem;
-  font-weight: 500;
-  color: #ffffff;
-  line-height: 1.5;
+  color: white;
   margin-bottom: 2.5rem;
+  font-weight: 500;
+  line-height: 1.3;
   max-width: 530px;
 }
 
@@ -54,7 +47,7 @@
 .home-btn {
   padding: 1rem 2.5rem;
   background-color: #1a5bff;
-  color: white;
+  color: #ffffff;
   font-size: 1.1rem;
   font-weight: 600;
   border: none;
@@ -75,7 +68,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
 }
 
 .home-img img {
@@ -86,7 +78,7 @@
   filter: drop-shadow(0 0 30px rgba(26, 91, 255, 0.3));
 }
 
-/* === ANIMATION === */
+/* === FLOATING ANIMATION === */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -96,7 +88,7 @@
   }
 }
 
-/* === RESPONSIVE === */
+/* === RESPONSIVE STYLES === */
 @media (max-width: 992px) {
   .Home-Flex {
     flex-direction: column;
@@ -104,11 +96,11 @@
   }
 
   .home-title {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
   }
 
   .home-p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 0 auto 2rem;
   }
 
@@ -123,16 +115,15 @@
 }
 
 @media (max-width: 576px) {
-  .home-img img {
+  .home-img img{
     display: none;
   }
-
   .home-title {
     font-size: 2rem;
   }
 
   .home-p {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 
   .home-btn {

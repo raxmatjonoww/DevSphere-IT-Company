@@ -115,6 +115,9 @@
 }
 
 @media (max-width: 576px) {
+  .home-img img{
+    display: none;
+  }
   .home-title {
     font-size: 2rem;
   }

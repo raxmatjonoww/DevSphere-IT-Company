@@ -107,7 +107,7 @@
   }
 
   .logo {
-    font-size: 1rem;
+    font-size: 1.2rem; /* kichikroq qildim */
   }
 
   .nav-links {
@@ -116,12 +116,16 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    background-color: #000713;
+
+    /* Hira, transparent background */
+    background-color: rgba(0, 7, 19, 0.7); /* rgba qora, opacity 0.7 */
+
     padding: 1.5rem;
     transform: translateY(-200%);
     transition: transform 0.3s ease-in-out;
     z-index: 999;
     gap: 1.2rem;
+    backdrop-filter: blur(8px); /* orqa fonda blur effekt qo‘shildi */
   }
 
   .nav-links.active {
@@ -129,7 +133,7 @@
   }
 
   .nav-link {
-    font-size: 1.2rem;
+    font-size: 1rem; /* tekstlarni kichikroq qildim */
     text-align: center;
   }
 

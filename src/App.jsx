@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
+
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Containers/Home/Home";
 import Services from './Containers/Services/Services';
@@ -7,12 +9,13 @@ import Works from './Containers/Works/Works';
 import Team from "./Containers/Team/Team";
 import Contact from "./Containers/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
+import Portfolio from "./Containers/Portfolio/Portfolio";
 
 function App() {
   const [stars, setStars] = useState([]);
 
   useEffect(() => {
-    const totalStars = 80;
+    const totalStars = 150;
     const starElements = [];
 
     for (let i = 0; i < totalStars; i++) {
@@ -40,16 +43,32 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <div className="stars-wrapper">{stars}</div>
-      <Navbar />
-      <Home />
-      <Services />
-      <Works />
-      <Team />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        {/* Fon yulduzchalar */}
+        <div className="stars-wrapper">{stars}</div>
+
+        {/* Navigatsiya */}
+        <Navbar />
+
+        {/* Sahifalar */}
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Home />
+              <Services />
+              <Works />
+              <Team />
+              <Contact />
+            </>
+          } />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Routes>
+
+        {/* Footer har sahifada bo‘ladi */}
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

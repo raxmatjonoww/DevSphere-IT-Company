@@ -13,7 +13,7 @@ body, html, #root {
 
 /* Asosiy App konteyner */
 .App {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   position: relative;
   z-index: 1;
 }

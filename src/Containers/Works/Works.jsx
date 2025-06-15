@@ -1,10 +1,11 @@
 import React from 'react';
 import './Works.css';
+import { Link } from 'react-router-dom';
 
 const worksData = [
   {
     title: 'По Созданию Cайтов',
-    link: 'https://kia.uz',
+    link: '/portfolio',
   },
   {
     title: 'По Созданию Ботов',

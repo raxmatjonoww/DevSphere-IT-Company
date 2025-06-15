@@ -39,15 +39,17 @@
   }
   
   .team-card {
-    background: rgba(255, 255, 255, 0.06);
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    z-index: 1;
+    background: rgba(255, 255, 255, 0.03); /* Oldingi 0.05 edi */
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(1px);
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Oldingi 0.1 yoki 0.2 edi */
+  position: relative;
+  z-index: 1;
   }
   
   .team-card::before {

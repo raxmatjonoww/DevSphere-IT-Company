@@ -41,16 +41,18 @@
   }
   
   .contact-form {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.03); /* oldingi 0.06 */
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* engilroq soyani tanladik */
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.06); /* oldingi 0.08 */
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
+  
   
   .contact-form input,
   .contact-form textarea {
@@ -88,21 +90,26 @@
   
   /* Responsive */
   @media (max-width: 768px) {
-    .contact-title {
+    .team-title {
       font-size: 2rem;
     }
   
-    .contact-form {
+    .team-grid {
+      grid-template-columns: 1fr; /* Har bir card 100% bo'ladi */
+      padding: 0;
+    }
+  
+    .team-card {
       padding: 1.5rem;
+      width: 100%; /* To‘liq kenglik */
     }
   
-    .contact-form input,
-    .contact-form textarea {
-      font-size: 0.95rem;
+    .team-card h3 {
+      font-size: 1.1rem;
     }
   
-    .contact-button {
-      font-size: 1rem;
+    .desc {
+      font-size: 0.85rem;
     }
   }
   

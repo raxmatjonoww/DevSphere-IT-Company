@@ -15,7 +15,7 @@ function App() {
   const [stars, setStars] = useState([]);
 
   useEffect(() => {
-    const totalStars = 150;
+    const totalStars = 80;
     const starElements = [];
 
     for (let i = 0; i < totalStars; i++) {

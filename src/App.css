@@ -6,7 +6,7 @@ body, html, #root {
   padding: 0;
   font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
   scroll-behavior: smooth;
-  background: linear-gradient(135deg, #000713, #1a5bff);
+  background: linear-gradient(135deg, #000713, #1647c5);
   color: #ffffff;
   overflow-x: hidden;
 }

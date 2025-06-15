@@ -1,55 +1,84 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Footer.css';
-import { FaTelegramPlane, FaInstagram, FaYoutube, FaFacebookF } from 'react-icons/fa';
+import {
+  FaTelegramPlane,
+  FaInstagram,
+  FaPhoneAlt,
+  FaArrowUp
+} from 'react-icons/fa';
 
 const Footer = () => {
-  return (
-    <footer className="footer-section">
-      <div className="footer-container">
+  const [showTopBtn, setShowTopBtn] = useState(false);
 
-        {/* Left: Company Info */}
-        <div className="footer-col">
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTopBtn(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <footer className="footer">
+      <div className="footer-container">
+        {/* Company Info */}
+        <div className="footer-about">
           <h2 className="footer-logo">DevSphere</h2>
           <p className="footer-description">
-            Мы создаем сайты, Telegram-ботов, дизайны и цифровые решения.
-            DevSphere — ваш надежный партнер в мире IT.
+            DevSphere — современная IT-компания, предоставляющая услуги по созданию сайтов, Telegram-ботов, графическому дизайну и мобильной видеосъёмке.
           </p>
         </div>
 
-        {/* Right Side: Services and Contacts */}
-        <div className="footer-flex-group">
+        {/* Navigation Links */}
+        {/* <div className="footer-links">
+          <h3>Навигация</h3>
+          <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#">Портфолио</a></li>
+            <li><a href="#contact">Контакты</a></li>
+          </ul>
+        </div> */}
 
-          <div className="footer-col">
-            <h3 className="footer-heading">Услуги</h3>
-            <ul className="footer-links">
-                <li><a href="#services">Создание сайтов</a></li>
-                <li><a href="#services">Telegram-боты</a></li>
-                <li><a href="#services">UI/UX дизайн</a></li>
-                <li><a href="#services">Мобилография</a></li>
-            </ul>
-
-          </div>
-
-          <div className="footer-col">
-            <h3 className="footer-heading">Контакты</h3>
-            <div className="footer-socials">
-              <a href="https://t.me/raxmatjonoww" target="_blank" rel="noopener noreferrer">
-                <FaTelegramPlane /> devsphere.uz
+        {/* Contact & Social */}
+        <div className="footer-contact">
+          <h3>Связаться с нами</h3>
+          <ul className="contact-list">
+            <li>
+              <a href="tel:+998901234567" target="_blank" rel="noopener noreferrer">
+                <FaPhoneAlt className="icon" />
+                <span className="contact-text">+998 (99) 990-95-69</span>
               </a>
-              <a href="https://instagram.com/raxmarjonoww" target="_blank" rel="noopener noreferrer">
-                <FaInstagram /> devsphere.uz
+            </li>
+            <li>
+              <a href="https://t.me/devsphere" target="_blank" rel="noopener noreferrer">
+                <FaTelegramPlane className="icon" />
+                <span className="contact-text">@devsphere.uz</span>
               </a>
-              <a href="#"><FaYoutube /> devsphere.uz</a>
-              <a href="#"><FaFacebookF /> devsphere.uz</a>
-            </div>
-          </div>
-
+            </li>
+            <li>
+              <a href="https://instagram.com/devsphere.uz" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="icon" />
+                <span className="contact-text">@devsphere.uz</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} DevSphere. Все права защищены.</p>
       </div>
+
+      {showTopBtn && (
+        <button className="back-to-top" onClick={scrollToTop}>
+          <FaArrowUp />
+        </button>
+      )}
     </footer>
   );
 };

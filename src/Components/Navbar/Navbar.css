@@ -5,6 +5,7 @@
   font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
 }
 
+/* Navbar asosiy konteyner */
 .navbar {
   width: 100%;
   padding: 1rem 2rem;
@@ -16,35 +17,40 @@
   backdrop-filter: blur(10px);
 }
 
+/* Navbar ichki joylashuvi */
 .navbar-container {
   display: flex;
-  justify-content: space-around; /* space-around ishlatilmoqda */
+  justify-content: space-around;
   align-items: center;
-  position: relative;
 }
 
+/* Logo uslubi */
 .logo {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   font-weight: bold;
-  color: #84a7ff;
-  letter-spacing: 0.1em; /* harflar orasini kengaytirdi */
+  color: white;
+  letter-spacing: 0.05em;
 }
 
+/* Havolalar ro'yxati */
 .nav-links {
   display: flex;
-  gap: 3rem; /* kartalar orasidagi bo‘shliq kattalashdi */
+  align-items: center;
+  gap: 2.5rem;
   list-style: none;
 }
 
+/* Har bir nav link */
 .nav-link {
   color: white;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   position: relative;
   transition: color 0.3s ease;
-  letter-spacing: 0.05em; /* harflar orasini kengaytirdi */
+  letter-spacing: 0.02em;
 }
 
+/* Hover effekt chizig'i */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -64,30 +70,16 @@
   width: 100%;
 }
 
-.burger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.burger .line {
-  width: 25px;
-  height: 3px;
-  background: white;
-  border-radius: 2px;
-}
-
 /* Qo'ng'iroq ikonkasi */
 .call-icon {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   border: 2px solid white;
   padding: 8px;
   border-radius: 50%;
   transition: background-color 0.3s, color 0.3s;
   cursor: pointer;
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,7 +91,23 @@
   color: white;
 }
 
-/* Responsive */
+/* Burger menyu (mobil uchun) */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  margin-left: 1.2rem;
+}
+
+.burger .line {
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* Responsiv uslublar */
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
@@ -125,10 +133,9 @@
   .nav-link::after {
     display: none;
   }
-  
-  /* Qo'ng'iroq tugmasini kichik ekranlarda ozroq kattalashtirish yoki joylashuv o'zgartirish mumkin */
+
   .call-icon {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     padding: 6px;
     margin-left: 0.5rem;
   }

@@ -23,7 +23,6 @@ const Navbar = () => {
               Главная
             </HashLink>
           </li>
-
           {isHomePage ? (
             <>
               <li><a href="#services" className="nav-link" onClick={handleClose}>Услуги</a></li>
@@ -39,25 +38,22 @@ const Navbar = () => {
               <li><HashLink smooth to="/#contact" className="nav-link" onClick={handleClose}>Контакты</HashLink></li>
             </>
           )}
-
           <li>
             <Link to="/portfolio" className="nav-link" onClick={handleClose}>
               Портфолио
             </Link>
           </li>
+              <a href="tel:+998999909569" className="call-icon" aria-label="Позвонить">
+                <FaPhoneAlt />
+              </a>
         </ul>
 
-        {/* Burger for mobile */}
+
         <div className="burger" onClick={handleToggle}>
           <span className="line"></span>
           <span className="line"></span>
           <span className="line"></span>
         </div>
-
-        {/* Call Icon outside of nav links */}
-        <a href="tel:+998999909569" className="call-icon" aria-label="Позвонить">
-          <FaPhoneAlt />
-        </a>
       </div>
     </nav>
   );

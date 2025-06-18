@@ -5,28 +5,35 @@ import './App.css';
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Containers/Home/Home";
 import Services from './Containers/Services/Services';
-import Works from './Containers/Works/Works';
+import Works from "./Containers/Works/Works";
 import Team from "./Containers/Team/Team";
 import Contact from "./Containers/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import Portfolio from "./Containers/Portfolio/Portfolio";
-import Testimonials from './Containers/Testimonials/Testimonials';
-// import Pricing from './Containers/Pricing/Pricing';
-import FAQ from './Containers/FAQ/FAQ';
+import Testimonials from "./Containers/Testimonials/Testimonials";
+import FAQ from "./Containers/FAQ/FAQ";
 
 function App() {
   const [stars, setStars] = useState([]);
+  const [loading, setLoading] = useState(true); // 🔁 loading state
+
+  useEffect(() => {
+    // ── Loading spinner uchun kichik tizim vaqtini qo'shamiz
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500); // 1.5 soniya - demo uchun
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const totalStars = 80;
     const starElements = [];
-
     for (let i = 0; i < totalStars; i++) {
       const left = Math.random() * 100;
       const top = Math.random() * 100;
       const size = Math.random() * 2 + 1;
       const delay = Math.random() * 5;
-
       starElements.push(
         <div
           key={i}
@@ -41,20 +48,22 @@ function App() {
         />
       );
     }
-
     setStars(starElements);
   }, []);
+
+  if (loading) {
+    return (
+      <div className="app-loading-overlay">
+        <div className="app-spinner"></div>
+      </div>
+    );
+  }
 
   return (
     <Router>
       <div className="App">
-        {/* Fon yulduzchalar */}
         <div className="stars-wrapper">{stars}</div>
-
-        {/* Navigatsiya */}
         <Navbar />
-
-        {/* Sahifalar */}
         <Routes>
           <Route path="/" element={
             <>
@@ -62,7 +71,6 @@ function App() {
               <Services />
               <Works />
               <Testimonials />
-              {/* <Pricing /> */}
               <Team />
               <FAQ />
               <Contact />
@@ -70,8 +78,6 @@ function App() {
           } />
           <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
-
-        {/* Footer har sahifada bo‘ladi */}
         <Footer />
       </div>
     </Router>

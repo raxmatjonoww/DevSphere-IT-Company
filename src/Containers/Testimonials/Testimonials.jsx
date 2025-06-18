@@ -3,18 +3,19 @@ import './Testimonials.css';
 
 const testimonials = [
   {
-    name: "Ali",
-    feedback: "DevSphere menga ajoyib sayt yaratib berdi!",
+    name: "Али Ибрагимов",
+    feedback: "DevSphere разработали для меня сайт, который превзошёл все мои ожидания. Команда продемонстрировала высокий уровень профессионализма и учла каждую мою просьбу.",
   },
   {
-    name: "Malika",
-    feedback: "Ular bilan ishlash juda qulay va professional!",
+    name: "Малика Абдуллаева",
+    feedback: "Работать с DevSphere было очень комфортно. Все этапы проекта проходили чётко и слаженно. Я очень довольна качеством и подходом команды.",
   },
   {
-    name: "John",
-    feedback: "Yuqori sifatli dizayn va tezkor xizmat.",
+    name: "Рустам Хасанов",
+    feedback: "Отличный сервис и качественный дизайн. Сайт загрузился быстро, адаптирован под все устройства. Рекомендую DevSphere всем, кто ищет надёжного партнёра в сфере IT.",
   }
 ];
+
 
 const Testimonials = () => {
   return (

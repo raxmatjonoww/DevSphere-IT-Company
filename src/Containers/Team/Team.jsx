@@ -25,12 +25,12 @@ const Team = () => {
         </div></a>
         <a className='a-hreff' href="https://www.instagram.com/faruxovich_media/"><div className="team-card">
           <img src={ibroxim2} alt="Иброхим Мухиддинов" className="team-photo" />
-          <h3>Иброхим Мухиддинов</h3>
+          <h3>Ибрагим Мухиддинов</h3>
           <p className="position">Мобилограф / Frontend Developer</p>
         </div></a>
         <a className='a-hreff' href="https://www.instagram.com/inobat_hikmatullayevna/"><div className="team-card">
           <img src={inobat} alt="Инобат Асоатуллаева" className="team-photo" />
-          <h3>Инобат Асоатуллаева</h3>
+          <h3>Инобат <br /> Шарапова</h3>
           <p className="position">SMM-Специалист / Мобилограф</p>
         </div></a>
       </div>

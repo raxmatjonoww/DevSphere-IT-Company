@@ -53,7 +53,7 @@ const Navbar = () => {
               <li><HashLink smooth to="/#team" className="nav-link" onClick={handleClose}>О нас</HashLink></li>
               <li className="divider">|</li>
               <li><HashLink smooth to="/#faq" className="nav-link" onClick={handleClose}>FAQ</HashLink></li>
-              <li className="divider">|</li>
+              <li style={{ color: "white" }} className="divider">|</li>
               <li><HashLink smooth to="/#contact" className="nav-link" onClick={handleClose}>Контакты</HashLink></li>
             </>
           )}

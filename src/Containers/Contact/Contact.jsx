@@ -8,23 +8,19 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        'devsphere-it-company2025',       // ← o‘z ID’ing bilan almashtir
-        'devsphere_company2025',      // ← o‘z Template ID’ing bilan almashtir
-        form.current,
-        '-YKQFUruqfb3HN-37'        // ← publicKey (user_...) bilan almashtir
-      )
-      .then(
-        () => {
-          alert('Сообщение успешно отправлено!');
-          form.current.reset();
-        },
-        (error) => {
-          console.error('Ошибка отправки:', error.text);
-          alert('Произошла ошибка при отправке.');
-        }
-      );
+    emailjs.sendForm(
+      'devsphere-it-company2025',
+      'devsphere_company2025',
+      form.current,
+      { publicKey: '-YKQFUruqfb3HN-37' } // to‘g‘ri formatda
+    )
+    .then(() => {
+      alert('Сообщение успешно отправлено!');
+      form.current.reset();
+    }, (error) => {
+      console.error('Ошибка отправки:', error.text);
+      alert('Произошла ошибка при отправке.');
+    });
   };
 
   return (

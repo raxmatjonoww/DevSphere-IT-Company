@@ -56,7 +56,8 @@ body, html, #root {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #00070f;
+  background: linear-gradient(135deg, #000713, #1647c5);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +70,7 @@ body, html, #root {
   border: 8px solid #ffffff;
   border-top: 8px solid #376fff;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 0.3s linear infinite;
 }
 
 @keyframes spin {

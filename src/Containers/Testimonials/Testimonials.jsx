@@ -1,5 +1,6 @@
 import React from 'react';
 import './Testimonials.css';
+import { FaStar } from 'react-icons/fa';
 
 const testimonials = [
   {
@@ -16,16 +17,20 @@ const testimonials = [
   }
 ];
 
-
 const Testimonials = () => {
   return (
     <section className="testimonials-section" id="testimonials">
-      <h2>Отзывы клиентов</h2>
+      <h2 className="testimonials-title">Отзывы клиентов</h2>
       <div className="testimonials-container">
         {testimonials.map((t, index) => (
-          <div key={index} className="testimonial-card">
-            <p>“{t.feedback}”</p>
-            <h4>- {t.name}</h4>
+          <div key={index} className="testimonial-card" data-aos="fade-up" data-aos-delay={index * 100}>
+            <p className="testimonial-text">“{t.feedback}”</p>
+            <div className="stars">
+              {[...Array(5)].map((_, i) => (
+                <FaStar key={i} />
+              ))}
+            </div>
+            <h4 className="testimonial-name">– {t.name}</h4>
           </div>
         ))}
       </div>

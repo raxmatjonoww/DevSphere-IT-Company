@@ -10,6 +10,9 @@ import Team from "./Containers/Team/Team";
 import Contact from "./Containers/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import Portfolio from "./Containers/Portfolio/Portfolio";
+import Testimonials from './Containers/Testimonials/Testimonials';
+// import Pricing from './Containers/Pricing/Pricing';
+import FAQ from './Containers/FAQ/FAQ';
 
 function App() {
   const [stars, setStars] = useState([]);
@@ -58,7 +61,10 @@ function App() {
               <Home />
               <Services />
               <Works />
+              <Testimonials />
+              {/* <Pricing /> */}
               <Team />
+              <FAQ />
               <Contact />
             </>
           } />

@@ -1,3 +1,4 @@
+/* === RESET === */
 * {
   margin: 0;
   padding: 0;
@@ -5,37 +6,43 @@
   font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
 }
 
+/* === NAVBAR === */
 .navbar {
-  width: 100%;
-  padding: 1rem 2rem;
-  background-color: transparent;
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
+  width: 100%;
+  padding: 1.2rem 2rem;
+  /* background: rgba(0, 0, 0, 0.6); */
+  backdrop-filter: blur(13px);
+  z-index: 999;
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* max-width: 1200px; */
-  /* margin: 0 auto; */
 }
 
+/* === LOGO === */
 .logo {
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: bold;
   color: white;
+  text-decoration: none;
   letter-spacing: 0.05em;
+  transition: opacity 0.3s;
 }
 
+.logo:hover {
+  opacity: 0.8;
+}
+
+/* === NAV LINKS === */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 3rem;
   list-style: none;
+  gap: 1.2rem;
 }
 
 .nav-link {
@@ -44,7 +51,6 @@
   font-size: 1.3rem;
   position: relative;
   transition: color 0.3s ease;
-  letter-spacing: 0.02em;
 }
 
 .nav-link::after {
@@ -66,11 +72,12 @@
   width: 100%;
 }
 
+/* === CALL ICON === */
 .call-icon {
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   border: 2px solid white;
-  padding: 8px;
+  padding: 6px;
   border-radius: 50%;
   transition: background-color 0.3s, color 0.3s;
   cursor: pointer;
@@ -85,12 +92,21 @@
   color: white;
 }
 
+/* === DIVIDER === */
+.divider {
+  color: white;
+  margin: 0 0.4rem;
+  font-size: 1.3rem;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* === BURGER MENU === */
 .burger {
   display: none;
   flex-direction: column;
-  cursor: pointer;
   gap: 4px;
-  margin-left: 1.2rem;
+  cursor: pointer;
 }
 
 .burger .line {
@@ -100,32 +116,23 @@
   border-radius: 2px;
 }
 
-/* RESPONSIVE */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 1rem 1.2rem;
-  }
-
-  .logo {
-    font-size: 1.2rem; /* kichikroq qildim */
+  .burger {
+    display: flex;
   }
 
   .nav-links {
     position: absolute;
-    top: 65px;
+    top: 100%;
     left: 0;
     right: 0;
     flex-direction: column;
-
-    /* Hira, transparent background */
-    background-color: rgba(0, 7, 19, 0.7); /* rgba qora, opacity 0.7 */
-
-    padding: 1.5rem;
-    transform: translateY(-200%);
+    background-color: rgba(0, 7, 19, 0.85);
+    padding: 1.5rem 0;
+    transform: translateY(-300%);
     transition: transform 0.3s ease-in-out;
-    z-index: 999;
-    gap: 1.2rem;
-    backdrop-filter: blur(8px); /* orqa fonda blur effekt qo‘shildi */
+    backdrop-filter: blur(10px);
   }
 
   .nav-links.active {
@@ -133,7 +140,7 @@
   }
 
   .nav-link {
-    font-size: 1rem; /* tekstlarni kichikroq qildim */
+    font-size: 1rem;
     text-align: center;
   }
 
@@ -141,17 +148,12 @@
     display: none;
   }
 
-  .burger {
-    display: flex;
-  }
-
-  .burger .line {
-    width: 22px;
-    height: 2px;
-  }
-
   .call-icon {
     font-size: 1.2rem;
     padding: 5px;
+  }
+
+  .divider {
+    display: none;
   }
 }

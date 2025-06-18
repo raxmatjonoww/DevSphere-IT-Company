@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './App.css';
+import React, { useEffect, useState, useRef } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigationType, useLocation } from "react-router-dom";
+import LoadingBar from "react-top-loading-bar";
+import toast, { Toaster } from "react-hot-toast";
+import ReactGA from "react-ga4";  // GA4 kutubxonasi
+import "./App.css";
 
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Containers/Home/Home";
-import Services from './Containers/Services/Services';
+import Services from "./Containers/Services/Services";
 import Works from "./Containers/Works/Works";
 import Team from "./Containers/Team/Team";
 import Contact from "./Containers/Contact/Contact";
@@ -13,42 +16,82 @@ import Portfolio from "./Containers/Portfolio/Portfolio";
 import Testimonials from "./Containers/Testimonials/Testimonials";
 import FAQ from "./Containers/FAQ/FAQ";
 
-function App() {
-  const [stars, setStars] = useState([]);
-  const [loading, setLoading] = useState(true); // 🔁 loading state
+const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; // ← o'zingizni Measurement ID yozing
+
+// Routing o'zgarishlarini olayotgan Listener component
+function GAListener() {
+  const location = useLocation();
 
   useEffect(() => {
-    // ── Loading spinner uchun kichik tizim vaqtini qo'shamiz
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500); // 1.5 soniya - demo uchun
+    ReactGA.send({ hitType: "pageview", page: location.pathname + location.search });
+  }, [location]);
 
-    return () => clearTimeout(timer);
+  return null;
+}
+
+function AppContent() {
+  const ref = useRef(null);
+  const navigationType = useNavigationType();
+
+  useEffect(() => {
+    ReactGA.initialize(GA_MEASUREMENT_ID);
   }, []);
 
   useEffect(() => {
-    const totalStars = 80;
-    const starElements = [];
-    for (let i = 0; i < totalStars; i++) {
+    ref.current?.continuousStart();
+    const timer = setTimeout(() => ref.current?.complete(), 800);
+    return () => clearTimeout(timer);
+  }, [navigationType]);
+
+  return (
+    <>
+      <LoadingBar color="#376fff" ref={ref} height={3} />
+      <Toaster position="top-center" reverseOrder={false} />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Home />
+            <Services />
+            <Works />
+            <Testimonials />
+            <Team />
+            <FAQ />
+            <Contact toast={toast} />
+          </>
+        } />
+        <Route path="/portfolio" element={<Portfolio />} />
+      </Routes>
+      <Footer />
+    </>
+  );
+}
+
+function App() {
+  const [stars, setStars] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const arr = [];
+    for (let i = 0; i < 80; i++) {
       const left = Math.random() * 100;
       const top = Math.random() * 100;
       const size = Math.random() * 2 + 1;
       const delay = Math.random() * 5;
-      starElements.push(
+      arr.push(
         <div
           key={i}
           className="star"
-          style={{
-            left: `${left}%`,
-            top: `${top}%`,
-            width: `${size}px`,
-            height: `${size}px`,
-            animationDelay: `${delay}s`,
-          }}
+          style={{ left: `${left}%`, top: `${top}%`, width: `${size}px`, height: `${size}px`, animationDelay: `${delay}s` }}
         />
       );
     }
-    setStars(starElements);
+    setStars(arr);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1200);
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
@@ -61,24 +104,10 @@ function App() {
 
   return (
     <Router>
+      <GAListener />
       <div className="App">
         <div className="stars-wrapper">{stars}</div>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Home />
-              <Services />
-              <Works />
-              <Testimonials />
-              <Team />
-              <FAQ />
-              <Contact />
-            </>
-          } />
-          <Route path="/portfolio" element={<Portfolio />} />
-        </Routes>
-        <Footer />
+        <AppContent />
       </div>
     </Router>
   );

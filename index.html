@@ -1,79 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#1a5bff" />
+  <head>
+    <!-- Basic Settings -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a5bff" />
 
-  <!-- Google Search Console tasdiqlash meta-tegi -->
-  <meta name="google-site-verification" content="ciRvvkfeOQQXZtAwd_X2M_tyvKf96_fS6JZxPuPNFRA" />
+    <!-- Page Title -->
+    <title>DevSphere — IT Company & Creative Agency</title>
 
-  <!-- Optimizatsiyalashgan Title -->
-  <title>Web & Mobile Dev + UI/UX Design – DevSphere IT Company</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/glob.png" type="image/png" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="/assets/glob.png" type="image/png" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="DevSphere is a modern IT company and creative agency offering web development, UI/UX design, branding, Telegram bots, and mobile video editing services." />
+    <meta name="keywords" content="DevSphere, IT company, creative agency, web development, UI/UX design, branding, Telegram bots, video editing, digital solutions, business growth" />
+    <meta name="author" content="DevSphere Team" />
+    <meta name="language" content="en" />
 
-  <!-- SEO Meta Tasvirlar -->
-  <meta name="description" content="DevSphere — custom web & mobile development, UI/UX design, branding, Telegram bots & video editing for modern businesses." />
-  <meta name="keywords" content="web development, mobile development, UI/UX design, branding, Telegram bots, video editing, custom software" />
-  <meta name="author" content="DevSphere Team" />
+    <!-- Alternate Language Tags -->
+    <link rel="alternate" hreflang="en" href="https://yourwebsite.com/en" />
+    <link rel="alternate" hreflang="ru" href="https://yourwebsite.com/ru" />
+    <link rel="alternate" hreflang="uz" href="https://yourwebsite.com/uz" />
 
-  <!-- Til-xususiy meta-teglar -->
-  <meta name="description" lang="ru" content="DevSphere — разработка сайтов и мобильных приложений, UI/UX дизайн, брендинг, Telegram-боты и монтаж видео." />
-  <meta name="description" lang="uz" content="DevSphere — sayt va mobil ilovalar ishlab chiqish, UI/UX dizayn, brending, Telegram botlar va video montaj." />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="DevSphere — IT Company & Creative Agency" />
+    <meta property="og:description" content="We build websites, design brands, create Telegram bots, and edit videos to grow your business." />
+    <meta property="og:image" content="https://yourwebsite.com/assets/glob.png" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="DevSphere" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="DevSphere IT Company — Web, Design, Bots & Video Services" />
-  <meta property="og:description" content="Custom websites, UI/UX, branding, Telegram bots & video editing for businesses." />
-  <meta property="og:image" content="https://yourwebsite.com/assets/glob.png" />
-  <meta property="og:url" content="https://yourwebsite.com" />
-  <meta property="og:type" content="website" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DevSphere — IT Company & Creative Agency" />
+    <meta name="twitter:description" content="Professional IT solutions including websites, branding, UI/UX, Telegram bots, and video editing." />
+    <meta name="twitter:image" content="https://yourwebsite.com/assets/glob.png" />
+    <meta name="twitter:site" content="@DevSphere" />
+    <meta name="twitter:creator" content="@DevSphere" />
+  </head>
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="DevSphere — IT Company & Creative Agency" />
-  <meta name="twitter:description" content="Custom web/mobile, UI/UX, branding, bots & video editing." />
-  <meta name="twitter:image" content="https://yourwebsite.com/assets/glob.png" />
-
-  <!-- Canonical link -->
-  <link rel="canonical" href="https://yourwebsite.com/" />
-
-  <!-- Structure Data – JSON‑LD Organization -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "DevSphere IT Company",
-      "url": "https://yourwebsite.com",
-      "logo": "https://yourwebsite.com/assets/glob.png",
-      "sameAs": [
-        "https://linkedin.com/company/devsphere",
-        "https://facebook.com/devsphere",
-        "https://twitter.com/devsphere"
-      ],
-      "description": "Custom web & mobile development, UI/UX design, branding, Telegram bots & video editing.",
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": "+998123456789",
-          "contactType": "customer support",
-          "areaServed": "UZ"
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Main St",
-        "addressLocality": "Tashkent",
-        "addressRegion": "Tashkent",
-        "postalCode": "100000",
-        "addressCountry": "UZ"
-      }
-    }
-  </script>
-</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

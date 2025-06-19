@@ -29,6 +29,7 @@
     "react-router-hash-link": "^2.4.3",
     "react-slick": "^0.30.3",
     "react-top-loading-bar": "^3.0.2",
+    "sitemap-generator": "^8.5.1",
     "slick-carousel": "^1.8.1",
     "zod": "^3.25.67"
   },

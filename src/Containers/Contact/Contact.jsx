@@ -11,16 +11,14 @@ const Contact = () => {
     setLoading(true);
 
     emailjs.sendForm(
-      'devsphere-it-company2025',
-      'devsphere_company2025',
+      'devsphere-itcompany2025',
+      'devsphereitcompany_20025',
       form.current,
-      { publicKey: '-YKQFUruqfb3HN-37' }
+      { publicKey: 'oEsERaOkMVQB4EyxW' }
     )
     .then(() => {
-      alert('Сообщение успешно отправлено!');
+      alert('Данные успешно отправлены!');
       form.current.reset();
-
-      // 🔁 Sahifani root ('/') ga qaytadan yuklash
       window.location = '/';
     }, (error) => {
       console.error('Ошибка отправки:', error.text);
@@ -33,13 +31,14 @@ const Contact = () => {
     <section className="contact-section" id="contact">
       <div className="contact-container">
         <h2 className="contact-title">Свяжитесь с нами</h2>
-        <p className="contact-subtitle">Заполните форму, чтобы мы могли с вами связаться</p>
+        <p className="contact-subtitle">Пожалуйста, заполните свои данные</p>
 
         <form ref={form} onSubmit={sendEmail} className="contact-form">
-          <input type="text" name="user_name" placeholder="Ваше имя" required />
-          <input type="email" name="user_email" placeholder="Ваш Email" required />
-          <textarea name="message" placeholder="Ваше сообщение" rows="5" required></textarea>
-
+          <input type="text" name="user_name" placeholder="Имя" required />
+          <input type="text" name="user_surname" placeholder="Фамилия" required />
+          <input type="tel" name="user_phone" placeholder="Телефон номер" required />
+          <input type="email" name="user_email" placeholder="Email (обязательно)" />
+          
           <button type="submit" className="contact-button" disabled={loading}>
             {loading ? 'Отправка...' : 'Отправить'}
           </button>

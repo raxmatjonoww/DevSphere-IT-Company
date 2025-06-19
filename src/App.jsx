@@ -1,8 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
-import { BrowserRouter as Router, Routes, Route, useNavigationType, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigationType,
+  useLocation
+} from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 import toast, { Toaster } from "react-hot-toast";
-import ReactGA from "react-ga4";  // GA4 kutubxonasi
+import ReactGA from "react-ga4";
 import "./App.css";
 
 import Navbar from "./Components/Navbar/Navbar";
@@ -15,17 +21,19 @@ import Footer from "./Components/Footer/Footer";
 import Portfolio from "./Containers/Portfolio/Portfolio";
 import Testimonials from "./Containers/Testimonials/Testimonials";
 import FAQ from "./Containers/FAQ/FAQ";
+import Blog from "./Containers/Blog/Blog";
+import BlogPost from "./Containers/Blog/BlogPost"; // ✅
 
-const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; // ← o'zingizni Measurement ID yozing
+const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
 
-// Routing o'zgarishlarini olayotgan Listener component
 function GAListener() {
   const location = useLocation();
-
   useEffect(() => {
-    ReactGA.send({ hitType: "pageview", page: location.pathname + location.search });
+    ReactGA.send({
+      hitType: "pageview",
+      page: location.pathname + location.search
+    });
   }, [location]);
-
   return null;
 }
 
@@ -61,6 +69,8 @@ function AppContent() {
           </>
         } />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} /> {/* ✅ */}
       </Routes>
       <Footer />
     </>
@@ -82,7 +92,13 @@ function App() {
         <div
           key={i}
           className="star"
-          style={{ left: `${left}%`, top: `${top}%`, width: `${size}px`, height: `${size}px`, animationDelay: `${delay}s` }}
+          style={{
+            left: `${left}%`,
+            top: `${top}%`,
+            width: `${size}px`,
+            height: `${size}px`,
+            animationDelay: `${delay}s`
+          }}
         />
       );
     }

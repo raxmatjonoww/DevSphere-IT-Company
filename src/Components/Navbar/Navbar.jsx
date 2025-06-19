@@ -53,7 +53,7 @@ const Navbar = () => {
               <li><HashLink smooth to="/#team" className="nav-link" onClick={handleClose}>О нас</HashLink></li>
               <li className="divider">|</li>
               <li><HashLink smooth to="/#faq" className="nav-link" onClick={handleClose}>FAQ</HashLink></li>
-              <li style={{ color: "white" }} className="divider">|</li>
+              <li className="divider">|</li>
               <li><HashLink smooth to="/#contact" className="nav-link" onClick={handleClose}>Контакты</HashLink></li>
             </>
           )}
@@ -65,6 +65,16 @@ const Navbar = () => {
               Портфолио
             </Link>
           </li>
+
+          <li className="divider">|</li>
+
+          {/* ✅ YANGI: Blog linki qo‘shildi */}
+          <li>
+            <Link to="/blog" className="nav-link" onClick={handleClose}>
+              Блог
+            </Link>
+          </li>
+
           <li className="divider">|</li>
 
           <li>
@@ -72,7 +82,6 @@ const Navbar = () => {
               <FaPhoneAlt />
             </a>
           </li>
-          
         </ul>
 
         <div className="burger" onClick={handleToggle}>

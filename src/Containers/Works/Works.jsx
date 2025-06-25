@@ -6,26 +6,32 @@ const worksData = [
   {
     title: 'По Созданию Cайтов',
     link: '/portfolio',
+    // isInternal: true,
   },
   {
     title: 'По Созданию Ботов',
-    link: '#',
+    link: '/portfolio',
+    isInternal: true,
   },
   {
     title: 'По Созданию UI/UX',
-    link: '#',
+    link: '/portfolio',
+    isInternal: true,
   },
   {
     title: 'По Мобилографию',
     link: 'https://www.instagram.com/faruxovich_media/',
+    isInternal: false,
   },
   {
     title: 'СММ',
     link: 'https://www.instagram.com/di_group_agency/',
+    isInternal: false,
   },
   {
     title: 'По Графическому дизайну',
-    link: '',
+    link: 'https://www.instagram.com/di_group_agency/', 
+    isInternal: false,
   },
 ];
 
@@ -38,9 +44,21 @@ const Works = () => (
           <div className="work-card" key={index}>
             <h3>{work.title}</h3>
             <p>Профессионально выполненный проект в данной категории.</p>
-            <a href={work.link} className="work-button" target="_blank" rel="noreferrer">
-              Перейти
-            </a>
+            {work.link ? (
+              work.isInternal ? (
+                <Link to={work.link} className="work-button">
+                  Перейти
+                </Link>
+              ) : (
+                <a href={work.link} className="work-button" target="_blank" rel="noreferrer">
+                  Перейти
+                </a>
+              )
+            ) : (
+              <button className="work-button disabled" disabled>
+                В разработке
+              </button>
+            )}
           </div>
         ))}
       </div>

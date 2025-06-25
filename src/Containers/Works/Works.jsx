@@ -6,7 +6,7 @@ const worksData = [
   {
     title: 'По Созданию Cайтов',
     link: '/portfolio',
-    // isInternal: true,
+    isInternal: true,
   },
   {
     title: 'По Созданию Ботов',

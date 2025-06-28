@@ -83,7 +83,7 @@ function App() {
 
   useEffect(() => {
     const arr = [];
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 100; i++) {
       const left = Math.random() * 100;
       const top = Math.random() * 100;
       const size = Math.random() * 2 + 1;

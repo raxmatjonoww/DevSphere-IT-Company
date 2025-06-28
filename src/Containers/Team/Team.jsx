@@ -4,14 +4,15 @@ import './Team.css';
 import ibrohim from '../../assets/ibo.JPG';
 import ibroxim2 from '../../assets/ibo2.JPG';
 import inobat from '../../assets/inobat.JPG';
-import joka from '../../assets/joka.JPG';
+// import joka from '../../assets/joka.JPG';
+import jahongir from '../../assets/jahongir.JPG';
 
 const teamMembers = [
   {
     name: 'Джахонгир Рахматжонов',
     role: 'CTO & Marketing',
     desc: 'Full-Stack Developer',
-    image: joka,
+    image: jahongir,
     link: 'https://www.instagram.com/raxmatjonoww/',
   },
   {

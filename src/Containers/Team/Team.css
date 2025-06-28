@@ -35,11 +35,16 @@
   text-align: center;
   text-decoration: none;
   color: inherit;
+  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  /* Hoverlar olib tashlandi */
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(26, 91, 255, 0.25);
 }
 
 .team-image-wrapper {
@@ -78,7 +83,7 @@
   line-height: 1.5;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 768px) {
   .team-title {
     font-size: 2rem;
@@ -99,5 +104,11 @@
 
   .desc {
     font-size: 0.85rem;
+  }
+
+  /* ✅ Hover effekti faqat kichik ekranlarda o‘chirildi */
+  .team-card:hover {
+    transform: none;
+    box-shadow: none;
   }
 }

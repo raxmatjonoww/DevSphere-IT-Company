@@ -100,21 +100,13 @@
   gap: 4px;
 }
 
-/* === RESPONSIVE === */
 @media (max-width: 768px) {
-  .testimonials-title {
-    font-size: 2rem;
+  .testimonial-card:hover {
+    transform: none;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Default shadow */
   }
 
-  .testimonial-card {
-    padding: 1.5rem;
-  }
-
-  .testimonial-text {
-    font-size: 0.95rem;
-  }
-
-  .testimonial-name {
-    font-size: 1rem;
+  .testimonial-card:hover::before {
+    opacity: 0;
   }
 }

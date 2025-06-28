@@ -132,29 +132,20 @@ html {
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
-  .services-title {
-    font-size: 2rem;
+  /* Mavjud kodlar... */
+
+  .service-card:hover {
+    transform: none;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Default shadow */
   }
 
-  .service-card {
-    padding: 1.5rem;
+  .service-card:hover::before {
+    opacity: 0;
   }
 
-  .service-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .service-card p {
-    font-size: 0.95rem;
-  }
-
-  .service-icon {
-    width: 56px;
-    height: 56px;
-  }
-
-  .order-button {
-    font-size: 0.95rem;
-    padding: 0.5rem 1.2rem;
+  .order-button:hover {
+    transform: none;
+    background: linear-gradient(135deg, #1a5bff, #376fff); /* Default holatga o‘tkazamiz */
+    box-shadow: 0 4px 12px rgba(26, 91, 255, 0.3); /* Default holat */
   }
 }

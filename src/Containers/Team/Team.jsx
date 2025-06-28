@@ -6,33 +6,55 @@ import ibroxim2 from '../../assets/ibo2.JPG';
 import inobat from '../../assets/inobat.JPG';
 import joka from '../../assets/joka.JPG';
 
+const teamMembers = [
+  {
+    name: 'Джахонгир Рахматжонов',
+    role: 'CTO & Marketing',
+    desc: 'Full-Stack Developer',
+    image: joka,
+    link: 'https://www.instagram.com/raxmatjonoww/',
+  },
+  {
+    name: 'Ибрагим Махмудов',
+    role: 'CEO & Creative Director',
+    desc: 'Web Designer',
+    image: ibrohim,
+    link: 'https://www.instagram.com/kep.xn/',
+  },
+  {
+    name: 'Ибрагим Мухиддинов',
+    role: 'Frontend Developer / Мобилограф',
+    desc: '',
+    image: ibroxim2,
+    link: 'https://www.instagram.com/faruxovich_media/',
+  },
+  {
+    name: 'Инобат Шарапова',
+    role: 'SMM-Специалист / Мобилограф',
+    desc: '',
+    image: inobat,
+    link: 'https://www.instagram.com/inobat_hikmatullayevna/',
+  },
+];
+
 const Team = () => {
   return (
     <section className="team-section" id="team">
-      <h2 className="team-title">Команда с большими задачами.</h2>
+      <h2 className="team-title">Наша команда</h2>
+      <p className="team-subtitle">Те, кто двигает проект вперёд</p>
       <div className="team-grid">
-        <a className='a-hreff' href="https://www.instagram.com/raxmatjonoww/"><div className="team-card">
-          <img src={joka} alt="Джахонгир Рахматжонов" className="team-photo" />
-          <h3>Джахонгир Рахматжонов</h3>
-          <p className="position">CTO & Marketing</p>
-          <p className="desc">Full-Stack Developer</p>
-        </div></a>
-        <a className='a-hreff' href="https://www.instagram.com/kep.xn/"><div className="team-card">
-          <img src={ibrohim} alt="Ибрагим Махмудов" className="team-photo" />
-          <h3>Ибрагим Махмудов</h3>
-          <p className="position">CEO & Creative Director</p>
-          <p className="desc">Web Designer</p>
-        </div></a>
-        <a className='a-hreff' href="https://www.instagram.com/faruxovich_media/"><div className="team-card">
-          <img src={ibroxim2} alt="Иброхим Мухиддинов" className="team-photo" />
-          <h3>Ибрагим Мухиддинов</h3>
-          <p className="position">Мобилограф / Frontend Developer</p>
-        </div></a>
-        <a className='a-hreff' href="https://www.instagram.com/inobat_hikmatullayevna/"><div className="team-card">
-          <img src={inobat} alt="Инобат Асоатуллаева" className="team-photo" />
-          <h3>Инобат <br /> Шарапова</h3>
-          <p className="position">SMM-Специалист / Мобилограф</p>
-        </div></a>
+        {teamMembers.map((member, idx) => (
+          <a className="team-card" href={member.link} target="_blank" rel="noreferrer" key={idx}>
+            <div className="team-image-wrapper">
+              <img src={member.image} alt={member.name} className="team-photo" />
+            </div>
+            <div className="team-info">
+              <h3>{member.name}</h3>
+              <p className="position">{member.role}</p>
+              {member.desc && <p className="desc">{member.desc}</p>}
+            </div>
+          </a>
+        ))}
       </div>
     </section>
   );

@@ -119,25 +119,18 @@
   transform: scale(1.05);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .works-title {
-    font-size: 2rem;
+  .work-card:hover {
+    transform: none;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Default holatga qaytariladi */
   }
 
-  .work-card {
-    padding: 1.5rem;
+  .work-card:hover::before {
+    opacity: 0;
   }
 
-  .work-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .work-card p {
-    font-size: 0.95rem;
-  }
-
-  .work-image {
-    max-width: 100%;
+  .work-button:hover {
+    background-color: #ffffff;
+    transform: none;
   }
 }

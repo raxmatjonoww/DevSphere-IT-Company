@@ -1,6 +1,5 @@
 .team-section {
   padding: 6rem 5%;
-  /* background-color: #000713; */
   color: #ffffff;
   font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
   text-align: center;
@@ -36,16 +35,11 @@
   text-align: center;
   text-decoration: none;
   color: inherit;
-  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-}
-
-.team-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(26, 91, 255, 0.25);
+  /* Hoverlar olib tashlandi */
 }
 
 .team-image-wrapper {
@@ -54,7 +48,6 @@
   margin: 0 auto 1rem;
   border-radius: 50%;
   overflow: hidden;
-  /* border: 2px solid #1a5bff; */
   box-shadow: 0 0 20px rgba(26, 91, 255, 0.3);
 }
 
@@ -85,7 +78,7 @@
   line-height: 1.5;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .team-title {
     font-size: 2rem;

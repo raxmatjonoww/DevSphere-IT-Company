@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './FAQ.css';
 import { FaPlus, FaMinus } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const data = [
   {
@@ -57,8 +58,16 @@ const FAQ = () => {
       <h2 className="faq-title">FAQ — Часто задаваемые вопросы</h2>
       <div className="faq-container">
         {data.map((item, i) => (
-          <div key={i} className={`faq-item ${activeIndex === i ? 'active' : ''}`}>
-            <div className="faq-question" onClick={() => toggle(i)}>
+          <motion.div
+            key={i}
+            className={`faq-item ${activeIndex === i ? 'active' : ''}`}
+            onClick={() => toggle(i)}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            viewport={{ once: true }}
+          >
+            <div className="faq-question">
               <span>{item.q}</span>
               <span className="faq-icon">
                 {activeIndex === i ? <FaMinus /> : <FaPlus />}
@@ -70,7 +79,7 @@ const FAQ = () => {
             >
               <div className="faq-answer">{item.a}</div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

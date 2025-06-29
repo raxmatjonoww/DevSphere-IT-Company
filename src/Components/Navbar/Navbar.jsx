@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <HashLink smooth to="/#home" className="logo" onClick={handleClose}>
+        <HashLink smooth to="/" className="logo" onClick={handleClose}>
           DevSphere
         </HashLink>
 

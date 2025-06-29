@@ -1,6 +1,7 @@
 import React from 'react';
 import './Works.css';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion'; // 🔹 qo‘shildi
 
 const worksData = [
   {
@@ -30,7 +31,7 @@ const worksData = [
   },
   {
     title: 'По Графическому дизайну',
-    link: 'https://www.instagram.com/di_group_agency/', 
+    link: 'https://www.instagram.com/di_group_agency/',
     isInternal: false,
   },
 ];
@@ -41,25 +42,26 @@ const Works = () => (
       <h2 className="works-title">Наши работы</h2>
       <div className="works-grid">
         {worksData.map((work, index) => (
-          <div className="work-card" key={index}>
+          <motion.div
+            className="work-card"
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <h3>{work.title}</h3>
             <p>Профессионально выполненный проект в данной категории.</p>
             {work.link ? (
               work.isInternal ? (
-                <Link to={work.link} className="work-button">
-                  Перейти
-                </Link>
+                <Link to={work.link} className="work-button">Перейти</Link>
               ) : (
-                <a href={work.link} className="work-button" target="_blank" rel="noreferrer">
-                  Перейти
-                </a>
+                <a href={work.link} className="work-button" target="_blank" rel="noreferrer">Перейти</a>
               )
             ) : (
-              <button className="work-button disabled" disabled>
-                В разработке
-              </button>
+              <button className="work-button disabled" disabled>В разработке</button>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

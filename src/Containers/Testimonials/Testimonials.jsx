@@ -1,6 +1,7 @@
 import React from 'react';
 import './Testimonials.css';
 import { FaStar } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const testimonials = [
   {
@@ -23,7 +24,14 @@ const Testimonials = () => {
       <h2 className="testimonials-title">Отзывы клиентов</h2>
       <div className="testimonials-container">
         {testimonials.map((t, index) => (
-          <div key={index} className="testimonial-card" data-aos="fade-up" data-aos-delay={index * 100}>
+          <motion.div
+            key={index}
+            className="testimonial-card"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+          >
             <p className="testimonial-text">“{t.feedback}”</p>
             <div className="stars">
               {[...Array(5)].map((_, i) => (
@@ -31,7 +39,7 @@ const Testimonials = () => {
               ))}
             </div>
             <h4 className="testimonial-name">– {t.name}</h4>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

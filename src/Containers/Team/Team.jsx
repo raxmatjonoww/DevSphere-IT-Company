@@ -1,10 +1,10 @@
 import React from 'react';
 import './Team.css';
+import { motion } from 'framer-motion';
 
 import ibrohim from '../../assets/ibo.JPG';
 import ibroxim2 from '../../assets/ibo2.JPG';
 import inobat from '../../assets/inobat.JPG';
-// import joka from '../../assets/joka.JPG';
 import jahongir from '../../assets/jahongir.JPG';
 
 const teamMembers = [
@@ -45,7 +45,17 @@ const Team = () => {
       <p className="team-subtitle">Те, кто двигает проект вперёд</p>
       <div className="team-grid">
         {teamMembers.map((member, idx) => (
-          <a className="team-card" href={member.link} target="_blank" rel="noreferrer" key={idx}>
+          <motion.a
+            href={member.link}
+            target="_blank"
+            rel="noreferrer"
+            className="team-card"
+            key={idx}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: idx * 0.15 }}
+          >
             <div className="team-image-wrapper">
               <img src={member.image} alt={member.name} className="team-photo" />
             </div>
@@ -54,7 +64,7 @@ const Team = () => {
               <p className="position">{member.role}</p>
               {member.desc && <p className="desc">{member.desc}</p>}
             </div>
-          </a>
+          </motion.a>
         ))}
       </div>
     </section>

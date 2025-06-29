@@ -50,7 +50,7 @@
   font-size: 1rem;
   outline: none;
   transition: all 0.3s ease;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(1px);
 }
 
 .contact-form input::placeholder,

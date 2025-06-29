@@ -11,6 +11,7 @@ import toast, { Toaster } from "react-hot-toast";
 import ReactGA from "react-ga4";
 import "./App.css";
 
+// Komponentlar
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Containers/Home/Home";
 import Services from "./Containers/Services/Services";
@@ -22,7 +23,10 @@ import Portfolio from "./Containers/Portfolio/Portfolio";
 import Testimonials from "./Containers/Testimonials/Testimonials";
 import FAQ from "./Containers/FAQ/FAQ";
 import Blog from "./Containers/Blog/Blog";
-import BlogPost from "./Containers/Blog/BlogPost"; // ✅
+import BlogPost from "./Containers/Blog/BlogPost";
+
+// ✅ ScrollToTop komponentini import qilamiz
+import ScrollToTop from "./ScrollToTop";
 
 const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
 
@@ -70,7 +74,7 @@ function AppContent() {
         } />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:id" element={<BlogPost />} /> {/* ✅ */}
+        <Route path="/blog/:id" element={<BlogPost />} />
       </Routes>
       <Footer />
     </>
@@ -84,9 +88,9 @@ function App() {
   useEffect(() => {
     const arr = [];
     for (let i = 0; i < 100; i++) {
-      const left = Math.random() * 100;
-      const top = Math.random() * 100;
-      const size = Math.random() * 2 + 1;
+      const left = Math.random() * 900;
+      const top = Math.random() * 900;
+      const size = Math.random() * 3 + 1;
       const delay = Math.random() * 5;
       arr.push(
         <div
@@ -121,6 +125,7 @@ function App() {
   return (
     <Router>
       <GAListener />
+      <ScrollToTop /> {/* ✅ Bu yerda qo‘shdik */}
       <div className="App">
         <div className="stars-wrapper">{stars}</div>
         <AppContent />

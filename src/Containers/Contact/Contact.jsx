@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const form = useRef();
@@ -30,10 +31,34 @@ const Contact = () => {
   return (
     <section className="contact-section" id="contact">
       <div className="contact-container">
-        <h2 className="contact-title">Свяжитесь с нами</h2>
-        <p className="contact-subtitle">Пожалуйста, заполните свои данные</p>
+        <motion.h2 
+          className="contact-title"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Свяжитесь с нами
+        </motion.h2>
+        <motion.p 
+          className="contact-subtitle"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          Пожалуйста, заполните свои данные
+        </motion.p>
 
-        <form ref={form} onSubmit={sendEmail} className="contact-form">
+        <motion.form 
+          ref={form} 
+          onSubmit={sendEmail} 
+          className="contact-form"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
           <input type="text" name="user_name" placeholder="Имя" required />
           <input type="text" name="user_surname" placeholder="Фамилия" required />
           <input type="tel" name="user_phone" placeholder="Телефон номер" required />
@@ -42,7 +67,7 @@ const Contact = () => {
           <button type="submit" className="contact-button" disabled={loading}>
             {loading ? 'Отправка...' : 'Отправить'}
           </button>
-        </form>
+        </motion.form>
 
         {loading && (
           <div className="loading-overlay">

@@ -92,7 +92,18 @@
     font-size: 0.85rem;
     padding: 0.4rem 1rem;
   }
+
+  /* Mobilda hoverni olib tashlash */
+  .blog-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .blog-btn:hover {
+    background-color: #1a5bff;
+  }
 }
+
 
 @media (max-width: 480px) {
   .blog-title {

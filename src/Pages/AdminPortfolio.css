@@ -1,99 +1,90 @@
 .admin-portfolio {
-    padding: 2rem;
-    max-width: 960px;
-    margin: 0 auto;
+    min-height: 100vh;
+    background: linear-gradient(to right, #000713, #001a5a);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 9rem 1rem;
     color: #fff;
     text-align: center;
   }
   
   .admin-portfolio h1 {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
   }
   
   .admin-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background-color: #0e1c31;
-    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #000;
+    padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    max-width: 700px;
+    width: 100%;
+    margin-bottom: 3rem;
   }
   
   .admin-form input,
   .admin-form textarea {
-    padding: 0.8rem;
-    border-radius: 8px;
-    border: none;
-    background: #152c47;
-    color: #fff;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
     font-size: 1rem;
-  }
-  
-  .admin-form textarea {
+    border: 1px solid #ccc;
+    border-radius: 8px;
     resize: vertical;
-    min-height: 100px;
   }
   
   .admin-form button {
-    background-color: #3a7afe;
-    border: none;
-    padding: 0.9rem;
-    border-radius: 8px;
-    color: #fff;
+    width: 100%;
+    padding: 12px;
     font-size: 1rem;
+    background-color: #376fff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: background 0.3s ease;
   }
   
   .admin-form button:hover {
-    background-color: #265ddc;
+    background-color: #1a5bff;
   }
   
   .project-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
   }
   
   .project-card {
-    background: #0f2239;
-    border-radius: 12px;
-    padding: 1rem;
-    width: 280px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #000;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 0.8rem;
   }
   
   .project-card img {
     width: 100%;
-    height: 160px;
+    height: 180px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 0.8rem;
-  }
-  
-  .project-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .project-card p {
-    font-size: 0.95rem;
-    color: #ccc;
-    margin-bottom: 0.8rem;
   }
   
   .visit-link {
-    color: #57a6ff;
-    font-size: 0.9rem;
+    color: #1a5bff;
+    font-weight: 500;
     text-decoration: none;
-    margin-bottom: 0.8rem;
   }
   
   .visit-link:hover {
@@ -102,16 +93,18 @@
   
   .btn-group {
     display: flex;
+    justify-content: center;
     gap: 0.8rem;
   }
   
   .edit,
   .delete {
-    padding: 0.4rem 0.7rem;
+    padding: 0.5rem 1rem;
     border: none;
     border-radius: 6px;
     font-size: 0.9rem;
     cursor: pointer;
+    font-weight: 500;
   }
   
   .edit {
@@ -132,14 +125,70 @@
     background-color: #c62828;
   }
   
-  /* Responsive */
-  @media (max-width: 600px) {
-    .project-card {
-      width: 100%;
+  /* 🔧 Responsiveness */
+  @media (max-width: 1024px) {
+    .admin-portfolio h1 {
+      font-size: 2rem;
+    }
+  
+    .admin-form {
+      max-width: 90%;
+      padding: 1.5rem;
+    }
+  
+    .project-card img {
+      height: 160px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .admin-portfolio {
+      padding: 6rem 1rem;
+    }
+  
+    .admin-form input,
+    .admin-form textarea,
+    .admin-form button {
+      font-size: 0.95rem;
+    }
+  
+    .edit,
+    .delete {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .admin-portfolio {
+      padding: 4rem 0.8rem;
     }
   
     .admin-form {
       padding: 1rem;
+    }
+  
+    .admin-portfolio h1 {
+      font-size: 1.6rem;
+    }
+  
+    .project-card {
+      padding: 0.8rem;
+    }
+  
+    .project-card img {
+      height: 140px;
+    }
+  
+    .btn-group {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .edit,
+    .delete {
+      width: 100%;
+      text-align: center;
     }
   }
   

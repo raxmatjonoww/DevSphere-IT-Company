@@ -3,7 +3,7 @@
     background: linear-gradient(to right, #000713, #001a5a);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Ekran o‘rtasiga */
     align-items: center;
     color: #fff;
     padding: 2rem;
@@ -11,9 +11,10 @@
   }
   
   .dashboard h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: 2.6rem;
+    margin-bottom: 2.5rem;
     font-weight: 600;
+    letter-spacing: 0.5px;
   }
   
   .dashboard-buttons {
@@ -26,9 +27,9 @@
   .dashboard-buttons a {
     background-color: #376fff;
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 1rem 2.2rem;
     border-radius: 10px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -40,7 +41,6 @@
     transform: scale(1.05);
   }
   
-  /* Responsiveness */
   @media (max-width: 600px) {
     .dashboard h1 {
       font-size: 2rem;
@@ -48,7 +48,7 @@
   
     .dashboard-buttons a {
       font-size: 1rem;
-      padding: 0.8rem 1.5rem;
+      padding: 0.9rem 1.7rem;
     }
   }
   

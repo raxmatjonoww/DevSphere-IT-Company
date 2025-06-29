@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./AdminDashboard.css";
+import "../Pages/AdminDashboard.css"; // CSS import
 
 const AdminDashboard = () => {
   return (

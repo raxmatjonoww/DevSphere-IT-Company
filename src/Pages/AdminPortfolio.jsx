@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
+import { v4 as uuidv4 } from "uuid";
 import "./AdminPortfolio.css";
 
 const AdminPortfolio = () => {
@@ -7,9 +8,9 @@ const AdminPortfolio = () => {
   const [form, setForm] = useState({
     title: "",
     description: "",
-    image: "",
     link: "",
   });
+  const [imageFile, setImageFile] = useState(null);
   const [editingId, setEditingId] = useState(null);
 
   useEffect(() => {
@@ -24,22 +25,60 @@ const AdminPortfolio = () => {
     if (data) setProjects(data);
   };
 
+  const handleImageUpload = async (file) => {
+    const fileExt = file.name.split(".").pop();
+    const fileName = `${uuidv4()}.${fileExt}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from("portfolio-images")
+      .upload(fileName, file);
+
+    if (uploadError) {
+      console.error("Rasm yuklashda xatolik:", uploadError.message);
+      return null;
+    }
+
+    const { data: publicUrlData } = supabase.storage
+      .from("portfolio-images")
+      .getPublicUrl(fileName);
+
+    return publicUrlData?.publicUrl || null;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { title, description, image } = form;
-    if (!title || !description || !image) {
-      alert("Пожалуйста, заполните все обязательные поля.");
-      return;
+    const { title, description, link } = form;
+
+    if (!title || !description || (!editingId && !imageFile)) {
+      return alert("Barcha maydonlarni to‘ldiring.");
     }
+
+    let imageUrl = null;
+    if (imageFile) {
+      imageUrl = await handleImageUpload(imageFile);
+      if (!imageUrl) return;
+    }
+
+    const projectData = {
+      title,
+      description,
+      link,
+      ...(imageUrl && { image: imageUrl }),
+    };
+
+    const table = supabase.from("portfolio");
 
     if (editingId) {
-      await supabase.from("portfolio").update(form).eq("id", editingId);
+      const { error } = await table.update(projectData).eq("id", editingId);
+      if (error) return alert("Xatolik: " + error.message);
       setEditingId(null);
     } else {
-      await supabase.from("portfolio").insert([{ ...form }]);
+      const { error } = await table.insert([projectData]);
+      if (error) return alert("Xatolik: " + error.message);
     }
 
-    setForm({ title: "", description: "", image: "", link: "" });
+    setForm({ title: "", description: "", link: "" });
+    setImageFile(null);
     fetchProjects();
   };
 
@@ -47,14 +86,13 @@ const AdminPortfolio = () => {
     setForm({
       title: project.title,
       description: project.description,
-      image: project.image,
       link: project.link || "",
     });
     setEditingId(project.id);
   };
 
   const handleDelete = async (id) => {
-    if (window.confirm("Вы уверены, что хотите удалить этот проект?")) {
+    if (window.confirm("Haqiqatan o‘chirmoqchimisiz?")) {
       await supabase.from("portfolio").delete().eq("id", id);
       fetchProjects();
     }
@@ -62,34 +100,35 @@ const AdminPortfolio = () => {
 
   return (
     <div className="admin-portfolio">
-      <h1>Управление портфолио</h1>
+      <h1>Portfolio boshqaruvi</h1>
 
       <form className="admin-form" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Название проекта"
+          placeholder="Nomi"
           value={form.title}
           onChange={(e) => setForm({ ...form, title: e.target.value })}
         />
         <textarea
-          placeholder="Описание"
+          placeholder="Tavsif"
           value={form.description}
-          onChange={(e) => setForm({ ...form, description: e.target.value })}
+          onChange={(e) =>
+            setForm({ ...form, description: e.target.value })
+          }
+        />
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => setImageFile(e.target.files[0])}
         />
         <input
           type="text"
-          placeholder="Ссылка на изображение"
-          value={form.image}
-          onChange={(e) => setForm({ ...form, image: e.target.value })}
-        />
-        <input
-          type="text"
-          placeholder="Ссылка на сайт (необязательно)"
+          placeholder="Sayt havolasi (ixtiyoriy)"
           value={form.link}
           onChange={(e) => setForm({ ...form, link: e.target.value })}
         />
         <button type="submit">
-          {editingId ? "Обновить проект" : "Добавить проект"}
+          {editingId ? "Yangilash" : "Qo‘shish"}
         </button>
       </form>
 
@@ -103,21 +142,24 @@ const AdminPortfolio = () => {
               <a
                 href={project.link}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noreferrer"
                 className="visit-link"
               >
-                Перейти на сайт →
+                Saytga o‘tish →
               </a>
             )}
             <div className="btn-group">
-              <button onClick={() => handleEdit(project)} className="edit">
-                ✏️ Редактировать
+              <button
+                className="edit"
+                onClick={() => handleEdit(project)}
+              >
+                ✏️
               </button>
               <button
-                onClick={() => handleDelete(project.id)}
                 className="delete"
+                onClick={() => handleDelete(project.id)}
               >
-                🗑️ Удалить
+                🗑️
               </button>
             </div>
           </div>

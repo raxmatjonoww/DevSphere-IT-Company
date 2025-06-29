@@ -1,29 +1,54 @@
-/* src/Pages/AdminDashboard.css */
-.admin-dashboard {
-    padding: 40px;
-    text-align: center;
-    background: #f9f9f9;
+.dashboard {
     min-height: 100vh;
-  }
-  
-  .admin-links {
-    margin-top: 30px;
+    background: linear-gradient(to right, #000713, #001a5a);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
   }
   
-  .admin-links a {
-    padding: 15px 20px;
-    background-color: #376fff;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
+  .dashboard h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
     font-weight: 600;
-    transition: background 0.3s ease;
   }
   
-  .admin-links a:hover {
-    background-color: #254fbe;
+  .dashboard-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .dashboard-buttons a {
+    background-color: #376fff;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dashboard-buttons a:hover {
+    background-color: #1a5bff;
+    transform: scale(1.05);
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 600px) {
+    .dashboard h1 {
+      font-size: 2rem;
+    }
+  
+    .dashboard-buttons a {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+    }
   }
   

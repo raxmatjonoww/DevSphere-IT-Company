@@ -182,3 +182,47 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 }
+/* === ADMIN ICON === */
+.admin-icon {
+  color: #95b3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+.admin-icon:hover {
+  transform: scale(1.1);
+}
+
+/* === LOGOUT BUTTON === */
+.logout-btn {
+  background: none;
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.logout-btn:hover {
+  background: #ff4d4d;
+  color: white;
+}
+
+/* === Responsive uchun === */
+@media (max-width: 1500px) {
+  .logout-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .admin-icon {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
+}

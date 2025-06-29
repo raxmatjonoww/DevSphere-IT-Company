@@ -1,40 +1,68 @@
-/* src/Pages/Login.css */
 .login-page {
     min-height: 100vh;
-    background: #f5f5f5;
+    background: linear-gradient(to right, #000713, #001a5a);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
   }
   
   .login-form {
     background: white;
     padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    width: 100%;
+    border-radius: 10px;
     max-width: 400px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .login-form h2 {
-    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
   }
   
+  .login-form h2 {
+    margin-bottom: 30px;
+    color: #001a5a;
+  }
+  
   .login-form input {
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 16px;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
   }
   
   .login-form button {
-    background: #376fff;
+    width: 100%;
+    padding: 12px;
+    background-color: #376fff;
     color: white;
-    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .login-form button:hover {
+    background-color: #1a5bff;
+  }
+  
+  /* ✅ Responsive: Mobil uchun */
+  @media (max-width: 480px) {
+    .login-form {
+      padding: 25px;
+      border-radius: 8px;
+    }
+  
+    .login-form h2 {
+      font-size: 1.5rem;
+    }
+  
+    .login-form input,
+    .login-form button {
+      font-size: 0.95rem;
+      padding: 10px;
+    }
   }
   

@@ -1,117 +1,67 @@
-.blog-section {
-  padding: 6rem 5%;
-  background: transparent;
-  color: white;
-  font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
-  position: relative;
-  z-index: 1;
-}
+/* src/Containers/Blog/Blog.css */
 
-.blog-title {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 3rem;
-  color: #ffffff;
-  position: relative;
+.blog-section {
+  padding: 60px 20px;
+  background: #f5f7fa;
+  min-height: 100vh;
 }
 
 .blog-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-.blog-grid {
+.blog-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #001a5a;
+}
+
+.blog-list {
   display: grid;
+  gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
 }
 
 .blog-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 1.5rem;
-  backdrop-filter: blur(6px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  cursor: pointer;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
 }
 
 .blog-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
 }
 
-.blog-card-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-  color: white;
+.blog-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #000713;
 }
 
 .blog-summary {
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  color: #eaeaea;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .blog-date {
-  display: block;
-  font-size: 0.8rem;
-  color: #aaa;
-  margin-bottom: 1rem;
-}
-
-.blog-btn {
-  display: inline-block;
-  padding: 0.5rem 1.2rem;
-  background-color: #1a5bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 500;
   font-size: 0.9rem;
-  transition: background 0.3s ease;
+  color: #777;
+  margin-bottom: 12px;
 }
 
-.blog-btn:hover {
-  background-color: #376fff;
+.blog-readmore {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #376fff;
+  text-decoration: none;
 }
 
-/* === Responsive === */
-@media (max-width: 768px) {
-  .blog-title {
-    font-size: 2.2rem;
-  }
-
-  .blog-card {
-    padding: 1.2rem;
-  }
-
-  .blog-btn {
-    font-size: 0.85rem;
-    padding: 0.4rem 1rem;
-  }
-
-  /* Mobilda hoverni olib tashlash */
-  .blog-card:hover {
-    transform: none;
-    box-shadow: none;
-  }
-
-  .blog-btn:hover {
-    background-color: #1a5bff;
-  }
-}
-
-
-@media (max-width: 480px) {
-  .blog-title {
-    font-size: 1.8rem;
-  }
-
-  .blog-btn {
-    font-size: 0.8rem;
-    padding: 0.35rem 0.9rem;
-  }
+.blog-readmore:hover {
+  text-decoration: underline;
 }

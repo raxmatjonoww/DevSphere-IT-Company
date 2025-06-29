@@ -1,15 +1,15 @@
-// src/Pages/AdminDashboard.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import "../Pages/AdminDashboard.css";
+import "./AdminDashboard.css";
 
 const AdminDashboard = () => {
   return (
-    <div className="admin-dashboard">
-      <h2>👋 Xush kelibsiz, Admin!</h2>
-      <div className="admin-links">
-        <Link to="/admin/portfolio">📁 Portfolio'ni boshqarish</Link>
-        <Link to="/admin/blogs">📝 Blog postlar</Link>
+    <div className="dashboard">
+      <h1>Панель администратора</h1>
+      <div className="dashboard-buttons">
+        <Link to="/admin/portfolio">Портфолио</Link>
+        <Link to="/admin/blogs">Блог-посты</Link>
+        <Link to="/">На главную</Link>
       </div>
     </div>
   );

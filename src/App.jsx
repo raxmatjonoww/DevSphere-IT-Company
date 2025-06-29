@@ -72,9 +72,12 @@ import Contact from "./Containers/Contact/Contact";
 import AdminPortfolio from "./Pages/AdminPortfolio";
 import AdminPanel from "./Pages/AdminPanel";
 import Login from "./Pages/Login";
+import Team from "./Containers/Team/Team";
 import Navbar from "./Components/Navbar/Navbar";
 import AdminProtectedRoute from "./Pages/AdminProtectedRoute";
 import AdminDashboard from "./Pages/AdminDashboard";
+import Testimonials from "./Containers/Testimonials/Testimonials";
+import FAQ from "./Containers/FAQ/FAQ";
 import "./App.css";
 
 function App() {
@@ -90,6 +93,9 @@ function App() {
               <Home />
               <Services />
               <Works />
+              <Team />
+              <Testimonials />
+              <FAQ />
               <Contact />
             </>
           }

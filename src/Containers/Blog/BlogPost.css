@@ -1,41 +1,91 @@
 .blogpost-section {
-    padding: 6rem 5%;
-    background: transparent;
-    color: white;
-    font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
+  padding: 6rem 5%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  color: white;
+  font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
+}
+
+.blogpost-container {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.blogpost-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #1a5bff;
+}
+
+.blogpost-date {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 1.5rem;
+}
+
+.blogpost-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  font-size: 1.05rem;
+}
+
+.blog-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: #1a8fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.blog-btn:hover {
+  color: #61aaff;
+  text-decoration: underline;
+}
+
+.post-not-found {
+  text-align: center;
+  padding: 5rem 2rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.blog-spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top: 6px solid #1a8fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
-  
+}
+
+@media (max-width: 600px) {
   .blogpost-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 16px;
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
   }
-  
+
   .blogpost-title {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    color: #1a5bff;
+    font-size: 1.7rem;
   }
-  
-  .blogpost-date {
-    font-size: 0.9rem;
-    color: #aaa;
-    margin-bottom: 1.5rem;
-  }
-  
+
   .blogpost-content p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    color: #e0e0e0;
+    font-size: 1rem;
   }
-  
-  .post-not-found {
-    text-align: center;
-    padding: 5rem;
-    color: #fff;
-  }
-  
+}

@@ -1,76 +1,109 @@
-/* App.css */
-
-/* Umumiy body styling */
-body, html, #root {
+html, body, #root {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
   scroll-behavior: smooth;
   background: linear-gradient(135deg, #000713, #001a5a);
   color: #ffffff;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* Asosiy App konteyner */
 .App {
-  /* min-height: 100vh; */
   position: relative;
   z-index: 1;
 }
 
-/* Yulduzcha konteyneri */
+/* === Yulduzli fon === */
 .stars-wrapper {
   position: fixed;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
-  overflow: hidden;
-  pointer-events: none; /* elementlar bilan to‘qnashmaydi */
+  height: 100%;
+  width: 100%;
   z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-/* Yulduzlar */
 .star {
   position: absolute;
+  width: 2px;
+  height: 2px;
   background: white;
   border-radius: 50%;
-  opacity: 0.8;
-  animation: twinkle 2s infinite ease-in-out;
+  opacity: 0.2;
+  animation: twinkle 3s infinite ease-in-out;
 }
 
-/* Chaqnash animatsiyasi */
 @keyframes twinkle {
   0%, 100% {
     opacity: 0.2;
     transform: scale(1);
   }
   50% {
-    opacity: 1;
+    opacity: 0.9;
     transform: scale(1.5);
   }
 }
+
+/* === Yuklanish overlay === */
 .app-loading-overlay {
   position: fixed;
   inset: 0;
   background: linear-gradient(135deg, #000713, #1647c5);
-
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
 }
 
+/* Spinner */
 .app-spinner {
   width: 60px;
   height: 60px;
-  border: 6px solid #fff;
+  border: 6px solid rgba(255, 255, 255, 0.3);
   border-top-color: #376fff;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
+/* === Tepadagi ilondek gradient loading chiziq === */
+.top-snake-loader {
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 30%;
+  height: 4px;
+  background: linear-gradient(90deg, #1a5bff, #61aaff);
+  border-radius: 3px;
+  animation: snakeMove 1.5s ease-in-out infinite;
+  z-index: 10000;
+}
+
+@keyframes snakeMove {
+  0% {
+    left: -30%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    left: 35%;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}

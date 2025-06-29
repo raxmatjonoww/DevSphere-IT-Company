@@ -2,11 +2,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../../supabaseClient";
+import { motion } from "framer-motion";
 import "./Blog.css";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -16,9 +18,10 @@ const Blog = () => {
         .order("date", { ascending: false });
 
       if (error) {
-        console.error("Xatolik:", error);
+        console.error("Ошибка:", error.message);
+        setError("Ошибка при загрузке данных.");
       } else {
-        setPosts(data);
+        setPosts(data || []);
       }
       setLoading(false);
     };
@@ -26,30 +29,79 @@ const Blog = () => {
     fetchPosts();
   }, []);
 
+  const formatDate = (date) => {
+    const postDate = new Date(date);
+    const today = new Date();
+
+    if (postDate.toDateString() === today.toDateString()) {
+      return "Сегодня";
+    }
+
+    return postDate.toLocaleDateString("ru-RU", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+  };
+
   return (
-    <section className="blog-section">
+    <motion.section
+      className="blog-section"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="blog-container">
-        <h2 className="blog-title">Blog Yangiliklari</h2>
+        <motion.h2
+          className="blog-title"
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        >
+          Новости блога
+        </motion.h2>
+
         {loading ? (
-          <p>Yuklanmoqda...</p>
+          <div className="blog-loading">
+            <div className="blog-spinner" />
+          </div>
+        ) : error ? (
+          <p className="blog-error">{error}</p>
         ) : posts.length === 0 ? (
-          <p>Postlar topilmadi</p>
+          <p className="blog-empty">Пока нет записей в блоге.</p>
         ) : (
-          <div className="blog-list">
+          <motion.div
+            className="blog-list"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.1 },
+              },
+            }}
+          >
             {posts.map((post) => (
-              <div key={post.id} className="blog-card">
+              <motion.div
+                key={post.id}
+                className="blog-card"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
                 <h3>{post.title}</h3>
                 <p className="blog-summary">{post.summary}</p>
-                <p className="blog-date">{new Date(post.date).toLocaleDateString()}</p>
+                <p className="blog-date">{formatDate(post.date)}</p>
                 <Link to={`/blog/${post.id}`} className="blog-readmore">
-                  Batafsil →
+                  Читать далее →
                 </Link>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

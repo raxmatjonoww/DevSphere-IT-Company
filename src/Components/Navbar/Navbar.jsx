@@ -67,9 +67,10 @@ const Navbar = () => {
               <li className="divider">|</li>
               <li>
                 <Link to="/login" className="nav-link" onClick={handleClose} title="Admin Login">
-                  <FaUserShield />
+                  <FaUserShield style={{ fontSize: "1.5rem" }} />
                 </Link>
               </li>
+
               <li className="divider">|</li>
               <li>
                 <a href="tel:+998999909569" className="call-icon" aria-label="Позвонить">

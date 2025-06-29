@@ -1,0 +1,148 @@
+/* src/Pages/AdminPortfolio.css */
+
+.admin-portfolio {
+    min-height: 100vh;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertikal o‘rtaga */
+    align-items: center;     /* gorizontal o‘rtaga */
+    background: #f5f7fa;
+    box-sizing: border-box;
+    color: #222;
+  }
+  
+  .admin-portfolio h2 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .admin-form {
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+  
+  .admin-form input,
+  .admin-form textarea {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  
+  .admin-form textarea {
+    min-height: 80px;
+  }
+  
+  .admin-form button {
+    background-color: #376fff;
+    color: white;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-form button:hover {
+    background-color: #254ecc;
+  }
+  
+  .portfolio-list {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  
+  .portfolio-item {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #333;
+  }
+  
+  .portfolio-item h3 {
+    margin-bottom: 10px;
+  }
+  
+  .portfolio-item p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: #555;
+  }
+  
+  .portfolio-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: contain;
+    max-height: 180px;
+  }
+  
+  .visit-link {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #376fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .visit-link:hover {
+    color: #254ecc;
+  }
+  
+  .btn-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .btn {
+    padding: 8px 15px;
+    font-weight: 600;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1;
+  }
+  
+  .edit-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .edit-btn:hover {
+    background-color: #3a8c3a;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #d32f2f;
+  }
+  

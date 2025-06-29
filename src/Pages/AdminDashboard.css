@@ -1,0 +1,29 @@
+/* src/Pages/AdminDashboard.css */
+.admin-dashboard {
+    padding: 40px;
+    text-align: center;
+    background: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .admin-links {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .admin-links a {
+    padding: 15px 20px;
+    background-color: #376fff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  
+  .admin-links a:hover {
+    background-color: #254fbe;
+  }
+  

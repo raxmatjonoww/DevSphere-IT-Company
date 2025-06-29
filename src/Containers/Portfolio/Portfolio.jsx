@@ -1,28 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import './Portfolio.css';
 import { motion } from 'framer-motion';
-
-import kia from '../../assets/kia.jpg';
-import chillpro from '../../assets/chillpro.jpg';
-import fasten from '../../assets/fasten.jpg';
-import sky from '../../assets/sky.jpg';
-import weestep from '../../assets/weestep.jpg';
-import tomato from '../../assets/tomato.jpg';
-import surfing from '../../assets/surfing.jpg';
-import ers from '../../assets/ers.jpg';
-
-const projects = [
-  { title: "KIA Uzbekistan", image: kia, link: "https://kia.uz" },
-  { title: "ChillPro Service", image: chillpro, link: "https://www.chillpro.uz/" },
-  { title: "Fasten Marketing", image: fasten, link: "https://fasten.com/ru_uz" },
-  { title: "Skywings", image: sky, link: "https://skywings-studio.vercel.app/" },
-  { title: "Weestep be bigger", image: weestep, link: "https://weestep-app.vercel.app/" },
-  { title: "Cafe Tomato", image: tomato, link: "https://tomato-cafe.vercel.app/" },
-  { title: "Surfing School", image: surfing, link: "https://surfing-school.vercel.app/" },
-  { title: "Ерсұлтан Бекет", image: ers, link: "https://ersultan-beket.vercel.app/" },
-];
+import { supabase } from "../../supabaseClient";
 
 const Portfolio = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  const fetchProjects = async () => {
+    const { data, error } = await supabase
+      .from("portfolio")
+      .select("*")
+      .order("created_at", { ascending: false });
+    if (data) setProjects(data);
+  };
+
   return (
     <section className="portfolio-section" id="portfolio">
       <motion.h2
@@ -38,7 +33,7 @@ const Portfolio = () => {
         <div className="portfolio-grid">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.id}
               className="portfolio-card"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -48,12 +43,7 @@ const Portfolio = () => {
               <div className="image-wrapper">
                 <img src={project.image} alt={project.title} className="portfolio-img" />
                 <div className="overlay">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="portfolio-btn"
-                  >
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="portfolio-btn">
                     Перейти →
                   </a>
                 </div>

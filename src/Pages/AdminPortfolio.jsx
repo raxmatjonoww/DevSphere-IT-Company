@@ -7,7 +7,6 @@ const AdminPortfolio = () => {
   const [projects, setProjects] = useState([]);
   const [form, setForm] = useState({
     title: "",
-    description: "",
     link: "",
   });
   const [imageFile, setImageFile] = useState(null);
@@ -47,9 +46,9 @@ const AdminPortfolio = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { title, description, link } = form;
+    const { title, link } = form;
 
-    if (!title || !description || (!editingId && !imageFile)) {
+    if (!title || (!editingId && !imageFile)) {
       return alert("Barcha maydonlarni to‘ldiring.");
     }
 
@@ -61,7 +60,6 @@ const AdminPortfolio = () => {
 
     const projectData = {
       title,
-      description,
       link,
       ...(imageUrl && { image: imageUrl }),
     };
@@ -77,7 +75,7 @@ const AdminPortfolio = () => {
       if (error) return alert("Xatolik: " + error.message);
     }
 
-    setForm({ title: "", description: "", link: "" });
+    setForm({ title: "", link: "" });
     setImageFile(null);
     fetchProjects();
   };
@@ -85,7 +83,6 @@ const AdminPortfolio = () => {
   const handleEdit = (project) => {
     setForm({
       title: project.title,
-      description: project.description,
       link: project.link || "",
     });
     setEditingId(project.id);
@@ -109,13 +106,6 @@ const AdminPortfolio = () => {
           value={form.title}
           onChange={(e) => setForm({ ...form, title: e.target.value })}
         />
-        <textarea
-          placeholder="Tavsif"
-          value={form.description}
-          onChange={(e) =>
-            setForm({ ...form, description: e.target.value })
-          }
-        />
         <input
           type="file"
           accept="image/*"
@@ -137,7 +127,6 @@ const AdminPortfolio = () => {
           <div key={project.id} className="project-card">
             <img src={project.image} alt={project.title} />
             <h3>{project.title}</h3>
-            <p>{project.description}</p>
             {project.link && (
               <a
                 href={project.link}

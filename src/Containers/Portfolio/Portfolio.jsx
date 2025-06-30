@@ -6,7 +6,7 @@ import { supabase } from "../../supabaseClient";
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true); // loading holati
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchProjects();
@@ -19,7 +19,7 @@ const Portfolio = () => {
       .order("created_at", { ascending: false });
 
     if (error) {
-      console.error("Xatolik:", error.message);
+      console.error("Ошибка при получении данных:", error.message);
     } else {
       setProjects(data || []);
     }
@@ -46,13 +46,16 @@ const Portfolio = () => {
         <div className="portfolio-container">
           <div className="portfolio-grid">
             {projects.map((project, index) => (
-              <motion.div
+              <motion.a
                 key={project.id}
+                href={project.link || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="portfolio-card"
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="image-wrapper">
                   <img
@@ -60,21 +63,9 @@ const Portfolio = () => {
                     alt={project.title}
                     className="portfolio-img"
                   />
-                  {project.link && (
-                    <div className="overlay">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="portfolio-btn"
-                      >
-                        Перейти →
-                      </a>
-                    </div>
-                  )}
                 </div>
                 <h3 className="portfolio-title-text">{project.title}</h3>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>

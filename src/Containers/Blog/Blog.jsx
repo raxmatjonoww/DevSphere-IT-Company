@@ -1,107 +1,76 @@
 // src/Containers/Blog/Blog.jsx
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import "./Blog.css";
 import { supabase } from "../../supabaseClient";
 import { motion } from "framer-motion";
-import "./Blog.css";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      const { data, error } = await supabase
-        .from("posts")
-        .select("*")
-        .order("date", { ascending: false });
-
-      if (error) {
-        console.error("Ошибка:", error.message);
-        setError("Ошибка при загрузке данных.");
-      } else {
-        setPosts(data || []);
-      }
-      setLoading(false);
-    };
-
     fetchPosts();
   }, []);
 
-  const formatDate = (date) => {
-    const postDate = new Date(date);
-    const today = new Date();
+  const fetchPosts = async () => {
+    const { data, error } = await supabase
+      .from("posts")
+      .select("*")
+      .order("date", { ascending: false });
 
-    if (postDate.toDateString() === today.toDateString()) {
-      return "Сегодня";
+    if (error) {
+      setError(true);
+      console.error("Ошибка при получении постов:", error.message);
+    } else {
+      setPosts(data || []);
     }
 
-    return postDate.toLocaleDateString("ru-RU", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    });
+    setLoading(false);
   };
 
   return (
-    <motion.section
-      className="blog-section"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
-      <div className="blog-container">
-        <motion.h2
-          className="blog-title"
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-        >
-          Новости блога
-        </motion.h2>
+    <section className="blog-section" id="blog">
+      <h2 className="blog-title">Блог</h2>
 
-        {loading ? (
-          <div className="blog-loading">
-            <div className="blog-spinner" />
-          </div>
-        ) : error ? (
-          <p className="blog-error">{error}</p>
-        ) : posts.length === 0 ? (
-          <p className="blog-empty">Пока нет записей в блоге.</p>
-        ) : (
-          <motion.div
-            className="blog-list"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {},
-              visible: {
-                transition: { staggerChildren: 0.1 },
-              },
-            }}
-          >
-            {posts.map((post) => (
+      {loading ? (
+        <div className="blog-loading">
+          <div className="blog-spinner" />
+        </div>
+      ) : error ? (
+        <p className="blog-error">Произошла ошибка при загрузке постов.</p>
+      ) : posts.length === 0 ? (
+        <p className="blog-empty">Записей пока нет.</p>
+      ) : (
+        <div className="blog-container">
+          <div className="blog-list">
+            {posts.map((post, index) => (
               <motion.div
                 key={post.id}
                 className="blog-card"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <h3>{post.title}</h3>
                 <p className="blog-summary">{post.summary}</p>
-                <p className="blog-date">{formatDate(post.date)}</p>
-                <Link to={`/blog/${post.id}`} className="blog-readmore">
+                <p className="blog-date">
+                  {new Date(post.date).toLocaleDateString("ru-RU", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+                <a href={`/blog/${post.id}`} className="blog-readmore">
                   Читать далее →
-                </Link>
+                </a>
               </motion.div>
             ))}
-          </motion.div>
-        )}
-      </div>
-    </motion.section>
+          </div>
+        </div>
+      )}
+    </section>
   );
 };
 

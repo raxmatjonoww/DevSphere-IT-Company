@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { supabase } from "../supabaseClient";
+import { supabase } from "../../supabaseClient";
 import { v4 as uuidv4 } from "uuid";
 import "./AdminPortfolio.css";
 

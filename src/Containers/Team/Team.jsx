@@ -10,15 +10,14 @@ import jahongir from '../../assets/jahongir.JPG';
 const teamMembers = [
   {
     name: 'Джахонгир Рахматжонов',
-    role: 'CTO & Marketing',
+    role: 'Founder & CEO',
     desc: 'Full-Stack Developer',
     image: jahongir,
     link: 'https://www.instagram.com/raxmatjonoww/',
   },
   {
     name: 'Ибрагим Махмудов',
-    role: 'CEO & Creative Director',
-    desc: 'Web Designer',
+    role: 'Web Designer',
     image: ibrohim,
     link: 'https://www.instagram.com/kep.xn/',
   },

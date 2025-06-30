@@ -1,194 +1,211 @@
 .admin-portfolio {
-    min-height: 100vh;
-    background: linear-gradient(to right, #000713, #001a5a);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 9rem 1rem;
-    color: #fff;
-    text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #000713, #001a5a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8rem 1rem 4rem;
+  color: #fff;
+  text-align: center;
+}
+
+.admin-portfolio h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+/* Forma styling */
+.admin-form {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 3rem;
+}
+
+.admin-form input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  outline: none;
+}
+
+.admin-form input::placeholder {
+  color: #ccc;
+}
+
+.admin-form input[type="file"] {
+  background: transparent;
+  color: #ccc;
+  padding: 0.5rem 0;
+  border: none;
+}
+
+.admin-form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #376fff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-form button:hover {
+  background-color: #1a5bff;
+  transform: translateY(-1px);
+}
+
+/* Project list */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Project card */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+/* Link */
+.visit-link {
+  color: #82b1ff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.visit-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.edit,
+.delete {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.edit {
+  background-color: #4caf50;
+  color: white;
+}
+
+.edit:hover {
+  background-color: #388e3c;
+}
+
+.delete {
+  background-color: #e53935;
+  color: white;
+}
+
+.delete:hover {
+  background-color: #c62828;
+}
+
+/* 📱 Responsiveness */
+@media (max-width: 768px) {
+  .admin-portfolio {
+    padding-top: 6rem;
   }
-  
+
   .admin-portfolio h1 {
-    font-size: 2.3rem;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
+    font-size: 2rem;
   }
-  
+
   .admin-form {
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #000;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    max-width: 700px;
-    width: 100%;
-    margin-bottom: 3rem;
-  }
-  
-  .admin-form input,
-  .admin-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    resize: vertical;
-  }
-  
-  .admin-form button {
-    width: 100%;
-    padding: 12px;
-    font-size: 1rem;
-    background-color: #376fff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .admin-form button:hover {
-    background-color: #1a5bff;
-  }
-  
-  .project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px;
-  }
-  
-  .project-card {
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #000;
     padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
   }
-  
+
   .project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
+    height: 160px;
   }
-  
-  .visit-link {
-    color: #1a5bff;
-    font-weight: 500;
-    text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .admin-portfolio h1 {
+    font-size: 1.6rem;
   }
-  
-  .visit-link:hover {
-    text-decoration: underline;
+
+  .admin-form {
+    padding: 1rem;
   }
-  
+
+  .project-card {
+    padding: 1rem;
+  }
+
+  .project-card img {
+    height: 140px;
+  }
+
   .btn-group {
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
+    flex-direction: column;
   }
-  
+
   .edit,
   .delete {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    font-weight: 500;
+    width: 100%;
+    text-align: center;
   }
-  
-  .edit {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  .delete {
-    background-color: #e53935;
-    color: white;
-  }
-  
-  .edit:hover {
-    background-color: #3a8e3c;
-  }
-  
-  .delete:hover {
-    background-color: #c62828;
-  }
-  
-  /* 🔧 Responsiveness */
-  @media (max-width: 1024px) {
-    .admin-portfolio h1 {
-      font-size: 2rem;
-    }
-  
-    .admin-form {
-      max-width: 90%;
-      padding: 1.5rem;
-    }
-  
-    .project-card img {
-      height: 160px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .admin-portfolio {
-      padding: 6rem 1rem;
-    }
-  
-    .admin-form input,
-    .admin-form textarea,
-    .admin-form button {
-      font-size: 0.95rem;
-    }
-  
-    .edit,
-    .delete {
-      font-size: 0.85rem;
-      padding: 0.4rem 0.8rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .admin-portfolio {
-      padding: 4rem 0.8rem;
-    }
-  
-    .admin-form {
-      padding: 1rem;
-    }
-  
-    .admin-portfolio h1 {
-      font-size: 1.6rem;
-    }
-  
-    .project-card {
-      padding: 0.8rem;
-    }
-  
-    .project-card img {
-      height: 140px;
-    }
-  
-    .btn-group {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-  
-    .edit,
-    .delete {
-      width: 100%;
-      text-align: center;
-    }
-  }
-  
+}

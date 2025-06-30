@@ -18,22 +18,8 @@ import Testimonials from "./Containers/Testimonials/Testimonials";
 import Team from "./Containers/Team/Team";
 import FAQ from "./Containers/FAQ/FAQ";
 import ScrollToTop from "./Components/ScrollToTop";
+import StarsBackground from "./Components/StarsBackground/StarsBackground"; // 💫 yulduzlarni import qilish
 import "./App.css";
-
-function generateStars(count = 120) {
-  const stars = [];
-  for (let i = 0; i < count; i++) {
-    const style = {
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      width: `${Math.random() * 2 + 1}px`,
-      height: `${Math.random() * 2 + 1}px`,
-      animationDuration: `${Math.random() * 3 + 2}s`,
-    };
-    stars.push(<div key={i} className="star" style={style} />);
-  }
-  return stars;
-}
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -54,7 +40,7 @@ function App() {
 
   return (
     <Router>
-      <div className="stars-wrapper">{generateStars()}</div>
+      <StarsBackground /> {/* 💫 Yulduzlar fonini chaqirish */}
       <ScrollToTop />
       <Navbar />
       <Routes>

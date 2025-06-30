@@ -1,147 +1,193 @@
 .admin-panel {
-    min-height: 100vh;
-    background: linear-gradient(to bottom right, #000713, #001a5a);
-    padding: 2rem;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000713, #001a5a);
+  padding: 8rem 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.admin-panel h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+/* === Form === */
+.admin-form {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.admin-form input,
+.admin-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  outline: none;
+}
+
+.admin-form input::placeholder,
+.admin-form textarea::placeholder {
+  color: #ccc;
+}
+
+.admin-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.admin-form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #376fff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.admin-form button:hover {
+  background-color: #1a5bff;
+  transform: translateY(-1px);
+}
+
+/* === Blog List === */
+.blog-list {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  gap: 2rem;
+}
+
+.blog-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.blog-item h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.blog-item .summary {
+  font-weight: 500;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.blog-item .post-date {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* === Button Group === */
+.btn-group {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.edit,
+.delete {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.edit {
+  background-color: #4caf50;
+  color: white;
+}
+
+.edit:hover {
+  background-color: #388e3c;
+}
+
+.delete {
+  background-color: #e53935;
+  color: white;
+}
+
+.delete:hover {
+  background-color: #c62828;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .admin-panel {
+    padding-top: 6rem;
   }
-  
+
   .admin-panel h1 {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    text-align: center;
+    font-size: 2rem;
   }
-  
+
   .admin-form {
-    background-color: #0e1c31;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    max-width: 700px;
-    width: 100%;
-    margin-bottom: 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    padding: 1.5rem;
   }
-  
+
+  .blog-item {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-form {
+    padding: 1rem;
+  }
+
   .admin-form input,
   .admin-form textarea {
-    background: #152c47;
-    color: #fff;
-    padding: 0.9rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    resize: vertical;
-  }
-  
-  .admin-form textarea {
-    min-height: 100px;
-  }
-  
-  .admin-form button {
-    background-color: #3a7afe;
-    color: white;
-    border: none;
-    padding: 1rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .admin-form button:hover {
-    background-color: #265ddc;
-  }
-  
-  .blog-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px;
-  }
-  
-  .blog-item {
-    background-color: #0f2239;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .blog-item h3 {
-    margin: 0;
-  }
-  
-  .blog-item .summary {
-    font-weight: 600;
-    color: #9fc9ff;
-  }
-  
-  .blog-item p {
-    margin: 0;
     font-size: 0.95rem;
-    line-height: 1.5;
   }
-  
+
+  .admin-form button {
+    font-size: 0.95rem;
+  }
+
   .btn-group {
-    display: flex;
-    gap: 0.8rem;
+    flex-direction: column;
   }
-  
+
   .edit,
   .delete {
-    padding: 0.5rem 0.9rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: 0.3s ease;
+    width: 100%;
+    text-align: center;
   }
-  
-  .edit {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  .delete {
-    background-color: #e53935;
-    color: white;
-  }
-  
-  .edit:hover {
-    background-color: #388e3c;
-  }
-  
-  .delete:hover {
-    background-color: #c62828;
-  }
-  
-  /* ✅ Mobile */
-  @media (max-width: 600px) {
-    .admin-form {
-      padding: 1.5rem;
-    }
-  
-    .blog-item {
-      padding: 1rem;
-    }
-  
-    .admin-form input,
-    .admin-form textarea {
-      font-size: 0.95rem;
-    }
-  
-    .admin-form button {
-      font-size: 0.95rem;
-    }
-  }
-  
+}

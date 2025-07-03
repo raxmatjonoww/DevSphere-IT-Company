@@ -198,8 +198,8 @@
 /* === LOGOUT BUTTON === */
 .logout-btn {
   background: none;
-  border: 1px solid #ff4d4d;
-  color: #ff4d4d;
+  border: 1px solid white;
+  /* color: #ff4d4d; */
   font-weight: 600;
   padding: 6px 12px;
   border-radius: 4px;
@@ -207,8 +207,8 @@
   transition: background 0.3s ease, color 0.3s ease;
 }
 .logout-btn:hover {
-  background: #ff4d4d;
-  color: white;
+  border: 1px solid #95b3ff;
+  color: #95b3ff;
 }
 
 /* === Responsive uchun === */
@@ -224,5 +224,31 @@
   .admin-icon {
     font-size: 1.6rem;
     margin-top: 1rem;
+  }
+}
+/* === Yuklanish overlay === */
+.app-loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #000713, #1647c5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Spinner */
+.app-spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #376fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

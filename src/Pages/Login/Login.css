@@ -65,4 +65,28 @@
       padding: 10px;
     }
   }
-  
+  /* === Spinner overlay === */
+.app-loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #000713, #1647c5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.app-spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #376fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

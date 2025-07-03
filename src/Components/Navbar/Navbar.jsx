@@ -9,8 +9,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const isHomePage = location.pathname === "/";
   const [user, setUser] = useState(null);
+  const [isLoggingOut, setIsLoggingOut] = useState(false); // logout loading holati
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -30,86 +30,102 @@ const Navbar = () => {
   const handleClose = () => setIsOpen(false);
 
   const handleLogout = async () => {
+    setIsLoggingOut(true);
     await supabase.auth.signOut();
-    navigate("/");
     setUser(null);
+    navigate("/");
+    setIsLoggingOut(false);
   };
 
   const isAdmin = user?.email === "devsphere.uz@gmail.com";
 
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <HashLink smooth to="/" className="logo" onClick={handleClose}>
-          DevSphere
-        </HashLink>
-
-        <ul className={`nav-links ${isOpen ? "active" : ""}`}>
-          {!isAdmin ? (
-            <>
-              <li><HashLink smooth to="/#home" className="nav-link" onClick={handleClose}>Главная</HashLink></li>
-              <li className="divider">|</li>
-              <li><HashLink smooth to="/#services" className="nav-link" onClick={handleClose}>Услуги</HashLink></li>
-              <li className="divider">|</li>
-              <li><HashLink smooth to="/#works" className="nav-link" onClick={handleClose}>Работы</HashLink></li>
-              <li className="divider">|</li>
-              <li><HashLink smooth to="/#testimonials" className="nav-link" onClick={handleClose}>Отзывы</HashLink></li>
-              <li className="divider">|</li>
-              <li><HashLink smooth to="/#team" className="nav-link" onClick={handleClose}>О нас</HashLink></li>
-              <li className="divider">|</li>
-              <li><HashLink smooth to="/#faq" className="nav-link" onClick={handleClose}>FAQ</HashLink></li>
-              <li className="divider">|</li>
-              <li><HashLink smooth to="/#contact" className="nav-link" onClick={handleClose}>Контакты</HashLink></li>
-              <li className="divider">|</li>
-              <li><Link to="/portfolio" className="nav-link" onClick={handleClose}>Портфолио</Link></li>
-              <li className="divider">|</li>
-              <li><Link to="/blog" className="nav-link" onClick={handleClose}>Блог</Link></li>
-              <li className="divider">|</li>
-              <li>
-                <Link to="/login" className="nav-link" onClick={handleClose} title="Admin Login">
-                  <FaUserShield style={{ fontSize: "1.5rem" }} />
-                </Link>
-              </li>
-
-              <li className="divider">|</li>
-              <li>
-                <a href="tel:+998999909569" className="call-icon" aria-label="Позвонить">
-                  <FaPhoneAlt />
-                </a>
-              </li>
-            </>
-          ) : (
-            <>
-              <li><Link to="/admin/portfolio" className="nav-link" onClick={handleClose}>Portfolio</Link></li>
-              <li className="divider">|</li>
-              <li><Link to="/admin/blogs" className="nav-link" onClick={handleClose}>Blog</Link></li>
-              <li className="divider">|</li>
-              <li>
-                <Link to="/admin" className="nav-link" onClick={handleClose} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                  <FaUserShield /> Admin
-                </Link>
-              </li>
-              <li className="divider">|</li>
-              <li>
-                <button
-                  onClick={handleLogout}
-                  className="nav-link"
-                  style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: "6px" }}
-                >
-                  <FaSignOutAlt /> Logout
-                </button>
-              </li>
-            </>
-          )}
-        </ul>
-
-        <div className="burger" onClick={handleToggle}>
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
+    <>
+      {isLoggingOut && (
+        <div className="app-loading-overlay">
+          <div className="app-spinner"></div>
         </div>
-      </div>
-    </nav>
+      )}
+
+      <nav className="navbar">
+        <div className="navbar-container">
+          <HashLink smooth to="/" className="logo" onClick={handleClose}>
+            DevSphere
+          </HashLink>
+
+          <ul className={`nav-links ${isOpen ? "active" : ""}`}>
+            {!isAdmin ? (
+              <>
+                <li><HashLink smooth to="/#home" className="nav-link" onClick={handleClose}>Главная</HashLink></li>
+                <li className="divider">|</li>
+                <li><HashLink smooth to="/#services" className="nav-link" onClick={handleClose}>Услуги</HashLink></li>
+                <li className="divider">|</li>
+                <li><HashLink smooth to="/#works" className="nav-link" onClick={handleClose}>Работы</HashLink></li>
+                <li className="divider">|</li>
+                <li><HashLink smooth to="/#testimonials" className="nav-link" onClick={handleClose}>Отзывы</HashLink></li>
+                <li className="divider">|</li>
+                <li><HashLink smooth to="/#team" className="nav-link" onClick={handleClose}>О нас</HashLink></li>
+                <li className="divider">|</li>
+                <li><HashLink smooth to="/#faq" className="nav-link" onClick={handleClose}>FAQ</HashLink></li>
+                <li className="divider">|</li>
+                <li><HashLink smooth to="/#contact" className="nav-link" onClick={handleClose}>Контакты</HashLink></li>
+                <li className="divider">|</li>
+                <li><Link to="/portfolio" className="nav-link" onClick={handleClose}>Портфолио</Link></li>
+                <li className="divider">|</li>
+                <li><Link to="/blog" className="nav-link" onClick={handleClose}>Блог</Link></li>
+                <li className="divider">|</li>
+                <li>
+                  <Link to="/login" className="nav-link" onClick={handleClose} title="Admin Login">
+                    <FaUserShield style={{ fontSize: "1.5rem" }} />
+                  </Link>
+                </li>
+                <li className="divider">|</li>
+                <li>
+                  <a href="tel:+998999909569" className="call-icon" aria-label="Позвонить">
+                    <FaPhoneAlt />
+                  </a>
+                </li>
+              </>
+            ) : (
+              <>
+                <li><Link to="/admin/portfolio" className="nav-link" onClick={handleClose}>Portfolio</Link></li>
+                <li className="divider">|</li>
+                <li><Link to="/admin/blogs" className="nav-link" onClick={handleClose}>Blog</Link></li>
+                <li className="divider">|</li>
+                <li>
+                  <Link to="/admin" className="nav-link" onClick={handleClose} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                    <FaUserShield /> Admin
+                  </Link>
+                </li>
+                <li className="divider">|</li>
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    className="nav-link logout-btn"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      cursor: isLoggingOut ? "not-allowed" : "pointer",
+                      opacity: isLoggingOut ? 0.6 : 1,
+                    }}
+                    disabled={isLoggingOut}
+                  >
+                    <FaSignOutAlt /> Logout
+                  </button>
+                </li>
+              </>
+            )}
+          </ul>
+
+          <div className="burger" onClick={handleToggle}>
+            <span className="line"></span>
+            <span className="line"></span>
+            <span className="line"></span>
+          </div>
+        </div>
+      </nav>
+    </>
   );
 };
 

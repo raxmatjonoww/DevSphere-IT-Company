@@ -30,28 +30,36 @@ const Login = () => {
   };
 
   return (
-    <div className="login-page">
-      <form onSubmit={handleLogin} className="login-form">
-        <h2>Вход администратора</h2>
-        <input
-          type="email"
-          placeholder="Электронная почта"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Пароль"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit" disabled={loading}>
-          {loading ? "Вход..." : "Войти"}
-        </button>
-      </form>
-    </div>
+    <>
+      {loading && (
+        <div className="app-loading-overlay">
+          <div className="app-spinner"></div>
+        </div>
+      )}
+
+      <div className="login-page">
+        <form onSubmit={handleLogin} className="login-form">
+          <h2>Вход администратора</h2>
+          <input
+            type="email"
+            placeholder="Электронная почта"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Пароль"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit" disabled={loading}>
+            Войти
+          </button>
+        </form>
+      </div>
+    </>
   );
 };
 

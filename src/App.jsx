@@ -18,7 +18,9 @@ import Testimonials from "./Containers/Testimonials/Testimonials";
 import Team from "./Containers/Team/Team";
 import FAQ from "./Containers/FAQ/FAQ";
 import ScrollToTop from "./Components/ScrollToTop";
-import StarsBackground from "./Components/StarsBackground/StarsBackground"; // 💫 yulduzlarni import qilish
+import StarsBackground from "./Components/StarsBackground/StarsBackground";
+import NotFound from "./Pages/NotFound/NotFound"; // ✅ 404 sahifa
+
 import "./App.css";
 
 function App() {
@@ -40,7 +42,7 @@ function App() {
 
   return (
     <Router>
-      <StarsBackground /> {/* 💫 Yulduzlar fonini chaqirish */}
+      <StarsBackground />
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -86,6 +88,8 @@ function App() {
             </AdminProtectedRoute>
           }
         />
+        {/* ✅ 404 sahifa marshruti */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>

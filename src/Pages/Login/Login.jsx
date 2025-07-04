@@ -15,11 +15,15 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
 
-    if (email !== "devsphere.uz@gmail.com") {
+    if (
+      email !== "devsphere.uz@gmail.com" &&
+      email !== "raxmatjonovjahongir5@gmail.com"
+    ) {
       alert("Только администратор может войти");
       setLoading(false);
       return;
     }
+    
 
     const { error } = await supabase.auth.signInWithPassword({ email, password });
 

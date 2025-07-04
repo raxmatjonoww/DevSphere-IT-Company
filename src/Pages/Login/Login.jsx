@@ -16,8 +16,7 @@ const Login = () => {
     setLoading(true);
 
     if (
-      email !== "devsphere.uz@gmail.com" &&
-      email !== "raxmatjonovjahongir5@gmail.com"
+      email !== "devsphere.uz@gmail.com"
     ) {
       alert("Только администратор может войти");
       setLoading(false);

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Testimonials.css';
 import { FaStar } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const testimonials = [
   {
@@ -19,18 +20,20 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  useEffect(() => {
+    AOS.init({ duration: 600, once: true });
+  }, []);
+
   return (
     <section className="testimonials-section" id="testimonials">
-      <h2 className="testimonials-title">Отзывы клиентов</h2>
+      <h2 className="testimonials-title" data-aos="fade-up">Отзывы клиентов</h2>
       <div className="testimonials-container">
         {testimonials.map((t, index) => (
-          <motion.div
+          <div
             key={index}
             className="testimonial-card"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
+            data-aos="fade-up"
+            data-aos-delay={index * 150}
           >
             <p className="testimonial-text">“{t.feedback}”</p>
             <div className="stars">
@@ -39,7 +42,7 @@ const Testimonials = () => {
               ))}
             </div>
             <h4 className="testimonial-name">– {t.name}</h4>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

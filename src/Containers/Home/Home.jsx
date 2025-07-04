@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
 import glob from '../../assets/glob.png';
-import { motion } from 'framer-motion';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init({ duration: 700, once: true });
+  }, []);
+
   return (
     <section className="home-section" id="home">
       <div className="Home-Flex">
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
+        <div className="home-text" data-aos="fade-right">
           <h1 className="home-title">DevSphere</h1>
           <p className="home-p">
             IT-компания под ключ: создаём сайты, дизайн, Telegram-ботов и продвигаем в соцсетях. Помогаем бизнесу расти быстро и умно — с автоматизацией, стилем и результатом
@@ -20,17 +20,11 @@ const Home = () => {
           <a href="#contact">
             <button className="home-btn">Связаться</button>
           </a>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="home-img"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
+        <div className="home-img" data-aos="zoom-in">
           <img src={glob} alt="Globe" />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

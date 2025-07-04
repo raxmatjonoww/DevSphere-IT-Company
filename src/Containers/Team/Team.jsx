@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Team.css';
-import { motion } from 'framer-motion';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import ibrohim from '../../assets/ibo.JPG';
 import ibroxim2 from '../../assets/ibo2.JPG';
@@ -38,22 +39,24 @@ const teamMembers = [
 ];
 
 const Team = () => {
+  useEffect(() => {
+    AOS.init({ duration: 600, once: true });
+  }, []);
+
   return (
     <section className="team-section" id="team">
-      <h2 className="team-title">Наша команда</h2>
-      <p className="team-subtitle">Те, кто двигает проект вперёд</p>
+      <h2 className="team-title" data-aos="fade-up">Наша команда</h2>
+      <p className="team-subtitle" data-aos="fade-up" data-aos-delay="100">Те, кто двигает проект вперёд</p>
       <div className="team-grid">
         {teamMembers.map((member, idx) => (
-          <motion.a
+          <a
             href={member.link}
             target="_blank"
             rel="noreferrer"
             className="team-card"
             key={idx}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: idx * 0.15 }}
+            data-aos="zoom-in"
+            data-aos-delay={idx * 100}
           >
             <div className="team-image-wrapper">
               <img src={member.image} alt={member.name} className="team-photo" />
@@ -63,7 +66,7 @@ const Team = () => {
               <p className="position">{member.role}</p>
               {member.desc && <p className="desc">{member.desc}</p>}
             </div>
-          </motion.a>
+          </a>
         ))}
       </div>
     </section>

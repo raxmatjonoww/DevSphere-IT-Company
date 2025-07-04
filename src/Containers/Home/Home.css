@@ -1,7 +1,7 @@
 /* === HOME SECTION === */
 .home-section {
   width: 100%;
-  min-height: 100vh; /* Asosiy ranglar */
+  min-height: 100vh;
   font-family: 'Poppins', 'Segoe UI', 'Inter', sans-serif;
   display: flex;
   align-items: center;
@@ -9,6 +9,7 @@
   padding: 5rem 3rem;
   box-sizing: border-box;
   overflow: hidden;
+  /* background-color: #000713; */
 }
 
 .Home-Flex {
@@ -115,9 +116,10 @@
 }
 
 @media (max-width: 576px) {
-  .home-img img{
+  .home-img img {
     display: none;
   }
+
   .home-title {
     font-size: 2rem;
   }

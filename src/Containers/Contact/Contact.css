@@ -9,69 +9,72 @@
 }
 
 .contact-container {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
 .contact-title {
-  font-size: 3rem;
+  font-size: 3.1rem;
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   text-transform: uppercase;
   color: #ffffff;
+  letter-spacing: 1px;
 }
 
 .contact-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #cccccc;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
+  line-height: 1.6;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.7rem;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 1.7rem;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 1rem;
+  padding: 1rem 1.2rem;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.2px solid rgba(255, 255, 255, 0.12);
   color: #ffffff;
   font-size: 1rem;
   outline: none;
   transition: all 0.3s ease;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #aaaaaa;
+  color: #bbbbbb;
+  font-size: 0.95rem;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #1a5bff;
   box-shadow: 0 0 0 3px rgba(26, 91, 255, 0.2);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.09);
 }
 
 .contact-button {
-  padding: 1rem 2rem;
+  padding: 1rem 2.2rem;
   background: linear-gradient(135deg, #1a5bff, #376fff);
   color: #ffffff;
   border: none;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -80,6 +83,7 @@
 .contact-button:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, #376fff, #1a5bff);
+  box-shadow: 0 8px 16px rgba(26, 91, 255, 0.25);
 }
 
 /* Spinner & Overlay */
@@ -114,7 +118,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .contact-title {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 
   .contact-subtitle {
@@ -124,5 +128,11 @@
   .contact-form input,
   .contact-form textarea {
     font-size: 0.95rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .contact-button {
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
   }
 }

@@ -1,6 +1,6 @@
 .notfound-container {
     height: 100vh;
-    background: linear-gradient(to right, #000713, #001a5a);
+    /* background: linear-gradient(to right, #000713, #001a5a); */
     color: white;
     display: flex;
     flex-direction: column;

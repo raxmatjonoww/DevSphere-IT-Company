@@ -14,7 +14,7 @@ const teamMembers = [
     role: 'Founder & CEO',
     desc: 'Full-Stack Developer',
     image: jahongir,
-    link: 'https://www.instagram.com/raxmatjonoww/',
+    link: 'https://www.instagram.com/raxmatjonoww_/',
   },
   {
     name: 'Ибрагим Махмудов',
